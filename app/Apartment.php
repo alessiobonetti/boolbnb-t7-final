@@ -27,6 +27,11 @@ class Apartment extends Model
         return $this->hasMany('App\Views');
     }
 
+    public function images()
+    {
+        return $this->hasMany('App\Images');
+    }
+
     public function promotion()
     {
         return $this->belongsTo('App\Promotion');
