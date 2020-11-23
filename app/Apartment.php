@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class apartment extends Model
+class Apartment extends Model
 {
     public function user()
     {
@@ -25,6 +25,11 @@ class apartment extends Model
     public function views()
     {
         return $this->hasMany('App\Views');
+    }
+
+    public function promotion()
+    {
+        return $this->belongsTo('App\Promotion');
     }
 }
 
