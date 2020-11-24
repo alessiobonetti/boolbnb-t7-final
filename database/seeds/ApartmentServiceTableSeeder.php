@@ -17,7 +17,8 @@ class ApatmentServiceTableSeeder extends Seeder
 
         foreach ($apartments as $apartment) {
 
-            $services = Service::inRandomOrder()->limit(rand(1, 6))->get();
+            $services = Service::inRandomOrder()->take(rand(1, 6))->get();
+            dd($services);
             $apartment->services()->sync($services);
         }
     }

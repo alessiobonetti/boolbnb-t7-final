@@ -16,9 +16,7 @@ class CreateViewsTable extends Migration
         Schema::create('views', function (Blueprint $table) {
             $table->id();
             $table->foreignId('apartment_id')->constrained();
-
             $table->date('data_view');
-            
             $table->timestamps();
         });
     }

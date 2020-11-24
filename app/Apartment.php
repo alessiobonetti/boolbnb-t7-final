@@ -46,7 +46,7 @@ class Apartment extends Model
      */
     public function views()
     {
-        return $this->hasMany('App\Views');
+        return $this->hasMany('App\View');
     }
 
     /**
@@ -56,7 +56,7 @@ class Apartment extends Model
      */
     public function images()
     {
-        return $this->hasMany('App\Images');
+        return $this->hasMany('App\Image');
     }
 
     /**

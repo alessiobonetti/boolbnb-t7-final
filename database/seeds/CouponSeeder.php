@@ -12,6 +12,7 @@ class CouponSeeder extends Seeder
      */
     public function run()
     {
+        // Possibilità di aggiungere altri coupons
         $coupons = [
             [
                 'tipo_1',
@@ -33,7 +34,6 @@ class CouponSeeder extends Seeder
         foreach ($coupons as $coupon) {
 
             $newCoupon = new Coupon;
-
             $newCoupon->name = $coupon[0];
             $newCoupon->price = $coupon[1];
             $newCoupon->duration = $coupon[2];

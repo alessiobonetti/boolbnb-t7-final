@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Inseriti i vari seeder per un lancio unico
         $this->call([
             UsersTableSeeder::class,
             ApartmentsTableSeeder::class,

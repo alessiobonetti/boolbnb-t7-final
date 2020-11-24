@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Service;
+use App\View;
 
 class HomeController extends Controller
 {
@@ -19,8 +20,7 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         $apartments = Apartment::all()->where('user_id', $id);
-        $services = Service::all();
-        return view('admin.index', compact('apartments', 'services'));
+        return view('admin.index', compact('apartments',));
     }
 
 
@@ -31,7 +31,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+        return view('admin.create', compact('services'));
     }
 
     /**
@@ -42,7 +43,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

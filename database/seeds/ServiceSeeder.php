@@ -24,7 +24,6 @@ class ServiceSeeder extends Seeder
         foreach ($services as $service) {
 
             $newService = new Service;
-
             $newService->name = $service;
 
             $newService->save();

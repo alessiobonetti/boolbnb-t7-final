@@ -16,13 +16,11 @@ class MessageSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $apartment = Apartment::inRandomOrder()->first();
-            
             $newMessage = new Message;
             $newMessage->apartment_id = $apartment->id;
-
             $newMessage->email = $faker->freeEmail();
             $newMessage->body = $faker->paragraph(2);
 

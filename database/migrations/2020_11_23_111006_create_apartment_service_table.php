@@ -14,7 +14,7 @@ class CreateApartmentServiceTable extends Migration
     public function up()
     {
         Schema::create('apartment_service', function (Blueprint $table) {
-            //Tabella pivot, relazione many-to-many users and posts table
+            //Tabella pivot, relazione many-to-many apartments e services table
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments');
 

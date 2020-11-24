@@ -15,15 +15,13 @@ class ViewSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 50; $i++) {
 
             $apartment = Apartment::inRandomOrder()->first();
 
             $newView = new View;
             $newView->apartment_id = $apartment->id;
-
-            $newView->data_view = $faker->dateTimeBetween('-1 years' , 'now');
-
+            $newView->data_view = $faker->dateTimeBetween('-1 years', 'now');
             $newView->save();
         }
     }

@@ -17,15 +17,13 @@ class ImageSeeder extends Seeder
     {
         $apartments = Apartment::all();
 
-        for ($i=0; $i < 5; $i++)
-        {
+        for ($i = 0; $i < 5; $i++) {
+
             foreach ($apartments as $apartment) {
 
                 $newImage = new Image;
-
                 $newImage->apartment_id = $apartment->id;
-
-                $newImage->media = $faker->imageUrl(300 , 400 , 'cats');
+                $newImage->media = $faker->imageUrl(300, 400, 'cats');
 
                 $newImage->save();
             }
