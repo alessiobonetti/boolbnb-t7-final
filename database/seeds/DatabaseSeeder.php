@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
             ApatmentServiceTableSeeder::class,
             MessageSeeder::class,
             ViewSeeder::class,
-            CouponSeeder::class
+            ImageSeeder::class,
+            CouponSeeder::class,
+            PromotionSeeder::class
         ]);
     }
 }

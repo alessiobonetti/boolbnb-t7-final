@@ -18,8 +18,7 @@ class PromotionSeeder extends Seeder
     {
         $apartment_check = [];
 
-        for($i = 0; $i < 10; $i++)
-        {
+        for ($i = 0; $i < 10; $i++) {
             $apartment = Apartment::inRandomOrder()->first();
 
             while (in_array($apartment->id, $apartment_check)) {
@@ -39,7 +38,6 @@ class PromotionSeeder extends Seeder
             $newPromotion->date_end = $date_stop;
             $newPromotion->save();
             array_push($apartment_check, $newPromotion->apartment_id);
-
         }
     }
 }

@@ -4,9 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Promotion
+ */
 class Promotion extends Model
 {
 
+    /**
+     * apartments
+     *
+     * @return void
+     */
     public function apartments()
     {
         return $this->hasMany('App\Apartment');
@@ -16,5 +24,4 @@ class Promotion extends Model
     {
         return $this->belongsTo('App\Coupon');
     }
-
 }
