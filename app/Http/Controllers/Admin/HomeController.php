@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Service;
+use App\User;
 use App\View;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -31,8 +33,9 @@ class HomeController extends Controller
      */
     public function create()
     {
+        $users = User::all();
         $services = Service::all();
-        return view('admin.create', compact('services'));
+        return view('admin.create', compact('services', 'users'));
     }
 
     /**
@@ -43,7 +46,32 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $data = $request->all();
+
+        $request->validate([
+            // TODO validazione user_id
+            // 'user_id' => 'required|exists:users,id',
+            'title' => 'required|max:50',
+            'description' => 'required',
+            'rooms' => 'required|min:1',
+            'beds' => 'required|min:1',
+            'baths' => 'required|min:1',
+            'mq' => 'required|min:1',
+            'address' => 'required|max:60',
+            'published' => 'required|boolean',
+            'cover' => 'required|image',
+        ]);
+
+        $path = Storage::disk('public')->put('images', $data['cover']);
+        $newApartment = new Apartment;
+        $newApartment->fill($data);
+        $newApartment->cover = $path;
+        $newApartment->user_id = Auth::id();
+        $newApartment->save();
+
+        if (count($data['services']) > 0) {
+            $newApartment->services()->sync($data['services']);
+        }
     }
 
     /**

@@ -16,6 +16,14 @@
                 <label for="description">Descrizione</label>
                 <textarea type="text" class="form-control" name="description" id="description" placeholder="Contenuto" cols="30" rows="4" required>{{ old('description') }}</textarea>
             </div>
+            <div class="form-group">
+                <label for="address">Indirizzo</label>
+                <input  name="address" value="{{ old('address') }}" type="text" class="form-control" id="address"  placeholder="Indirizzo (Via, N.Civico, Città, Cap, Nazione)" required>
+            </div>
+            <div class="form-group">
+                    <label for="cover">Cover</label>
+                    <input  name="cover" value="{{ old('cover') }}" type="file" class="form-control" id="cover" required>
+            </div>
             <div class="form-row">
                 <div class="col-2">
                  <input name="rooms" value="{{ old('rooms') }}" id="rooms" type="number" class="form-control" placeholder="n. stanze" min="1" required>
@@ -31,19 +39,24 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="address">Indirizzo</label>
-                <input  name="address" value="{{ old('address') }}" type="text" class="form-control" id="address"  placeholder="Indirizzo (Via, N.Civico, Città, Cap, Nazione)" required>
+            @foreach ($services as $service)
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="services[]" id="genre-{{ $service->id }}" value="{{ $service->id }}">
+                <label class="form-check-label" for="genre-{{ $service->id }}">{{ $service->name }}</label>
+                </div>
+            @endforeach
+            </div>
+            <div class="form-group mt-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="published" id="published" value= "1" {{ old('published') ? 'checked' : '' }} >
+                    <label class="form-check-labe" for="published">Pubblicato</label>
+                </div>
             </div>
 
 
-        <div class="form-group mt-3">
-            <button type="submit" class="btn btn-primary">Salva</button>
-        </div>
-</form>
-
-
-
-
+                <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary">Salva</button>
+                </div>
             @if ($errors->any())
                 <div class="alert alert-danger mt-2">
                     <ul>
@@ -53,7 +66,6 @@
                     </ul>
                 </div>
             @endif
-
         </form>
         </main>
 </div>
