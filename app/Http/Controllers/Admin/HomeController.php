@@ -69,7 +69,7 @@ class HomeController extends Controller
         $newApartment->user_id = Auth::id();
         $newApartment->save();
 
-        if (count($data['services']) > 0) {
+        if (! empty($data['services'])) {
             $newApartment->services()->sync($data['services']);
         }
 
