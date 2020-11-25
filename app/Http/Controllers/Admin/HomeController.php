@@ -6,10 +6,10 @@ use App\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Service;
 use App\User;
 use App\View;
-use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -48,8 +48,6 @@ class HomeController extends Controller
     {
         $data = $request->all();
 
-
-
         $request->validate([
             'title' => 'required|max:50',
             'description' => 'required',
@@ -73,12 +71,8 @@ class HomeController extends Controller
         if (count($data['services']) > 0) {
             $newApartment->services()->sync($data['services']);
         }
-<<<<<<< HEAD
 
         return redirect('admin.apartments.index');
-=======
-        return redirect('admin');
->>>>>>> 3997aa36936d2d20c269c3c06249c42bd28908b3
     }
 
     /**
@@ -100,7 +94,9 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        dd('ciao');
+        $apartment = Apartment::find($id);
+        $services = Service::all();
+        return view('admin.edit', compact('apartment', 'services'));
     }
 
     /**
