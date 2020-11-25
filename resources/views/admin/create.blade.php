@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                     <label for="cover">Cover</label>
-                    <input  name="cover" value="{{ old('cover') }}" type="file" class="form-control" id="cover" required>
+                    <input  name="cover" value="{{ old('cover') }}" type="file" class="form-control" id="cover" required accept="image/*">
             </div>
             <div class="form-row">
                 <div class="col-2">

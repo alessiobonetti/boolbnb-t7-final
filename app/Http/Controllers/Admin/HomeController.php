@@ -73,6 +73,7 @@ class HomeController extends Controller
         if (count($data['services']) > 0) {
             $newApartment->services()->sync($data['services']);
         }
+        return redirect('admin');
     }
 
     /**
