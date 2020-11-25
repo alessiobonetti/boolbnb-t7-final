@@ -2,7 +2,12 @@
 
 @section('content')
 <div class="container">
-    <a href="{{ route('admin.apartments.create') }}"><button class="badge badge-success">Aggiungi</button></a>
+    {{-- Button Create --}}
+    <div>
+        <a href="{{ route('admin.apartments.create') }}"><button class="badge badge-success">Aggiungi</button></a>
+    </div>
+    {{-- /Button Create --}}
+
     <table class="table" >
         <thead>
             <tr>
@@ -66,9 +71,11 @@
             @endforeach
         </tbody>
     </table>
+    {{-- Button Create --}}
     <div>
         <a href="{{ route('admin.apartments.create') }}"><button class="badge badge-success">Aggiungi</button></a>
-   </div>
+    </div>
+    {{-- /Button Create --}}
 </div>
 @endsection
 
