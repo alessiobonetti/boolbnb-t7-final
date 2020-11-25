@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                     <label for="cover">Cover</label>
-                    <input  type="file" value="{{ $apartment->cover }}" name="cover" class="form-control" id="cover" required accept="image/*">
+                    <input  type="file" value="{{asset('storage/'.$apartment->cover)}}" name="cover" class="form-control" id="cover" required accept="image/*">
             </div>
             <div class="form-row">
                 <div class="col-2">
@@ -38,8 +38,11 @@
             <div class="form-group">
             @foreach ($services as $service)
                 <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" name="services[]" id="genre-{{ $service->id }}" value="{{ $service->id }}">
+                <input class="form-check-input" type="checkbox" name="services[]" id="genre-{{ $service->id }}" value="{{ $service->id }}"
+                {{-- per tenere il valore checkato --}}
+                {{ in_array($service->id, $apartment_services) ? 'checked' : ' ' }}>
                 <label class="form-check-label" for="genre-{{ $service->id }}">{{ $service->name }}</label>
+                {{-- per tenere il valore checkato --}}
                 </div>
             @endforeach
             </div>

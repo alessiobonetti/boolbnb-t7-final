@@ -98,8 +98,12 @@ class HomeController extends Controller
     public function edit($id)
     {
         $apartment = Apartment::find($id);
+        $apartment_services = [];
+        foreach ($apartment->services as $apartment_service) {
+            array_push($apartment_services, $apartment_service->id);
+        }
         $services = Service::all();
-        return view('admin.edit', compact('apartment', 'services'));
+        return view('admin.edit', compact('apartment', 'services', 'apartment_services'));
     }
 
     /**
@@ -130,8 +134,10 @@ class HomeController extends Controller
         $apartment->cover = $path;
         $apartment->fill($data)->update();
 
-        if (count($data['services']) > 0) {
+        if (! empty($data['services'])) {
             $apartment->services()->sync($data['services']);
+        } else{
+            $apartment->services()->detach();
         }
 
         return redirect('admin/apartments');
