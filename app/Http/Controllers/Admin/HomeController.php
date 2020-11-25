@@ -72,7 +72,7 @@ class HomeController extends Controller
             $newApartment->services()->sync($data['services']);
         }
 
-        return redirect('admin.apartments.index');
+        return redirect('admin/apartments');
     }
 
     /**
@@ -108,7 +108,32 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $request->validate([
+            'title' => 'required|max:50',
+            'description' => 'required',
+            'rooms' => 'required|min:1',
+            'beds' => 'required|min:1',
+            'baths' => 'required|min:1',
+            'mq' => 'required|min:1',
+            'address' => 'required|max:60',
+            'published' => 'boolean',
+            'cover' => 'required|image',
+        ]);
+
+        $path = Storage::disk('public')->put('images', $data['cover']);
+     
+        $apartment = Apartment::findOrFail($id);
+
+        $apartment->cover = $path;
+        $apartment->fill($data)->update();
+
+        if (count($data['services']) > 0) {
+            $apartment->services()->sync($data['services']);
+        }
+
+        return redirect('admin/apartments');
+
     }
 
     /**

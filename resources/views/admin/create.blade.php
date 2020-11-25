@@ -4,7 +4,7 @@
 <div class="container">
 
     <main>
-        <form method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.apartments.store') }}" enctype="multipart/form-data">
             @csrf
             @method('POST')
             <div class="form-group">
