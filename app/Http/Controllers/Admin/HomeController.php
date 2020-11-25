@@ -73,11 +73,7 @@ class HomeController extends Controller
             $newApartment->services()->sync($data['services']);
         }
 
-<<<<<<< Updated upstream
         return redirect('admin/apartments');
-=======
-        return redirect('admin.apartments.index');
->>>>>>> Stashed changes
     }
 
     /**
@@ -88,7 +84,9 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        dd('ciao');
+        $apartment = Apartment::find($id);
+
+        return view('admin.show', compact('apartment'));
     }
 
     /**
@@ -99,12 +97,9 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< Updated upstream
         $apartment = Apartment::find($id);
         $services = Service::all();
         return view('admin.edit', compact('apartment', 'services'));
-=======
->>>>>>> Stashed changes
     }
 
     /**
