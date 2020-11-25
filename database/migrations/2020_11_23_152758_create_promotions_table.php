@@ -15,8 +15,8 @@ class CreatePromotionsTable extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('coupon_id')->constrained();
-            $table->foreignId('apartment_id')->constrained();
+            $table->foreignId('coupon_id')->constrained()->onDelete('cascade');
+            $table->foreignId('apartment_id')->constrained()->onDelete('cascade');
             $table->dateTime('date_start');
             $table->dateTime('date_end');
             $table->timestamps();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Apartment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Service;
@@ -125,13 +126,12 @@ class HomeController extends Controller
             'mq' => 'required|min:1',
             'address' => 'required|max:60',
             'published' => 'boolean',
-            'cover' => 'required|image',
+            'cover' => 'image|required',
         ]);
 
         $path = Storage::disk('public')->put('images', $data['cover']);
-     
-        $apartment = Apartment::findOrFail($id);
 
+        $apartment = Apartment::findOrFail($id);
         $apartment->cover = $path;
         $apartment->fill($data)->update();
 
@@ -140,7 +140,6 @@ class HomeController extends Controller
         }
 
         return redirect('admin/apartments');
-
     }
 
     /**
@@ -151,6 +150,15 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $apartment = Apartment::find($id);
+        if (Storage::disk('public')->exists($apartment->image)) {
+            Storage::disk('public')->delete([$apartment->image]);
+        };
+
+        $apartment->delete();
+
+
+        return redirect('admin/apartments');
     }
 }
