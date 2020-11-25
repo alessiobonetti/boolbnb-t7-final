@@ -41,14 +41,17 @@
                     <label for="rooms">Numero Stanze:</label>
                     <input name="rooms" value="{{old("rooms") ?? $apartment->rooms}}" id="rooms" type="number" class="form-control" placeholder="n. stanze" min="1" required>
                 </div>
+
                 <div class="col-2">
                     <label for="beds">Numero Letti:</label>
                     <input name="beds" type="number" value="{{ old('beds') ?? $apartment->beds}}" id="beds" class="form-control" placeholder="n. letti" min="1" required>
                 </div>
+
                 <div class="col-2">
                     <label for="baths">Numero Bagni:</label>
                     <input name="baths" type="number" value="{{ old('baths') ?? $apartment->baths}}" id="baths" class="form-control" placeholder="n. bagni" min="1" required>
                 </div>
+                
                 <div class="col-2 offset-col-4">
                     <label for="mq">Metri Quadri:</label>
                     <input name="mq" type="number" value="{{ old('mq') ?? $apartment->mq}}" id="mq" class="form-control" placeholder="mq" min="1" required>
