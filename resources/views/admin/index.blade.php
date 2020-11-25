@@ -53,9 +53,9 @@
                     {{ $apartment->messages->count() }}
                 </td>
                 <td>
-                    <a href="{{ route('admin.show', $apartment->id) }}"><button class="badge badge-info">Info</button></a>
-                    <a href="{{ route('admin.edit', $apartment->id) }}"><button class="badge badge-secondary">Edita</button></a>
-                    <form action="{{ route('admin.destroy', $apartment->id) }}" method="POST">
+                    <a href="{{ route('admin.apartments.show', $apartment->id) }}"><button class="badge badge-info">Info</button></a>
+                    <a href="{{ route('admin.apartments.edit', $apartment->id) }}"><button class="badge badge-secondary">Edita</button></a>
+                    <form action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="badge badge-warning" class="btn btn-warning" type="submit">Elimina</button>

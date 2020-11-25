@@ -73,6 +73,8 @@ class HomeController extends Controller
         if (count($data['services']) > 0) {
             $newApartment->services()->sync($data['services']);
         }
+
+        return redirect('admin.apartments.index');
     }
 
     /**
@@ -83,7 +85,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('ciao');
     }
 
     /**
@@ -94,7 +96,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd('ciao');
     }
 
     /**

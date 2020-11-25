@@ -25,5 +25,5 @@ Route::prefix('admin')
     ->namespace('Admin')
     ->middleware('auth')
     ->group(function () {
-        Route::resource('/', 'HomeController');
+        Route::resource('apartments', 'HomeController');
     });
