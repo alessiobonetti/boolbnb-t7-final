@@ -26,7 +26,7 @@
 
             <tr>
                 <td>{{$apartment->id}}</td>
-                <td><img src="{{ $apartment->cover }}" alt="cover" class="img-thumbnail"></td>
+                <td><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover" class="img-thumbnail"></td>
                 <td>{{$apartment->title}}</td>
                 {{-- // Estraggo i servizi legati all'appartamento --}}
                 <td>
@@ -51,6 +51,15 @@
                 </td>
                 <td>
                     {{ $apartment->messages->count() }}
+                </td>
+                <td>
+                    <a href="{{ route('admin.show', $apartment->id) }}"><button class="badge badge-info">Info</button></a>
+                    <a href="{{ route('admin.edit', $apartment->id) }}"><button class="badge badge-secondary">Edita</button></a>
+                    <form action="{{ route('admin.destroy', $apartment->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="badge badge-warning" class="btn btn-warning" type="submit">Elimina</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

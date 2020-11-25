@@ -48,9 +48,9 @@ class HomeController extends Controller
     {
         $data = $request->all();
 
+
+
         $request->validate([
-            // TODO validazione user_id
-            // 'user_id' => 'required|exists:users,id',
             'title' => 'required|max:50',
             'description' => 'required',
             'rooms' => 'required|min:1',
@@ -58,11 +58,12 @@ class HomeController extends Controller
             'baths' => 'required|min:1',
             'mq' => 'required|min:1',
             'address' => 'required|max:60',
-            'published' => 'required|boolean',
+            'published' => 'boolean',
             'cover' => 'required|image',
         ]);
 
         $path = Storage::disk('public')->put('images', $data['cover']);
+
         $newApartment = new Apartment;
         $newApartment->fill($data);
         $newApartment->cover = $path;
