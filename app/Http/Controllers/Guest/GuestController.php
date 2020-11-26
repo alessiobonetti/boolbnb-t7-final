@@ -31,7 +31,9 @@ class GuestController extends Controller
      */
     public function show($id)
     {
-        //
+        // Gestire null e visualizzare slug
+        $apartment = Apartment::find($id);
+        return view('guest.show', compact('apartment'));
     }
 
     // // Funzione di ricerca appartamenti
