@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.width_100 {
+  width: 100%;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
