@@ -32,7 +32,9 @@ class GuestController extends Controller
             $apartments_free_id[] = $apartment->apartment->id;
         }
         // Trovo gli appartamenti free per differenza
-        $apartments_free = Apartment::whereNotIn("id", $apartments_free_id)->get();
+        $apartments_free = Apartment::whereNotIn("id", $apartments_free_id)
+            ->where('published', '=', true)
+            ->get();
         $services = Service::all();
         return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
     }
