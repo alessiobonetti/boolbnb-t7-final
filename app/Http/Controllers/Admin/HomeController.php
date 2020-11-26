@@ -22,8 +22,6 @@ class HomeController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $apartments_free = Apartment::all()->promotion()->get();
-        dd($apartments_free);
         $apartments = Apartment::all()->where('user_id', $id);
         return view('admin.index', compact('apartments',));
     }

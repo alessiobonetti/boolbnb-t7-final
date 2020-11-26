@@ -19,13 +19,22 @@ class GuestController extends Controller
      */
     public function index()
     {
-        $now = Carbon::now()->toDateTimeString();
-        $apartments = Apartment::all();
-        $apartments_premium = Promotion::has('apartment')->where('date_end', '>', '$now')->get();
-        dd($apartments_premium);
+        //TODO solo pubblicati
+        $apartments_free_id = [];
 
+        $now = Carbon::now();
+        // Query per avere tutti gli appartamenti con la promozione attiva
+        $apartments_premium = Promotion::has('apartment')
+            ->where("date_end", ">=", "$now")
+            ->get();
+        // Trovo e metto in un array gli id degli appartamenti premium
+        foreach ($apartments_premium as $apartment) {
+            $apartments_free_id[] = $apartment->apartment->id;
+        }
+        // Trovo gli appartamenti free per differenza
+        $apartments_free = Apartment::whereNotIn("id", $apartments_free_id)->get();
         $services = Service::all();
-        return view('guest.welcome', compact('apartments'));
+        return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
     }
 
     /**
