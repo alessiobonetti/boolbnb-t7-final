@@ -21,7 +21,7 @@ Route::name('guest.')
     ->namespace('Guest')
     ->group(function () {
         Route::get('', 'GuestController@index');
-        Route::get('apartment', 'GuestController@show');
+        Route::get('apartment/{id}', 'GuestController@show');
         Route::get('search', 'GuestController@search');
     });
 
