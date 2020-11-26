@@ -69,7 +69,7 @@ class HomeController extends Controller
         $newApartment->user_id = Auth::id();
         $newApartment->save();
 
-        if (! empty($data['services'])) {
+        if (!empty($data['services'])) {
             $newApartment->services()->sync($data['services']);
         }
 
@@ -134,9 +134,9 @@ class HomeController extends Controller
         $apartment->cover = $path;
         $apartment->fill($data)->update();
 
-        if (! empty($data['services'])) {
+        if (!empty($data['services'])) {
             $apartment->services()->sync($data['services']);
-        } else{
+        } else {
             $apartment->services()->detach();
         }
 
