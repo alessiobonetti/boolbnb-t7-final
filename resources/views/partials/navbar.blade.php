@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <div class="row width_100">
-            <div class="col-ml-auto">
+            <div class="col col-xs-8">
                 <div class="navbar-nav mr-auto">
                     <h1>BoolBnB</h1>
                 </div>
             </div>
 
-            <div class="col-ml-auto">
+            <div class="col col-xs-4 d-flex flex-row-reverse">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -15,7 +15,7 @@
            
                 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col-ml-auto">
+                <div class="col">
                     <!-- Left Side Of Navbar -->
                     <form class="form-inline ">
                         <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
@@ -24,7 +24,7 @@
                     </form>
                 </div>
 
-                <div class="col-ml-auto">
+                <div class="col col-lg-3 d-flex flex-row-reverse">
                     <!-- Right Side Of Navbar -->
                     <div class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
