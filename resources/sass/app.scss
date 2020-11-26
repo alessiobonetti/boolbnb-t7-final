@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'Partials._variables';
-@import 'Partials._common';
-@import 'Partials._mixin';
+@import 'partials._variables';
+@import 'partials._common';
+@import 'partials._mixin';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 //Pages
-@import 'Partials._header';
-@import 'Partials._navbar';
-@import 'Partials._main';
-@import 'Partials._footer';
+@import 'partials._header';
+@import 'partials._navbar';
+@import 'partials._main';
+@import 'partials._footer';
 
