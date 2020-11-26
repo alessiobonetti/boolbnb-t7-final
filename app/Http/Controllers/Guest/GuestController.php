@@ -6,8 +6,9 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\Promotion;
 use App\Service;
-
+use Illuminate\Support\Carbon;
 
 class GuestController extends Controller
 {
@@ -18,7 +19,11 @@ class GuestController extends Controller
      */
     public function index()
     {
+        $now = Carbon::now()->toDateTimeString();
         $apartments = Apartment::all();
+        $apartments_premium = Promotion::has('apartment')->where('date_end', '>', '$now')->get();
+        dd($apartments_premium);
+
         $services = Service::all();
         return view('guest.welcome', compact('apartments'));
     }
