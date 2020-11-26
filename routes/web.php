@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Rotta per il guest
+Route::name('guest.')
+    ->namespace('Guest')
+    ->group(function () {
+        Route::get('', 'GuestController@index');
+        Route::get('apartment/{id}', 'GuestController@show');
+        Route::get('search', 'GuestController@search');
+    });
 
 Auth::routes();
 
