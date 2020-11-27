@@ -15649,3 +15649,32 @@ header .jumbotron .container .motto h2 {
   border: 3px solid red;
 }
 
+footer {
+  background-color: white;
+  margin-top: 20px;
+}
+
+footer .footer-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #9c9c9c;
+}
+
+footer .footer-list h4 {
+  color: #9c9c9c;
+  padding-top: 50px;
+}
+
+footer .footer-list ul {
+  color: #9c9c9c;
+  line-height: 30px;
+  list-style: none;
+}
+
+footer .copyright {
+  text-align: center;
+  color: #9c9c9c;
+  padding: 25px 0;
+}
+
