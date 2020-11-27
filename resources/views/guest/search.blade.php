@@ -6,6 +6,7 @@
 <script>
         $( document ).ready(function() {
         callTomTom();
+        // requestTomTom();
     });
 
 
@@ -18,8 +19,9 @@
                 'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?radius=2000&key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
                 'method': 'GET',
                 'success': function(data){
-                        var results = data.results;
-                        console.log(results[0].viewport);       
+                        var results = data.results[0].viewport;
+                        console.log(results);
+                              requestTomTom(results);
                 },
                 'error':function(){
                     console.log('errore!');
@@ -29,6 +31,23 @@
             // fine ajax
         }
         )}
+    
+    function requestTomTom(query){       
+        
+
+        $.ajax({
+            'url': '{{route('guest.response')}}',
+            'method': 'POST',
+            'data':{"_token": "{{ csrf_token() }}", query},
+            'success': function(data){
+                        console.log(data);
+                },
+                'error':function(){
+                    console.log('errore!');
+                    }
+        });
+        // fine ajax
+    }
     
 
 </script>

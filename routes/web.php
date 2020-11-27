@@ -22,7 +22,8 @@ Route::name('guest.')
     ->group(function () {
         Route::get('', 'GuestController@index');
         Route::get('apartment/{id}', 'GuestController@show');
-        Route::get('search', 'GuestController@search');
+        Route::get('search', 'GuestController@ajaxRequest')->name('request');
+        Route::post('search', 'GuestController@ajaxResponse')->name('response');
     });
 
 Auth::routes();
