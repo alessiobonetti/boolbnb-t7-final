@@ -77,8 +77,8 @@ class GuestController extends Controller
     }
 
     public function ajaxResponse(Request $request)
-    {   $cordinate = json_decode($request, true);
-        dd($cordinate);
+    {   $request = 5;
+        
             return response()->json($request);
     }
 }

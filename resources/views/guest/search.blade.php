@@ -20,7 +20,7 @@
                 'method': 'GET',
                 'success': function(data){
                         var results = data.results[0].viewport;
-                        console.log(results);
+                       
                               requestTomTom(results);
                 },
                 'error':function(){
@@ -33,14 +33,14 @@
         )}
     
     function requestTomTom(query){       
-        
+        console.log(query.btmRightPoint);
 
         $.ajax({
             'url': '{{route('guest.response')}}',
             'method': 'POST',
-            'data':{"_token": "{{ csrf_token() }}", query},
+            'data':{"_token": "{{ csrf_token() }}", 'query': query.btmRightPoint},
             'success': function(data){
-                        console.log(data);
+                        console.log(data.query);
                 },
                 'error':function(){
                     console.log('errore!');
