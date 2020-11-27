@@ -1,4 +1,4 @@
-.container_apartments{
+/* .container_apartments{
     width: 90%;
     margin:auto;
 
@@ -56,5 +56,17 @@
                 margin-top: 20px;
             }
         }
+    }
+} */
+
+.card-deck{
+    margin: 0;
+    .change_class{
+        flex: 0 0 100%;
+        margin-top: 25px;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
+    .premium_class{
+        border: 3px solid red;
     }
 }

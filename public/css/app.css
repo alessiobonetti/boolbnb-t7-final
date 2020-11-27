@@ -15569,66 +15569,78 @@ header .jumbotron .container .motto h2 {
   padding: 0 5px;
 }
 
-.container_apartments {
-  width: 90%;
-  margin: auto;
+/* .container_apartments{
+    width: 90%;
+    margin:auto;
+
+    .apartments_premium {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .apartment_premium_box{
+            width: 500px;
+            height: 515px;
+            border: 3px solid red;
+            margin: 20px;
+            padding: 10px;
+
+            h3{
+                text-align: center;
+            }
+
+            img{
+                max-width: 50%;
+                max-height: 50%;
+            }
+
+            p{
+                overflow-y: auto;
+                height: 150px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .apartments_free{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .apartment_free_box{
+            width: 500px;
+            height: 515px;
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+
+            img{
+                max-width: 50%;
+                max-height: 50%;
+            }
+            h3{
+                text-align: center;
+            }
+            p{
+                overflow-y: auto;
+                height: 150px;
+                margin-top: 20px;
+            }
+        }
+    }
+} */
+
+.card-deck {
+  margin: 0;
 }
 
-.container_apartments .apartments_premium {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.card-deck .change_class {
+  flex: 0 0 100%;
+  margin-top: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.container_apartments .apartments_premium .apartment_premium_box {
-  width: 500px;
-  height: 515px;
+.card-deck .premium_class {
   border: 3px solid red;
-  margin: 20px;
-  padding: 10px;
-}
-
-.container_apartments .apartments_premium .apartment_premium_box h3 {
-  text-align: center;
-}
-
-.container_apartments .apartments_premium .apartment_premium_box img {
-  max-width: 50%;
-  max-height: 50%;
-}
-
-.container_apartments .apartments_premium .apartment_premium_box p {
-  overflow-y: auto;
-  height: 150px;
-  margin-top: 20px;
-}
-
-.container_apartments .apartments_free {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.container_apartments .apartments_free .apartment_free_box {
-  width: 500px;
-  height: 515px;
-  border: 1px solid black;
-  margin: 20px;
-  padding: 10px;
-}
-
-.container_apartments .apartments_free .apartment_free_box img {
-  max-width: 50%;
-  max-height: 50%;
-}
-
-.container_apartments .apartments_free .apartment_free_box h3 {
-  text-align: center;
-}
-
-.container_apartments .apartments_free .apartment_free_box p {
-  overflow-y: auto;
-  height: 150px;
-  margin-top: 20px;
 }
 
