@@ -1,4 +1,3 @@
-@dd($apartments_premium);
 @extends('layouts.main')
 @section('title')
     BoolBnB - Sito Ufficile
