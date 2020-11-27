@@ -19,8 +19,8 @@ class GuestController extends Controller
      */
     public function index()
     {
-        //TODO solo pubblicati
-        $apartments_free_id = [];
+        //arry Id premium
+        $apartments_premium_id = [];
 
         $now = Carbon::now();
         // Query per avere tutti gli appartamenti con la promozione attiva
@@ -29,12 +29,17 @@ class GuestController extends Controller
             ->get();
         // Trovo e metto in un array gli id degli appartamenti premium
         foreach ($apartments_premium as $apartment) {
-            $apartments_free_id[] = $apartment->apartment->id;
+            $apartments_premium_id[] = $apartment->apartment->id;
         }
         // Trovo gli appartamenti free per differenza
-        $apartments_free = Apartment::whereNotIn("id", $apartments_free_id)
+        $apartments_free = Apartment::whereNotIn("id", $apartments_premium_id)
             ->where('published', '=', true)
             ->get();
+        $apartments_premium = Apartment::whereIn("id", $apartments_premium_id)
+            ->where('published', '=', true)
+            ->get();
+
+
         $services = Service::all();
         return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
     }
