@@ -15,9 +15,9 @@ class Promotion extends Model
      *
      * @return void
      */
-    public function apartments()
+    public function apartment()
     {
-        return $this->hasMany('App\Apartment');
+        return $this->belongsTo('App\Apartment');
     }
 
     public function coupon()
