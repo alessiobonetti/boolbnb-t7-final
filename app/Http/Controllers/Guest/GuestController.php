@@ -60,25 +60,19 @@ class GuestController extends Controller
     // // Funzione di ricerca appartamenti
     public function ajaxRequest()
     {
-        
-        //     // TODO inserire decode del file json
-        //     $request->validate([
-        //         'search' => 'required|min:3'
-        //     ]);
-        //     // Get the search value from the request
-        //     $search = $request->input('search');
-
-        //     $apartments = Apartment::query()
-        //         ->where('title', 'LIKE', "%{$search}%")
-        //         ->get();
-
-        //     return view('admin.search', compact('posts'));
         return view('guest.search');
     }
 
     public function ajaxResponse(Request $request)
-    {   $request = 5;
-        
-            return response()->json($request);
+    {
+        $topLeftPoint_lat = $request['query_topLeftPoint_lat'];
+        $topLeftPoint_lon = $request['query_topLeftPoint_lon'];
+        $btmRightPoint_lat = $request['query_btmRightPoint_lat'];
+        $btmRightPoint_lon = $request['query_btmRightPoint_lon'];
+        $data = Apartment::where('published', '=', true)
+            ->whereBetween('lat', [$btmRightPoint_lat, $topLeftPoint_lat])
+            ->whereBetween('long', [$topLeftPoint_lon, $btmRightPoint_lon])
+            ->get();
+        return response()->json($data);
     }
 }

@@ -6,7 +6,6 @@
 <script>
         $( document ).ready(function() {
         callTomTom();
-        // requestTomTom();
     });
 
 
@@ -16,31 +15,35 @@
             var title = $('#form').val();
             // effettutare chiamata ajax
             $.ajax({
-                'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?radius=2000&key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
+                'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?radius=5000000&key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
                 'method': 'GET',
                 'success': function(data){
                         var results = data.results[0].viewport;
-                       
                               requestTomTom(results);
                 },
                 'error':function(){
                     console.log('errore!');
                     }
-                
+
             });
             // fine ajax
         }
         )}
-    
-    function requestTomTom(query){       
-        console.log(query.btmRightPoint);
+
+    function requestTomTom(query){
+        console.log(query);
 
         $.ajax({
             'url': '{{route('guest.response')}}',
             'method': 'POST',
-            'data':{"_token": "{{ csrf_token() }}", 'query': query.btmRightPoint},
+            'data':{
+                '_token': '{{ csrf_token() }}',
+                'query_btmRightPoint_lat': query.btmRightPoint.lat,
+                'query_btmRightPoint_long': query.btmRightPoint.lon, 'query_topLeftPoint_lat': query.topLeftPoint.lat,
+                'query_topLeftPoint_long': query.topLeftPoint.lon,
+            },
             'success': function(data){
-                        console.log(data.query);
+                        console.log(data);
                 },
                 'error':function(){
                     console.log('errore!');
@@ -48,9 +51,9 @@
         });
         // fine ajax
     }
-    
+
 
 </script>
 
-    
+
 @endsection
