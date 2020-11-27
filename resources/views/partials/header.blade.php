@@ -1,1 +1,3 @@
-@include('partials.navbar')
+<header>
+    @include('partials.navbar')
+</header>
