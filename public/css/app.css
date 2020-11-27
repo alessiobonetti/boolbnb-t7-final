@@ -15630,17 +15630,22 @@ header .jumbotron .container .motto h2 {
     }
 } */
 
-.card-deck {
+.container_apartments {
+  width: 90%;
+  margin: auto;
+}
+
+.container_apartments .card-deck {
   margin: 0;
 }
 
-.card-deck .change_class {
+.container_apartments .card-deck .change_class {
   flex: 0 0 100%;
   margin-top: 25px;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.card-deck .premium_class {
+.container_apartments .card-deck .premium_class {
   border: 3px solid red;
 }
 
