@@ -1,15 +1,42 @@
-.apartments_premium {
-    display: flex;
+.container_apartments{
+    width: 90%;
+    margin:auto;
 
-    .apartment_premium_box{
-        width: 200px;
-        border: 1px solid black;
-        margin: 0 20px;
-        padding: 10px;
+    .apartments_premium {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
 
-        img{
-            max-width: 100%;
+        .apartment_premium_box{
+            width: 300px;
+            border: 3px solid red;
+            margin: 20px;
+            padding: 10px;
+    
+            h3{
+                text-align: center;
+            }
+    
+            img{
+                width: 200px;
+            }
         }
     }
-
+    
+    .apartments_free{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        .apartment_free_box{
+            width: 300px;
+            border: 1px solid black;
+            margin: 20px;
+            padding: 10px;
+    
+            img{
+                width: 200px;
+            }
+        }
+    }
 }

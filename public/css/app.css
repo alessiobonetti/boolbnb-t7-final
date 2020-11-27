@@ -15561,18 +15561,46 @@ header .jumbotron .container .motto h2 {
   padding: 0 5px;
 }
 
-.apartments_premium {
-  display: flex;
+.container_apartments {
+  width: 90%;
+  margin: auto;
 }
 
-.apartments_premium .apartment_premium_box {
-  width: 200px;
-  border: 1px solid black;
-  margin: 0 20px;
+.container_apartments .apartments_premium {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container_apartments .apartments_premium .apartment_premium_box {
+  width: 300px;
+  border: 3px solid red;
+  margin: 20px;
   padding: 10px;
 }
 
-.apartments_premium .apartment_premium_box img {
-  max-width: 100%;
+.container_apartments .apartments_premium .apartment_premium_box h3 {
+  text-align: center;
+}
+
+.container_apartments .apartments_premium .apartment_premium_box img {
+  width: 200px;
+}
+
+.container_apartments .apartments_free {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container_apartments .apartments_free .apartment_free_box {
+  width: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.container_apartments .apartments_free .apartment_free_box img {
+  width: 200px;
 }
 
