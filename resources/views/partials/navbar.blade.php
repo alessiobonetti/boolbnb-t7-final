@@ -12,8 +12,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-           
-                
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="col">
                     <!-- Left Side Of Navbar -->
@@ -34,7 +33,7 @@
                                     <a href="{{ url('/admin/apartments') }}">Home</a>
                                 @else
                                     <a href="{{ route('login') }}">Login</a>
-        
+
                                     @if (Route::has('register'))
                                         <a href="{{ route('register') }}">Register</a>
                                     @endif

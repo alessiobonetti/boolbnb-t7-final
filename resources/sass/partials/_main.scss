@@ -1,0 +1,15 @@
+.apartments_premium {
+    display: flex;
+
+    .apartment_premium_box{
+        width: 200px;
+        border: 1px solid black;
+        margin: 0 20px;
+        padding: 10px;
+
+        img{
+            max-width: 100%;
+        }
+    }
+
+}

@@ -15533,15 +15533,15 @@ a.text-dark:focus {
 
 header .jumbotron {
   position: relative;
-  background-image: url("https://a0.muscache.com/im/pictures/8203f5ab-f1a9-4574-b97c-b7ad693d83fb.jpg?im_q=highq&im_w=720");
-  background-color: green;
+  /* background-image: url('https://a0.muscache.com/im/pictures/8203f5ab-f1a9-4574-b97c-b7ad693d83fb.jpg?im_q=highq&im_w=720'); */
+  background-color: yellow;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 700px;
 }
 
-header .container .motto {
+header .jumbotron .container .motto {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -15549,7 +15549,7 @@ header .container .motto {
   margin-left: 40px;
 }
 
-header .container .motto h2 {
+header .jumbotron .container .motto h2 {
   color: #fff;
   font-size: 50px;
   font-weight: bolder;
@@ -15559,5 +15559,20 @@ header .container .motto h2 {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
   padding: 0 5px;
+}
+
+.apartments_premium {
+  display: flex;
+}
+
+.apartments_premium .apartment_premium_box {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+.apartments_premium .apartment_premium_box img {
+  max-width: 100%;
 }
 
