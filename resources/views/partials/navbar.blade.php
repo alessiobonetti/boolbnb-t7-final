@@ -7,7 +7,7 @@
                 </div>
             </div>
 
-            <div class="col col-xs-4 d-flex flex-row-reverse">
+            <div class="col-auto col-xs-4 d-flex flex-row-reverse">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
