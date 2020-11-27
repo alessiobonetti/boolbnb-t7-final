@@ -15555,7 +15555,15 @@ header .jumbotron .container .motto h2 {
   font-weight: bolder;
 }
 
-.links a {
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.navbar .links a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
   padding: 0 5px;
@@ -15573,7 +15581,8 @@ header .jumbotron .container .motto h2 {
 }
 
 .container_apartments .apartments_premium .apartment_premium_box {
-  width: 300px;
+  width: 500px;
+  height: 515px;
   border: 3px solid red;
   margin: 20px;
   padding: 10px;
@@ -15584,7 +15593,14 @@ header .jumbotron .container .motto h2 {
 }
 
 .container_apartments .apartments_premium .apartment_premium_box img {
-  width: 200px;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.container_apartments .apartments_premium .apartment_premium_box p {
+  overflow-y: auto;
+  height: 150px;
+  margin-top: 20px;
 }
 
 .container_apartments .apartments_free {
@@ -15594,13 +15610,25 @@ header .jumbotron .container .motto h2 {
 }
 
 .container_apartments .apartments_free .apartment_free_box {
-  width: 300px;
+  width: 500px;
+  height: 515px;
   border: 1px solid black;
   margin: 20px;
   padding: 10px;
 }
 
 .container_apartments .apartments_free .apartment_free_box img {
-  width: 200px;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.container_apartments .apartments_free .apartment_free_box h3 {
+  text-align: center;
+}
+
+.container_apartments .apartments_free .apartment_free_box p {
+  overflow-y: auto;
+  height: 150px;
+  margin-top: 20px;
 }
 

@@ -8,7 +8,8 @@
         flex-wrap: wrap;
 
         .apartment_premium_box{
-            width: 300px;
+            width: 500px;
+            height: 515px;
             border: 3px solid red;
             margin: 20px;
             padding: 10px;
@@ -18,7 +19,14 @@
             }
     
             img{
-                width: 200px;
+                max-width: 50%;
+                max-height: 50%;
+            }
+
+            p{
+                overflow-y: auto;
+                height: 150px;
+                margin-top: 20px;
             }
         }
     }
@@ -29,13 +37,23 @@
         flex-wrap: wrap;
     
         .apartment_free_box{
-            width: 300px;
+            width: 500px;
+            height: 515px;
             border: 1px solid black;
             margin: 20px;
             padding: 10px;
     
             img{
-                width: 200px;
+                max-width: 50%;
+                max-height: 50%;
+            }
+            h3{
+                text-align: center;
+            }
+            p{
+                overflow-y: auto;
+                height: 150px;
+                margin-top: 20px;
             }
         }
     }
