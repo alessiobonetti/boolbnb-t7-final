@@ -1,8 +1,15 @@
-.links{
-    
-    a{
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.5);
-        padding: 0 5px;
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+
+    .links{
+        a{
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.5);
+            padding: 0 5px;
+        }
     }
 }
