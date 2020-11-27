@@ -1,0 +1,25 @@
+.apartments-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.apartments{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 10px 20px;
+    height: 360px;
+    text-align: center;
+    background-color: blue;
+
+
+    img{
+        max-width: 100%;
+    }
+}
