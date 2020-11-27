@@ -72,5 +72,6 @@ class GuestController extends Controller
         //         ->get();
 
         //     return view('admin.search', compact('posts'));
+        return view('guest.search');
     }
 }
