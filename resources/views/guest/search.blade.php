@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.main')
 @section('content')
     <input type="text" id='form'>
@@ -54,3 +55,7 @@
 
     
 @endsection
+=======
+ciao
+@extends('layouts.main')
+>>>>>>> main
