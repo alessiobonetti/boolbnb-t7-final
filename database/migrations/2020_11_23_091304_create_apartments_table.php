@@ -23,8 +23,8 @@ class CreateApartmentsTable extends Migration
             $table->tinyInteger('baths');
             $table->smallInteger('mq');
             $table->string('address', 100);
-            $table->string('lat')->nullable();
-            $table->string('long')->nullable();
+            $table->decimal('lat', 10, 8);
+            $table->decimal('lng', 11, 8);
             $table->boolean('published')->default(false);
             $table->string('cover');
             $table->timestamps();

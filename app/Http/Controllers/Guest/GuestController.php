@@ -65,14 +65,39 @@ class GuestController extends Controller
 
     public function ajaxResponse(Request $request)
     {
-        $topLeftPoint_lat = $request['query_topLeftPoint_lat'];
-        $topLeftPoint_lon = $request['query_topLeftPoint_lon'];
-        $btmRightPoint_lat = $request['query_btmRightPoint_lat'];
-        $btmRightPoint_lon = $request['query_btmRightPoint_lon'];
-        $data = Apartment::where('published', '=', true)
-            ->whereBetween('lat', [$btmRightPoint_lat, $topLeftPoint_lat])
-            ->whereBetween('long', [$topLeftPoint_lon, $btmRightPoint_lon])
+
+        // $topLeftPoint_lat = $request['query_topLeftPoint_lat'];
+        // $topLeftPoint_lon = $request['query_topLeftPoint_lon'];
+        // $btmRightPoint_lat = $request['query_btmRightPoint_lat'];
+        // $btmRightPoint_lon = $request['query_btmRightPoint_lon'];
+        // $data = Apartment::where('published', '=', true)
+        //     ->whereBetween('lat', [$btmRightPoint_lat, $topLeftPoint_lat])
+        //     ->whereBetween('long', [$topLeftPoint_lon, $btmRightPoint_lon])
+        //     ->get();
+
+        $latitude = $request['query_lat'];
+        $longitude = $request['query__long'];
+        $radius = 100;
+
+        $apartments = Apartment::selectRaw("*,
+                     ( 6371 * acos( cos( radians(?) ) *
+                       cos( radians( lat ) )
+                       * cos( radians( lng ) - radians(?)
+                       ) + sin( radians(?) ) *
+                       sin( radians( lat ) ) )
+                     ) AS distance", [$latitude, $longitude, $latitude])
+            ->where('published', '=', 1)
+            ->having("distance", "<", $radius)
+            ->orderBy("distance", 'asc')
+            ->offset(0)
+            ->limit(20)
             ->get();
-        return response()->json($data);
+
+        return response()->json($apartments);
+
+        // SELECT *, ((ACOS(SIN(46.04724300 * PI() / 180) *
+        // SIN(lat * PI() / 180) + COS(lat * PI() / 180) *
+        // COS(lat * PI() / 180) * COS((9.22013800 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)
+        // as distance FROM apartments HAVING distance <= 5 ORDER BY distance ASC
     }
 }
