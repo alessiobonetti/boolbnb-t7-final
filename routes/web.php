@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Auth;
 Route::name('guest.')
     ->namespace('Guest')
     ->group(function () {
-        Route::get('', 'GuestController@index');
-        Route::get('apartment/{id}', 'GuestController@show');
+        Route::get('', 'GuestController@index')->name('index');
+        Route::get('apartment/{id}', 'GuestController@show')->name('show');
         Route::get('search', 'GuestController@ajaxRequest')->name('request');
         Route::post('search', 'GuestController@ajaxResponse')->name('response');
     });

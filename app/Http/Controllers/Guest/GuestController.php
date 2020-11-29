@@ -81,8 +81,8 @@ class GuestController extends Controller
                        sin( radians( lat ) ) )
                      ) AS distance", [$latitude, $longitude, $latitude])
             ->where('published', '=', 1)
-            ->having("distance", "<", $radius)
-            ->orderBy("distance", 'asc')
+            ->having('distance', "<", $radius)
+            ->orderBy('distance', 'asc')
             ->offset(0)
             ->limit(20)
             ->get();

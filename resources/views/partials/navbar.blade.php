@@ -12,15 +12,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-           
-                
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="col">
                     <!-- Left Side Of Navbar -->
                     <form class="form-inline ">
                         <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                          aria-label="Search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                          aria-label="Search" id='form'>
+                        <i class="fas fa-search" aria-hidden="true" id='button'></i>
                     </form>
                 </div>
 
@@ -34,7 +34,7 @@
                                     <a href="{{ url('/admin/apartments') }}">Home</a>
                                 @else
                                     <a href="{{ route('login') }}">Login</a>
-        
+
                                     @if (Route::has('register'))
                                         <a href="{{ route('register') }}">Register</a>
                                     @endif
@@ -43,7 +43,8 @@
                         @endif
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 </nav>
+
