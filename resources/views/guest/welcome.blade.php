@@ -37,7 +37,7 @@
                         <p class="card-text">{{ $apartment_premium['description'] }}</p>
                         </div>
                         <div class="card-footer span2">
-                        <button class="btn-block badge badge-info">Info</button>
+                            <a href="{{ url('apartment', $apartment_premium['id']) }}"><button class="btn-block badge badge-info">Info</button></a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <p class="card-text">{{ $apartment_free['description'] }}</p>
                         </div>
                         <div class="card-footer span2">
-                        <button class="btn-block badge badge-info">Info</button>
+                            <a href="{{ url('apartment', $apartment_free['id']) }}"><button class="btn-block badge badge-info">Info</button></a>
                         </div>
                     </div>
                 </div>

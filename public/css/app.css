@@ -15534,11 +15534,12 @@ a.text-dark:focus {
 header .jumbotron {
   position: relative;
   /* background-image: url('https://a0.muscache.com/im/pictures/8203f5ab-f1a9-4574-b97c-b7ad693d83fb.jpg?im_q=highq&im_w=720'); */
-  background-color: yellow;
+  background-image: url("/images/elephante.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 700px;
+  background-position: top;
+  height: 360px;
 }
 
 header .jumbotron .container .motto {
@@ -15647,6 +15648,21 @@ header .jumbotron .container .motto h2 {
 
 .container_apartments .card-deck .premium_class {
   border: 3px solid red;
+}
+
+.container .info_list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container .info_list ul {
+  list-style: none;
+  width: 50%;
+}
+
+.container .info_list img {
+  max-width: 100%;
 }
 
 footer {

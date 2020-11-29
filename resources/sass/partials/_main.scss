@@ -75,3 +75,19 @@
         }
     }
 }
+
+.container{
+    .info_list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        ul{
+            @include ulstyle;
+            width: 50%;
+        }
+
+        img{
+            max-width: 100%;
+        }
+    }
+}
