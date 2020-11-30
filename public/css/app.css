@@ -15562,12 +15562,21 @@ header .jumbotron .container .motto h2 {
   left: 0;
   z-index: 1;
   width: 100%;
+  height: 80px;
 }
 
-.navbar .links a {
+.navbar .navbar-collapse {
+  flex-grow: 1;
+  align-items: baseline;
+}
+
+.navbar .navbar-collapse h6 {
+  margin: 5px;
+}
+
+.navbar .navbar-collapse .links a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
-  padding: 0 5px;
 }
 
 /* .container_apartments{
@@ -15663,6 +15672,25 @@ header .jumbotron .container .motto h2 {
 
 .container .info_list img {
   max-width: 100%;
+}
+
+#search_apartments_premium {
+  width: 90%;
+  margin: auto;
+}
+
+#search_apartments_premium .card-deck {
+  margin: 0;
+}
+
+#search_apartments_premium .card-deck .change_class {
+  flex: 0 0 100%;
+  margin-top: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#search_apartments_premium .card-deck .premium_class {
+  border: 3px solid red;
 }
 
 footer {

@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <div class="row width_100">
@@ -9,16 +10,18 @@
             </div>
              {{-- /logo --}}
 
-             {{-- colapse right --}}
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {{-- colapse right --}}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 {{--  searchbar --}}
                 <div class="col">
-                    <form class="form-inline ">
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" >
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </form>
+                    <div class="container mt-3">
+
+                        <input type="text" id='form'>
+                        <p id="autocomplete"></p>
+                        <button id='button'>INVIA</button>
+                    </div>
                 </div>
-                 {{--  /searchbar --}}
+                {{--  /searchbar --}}
 
                 {{--  Authentication --}}
                 <div class="col col-lg-3 d-flex flex-row-reverse">
@@ -53,4 +56,3 @@
         </div>
     </div>
 </nav>
-

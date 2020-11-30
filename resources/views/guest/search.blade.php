@@ -1,19 +1,16 @@
 
 @extends('layouts.main')
 @section('content')
-    <div class="container mt-3">
 
-        <input type="text" id='form'>
-        <p id="autocomplete"></p>
-        <button id='button'>INVIA</button>
-    </div>
 
-    <div id="apartments_premium">
+    <div id="search_apartments_premium">
 
     </div>
 
+    
     {{-- handlebars template --}}
     <script id="apartments_template" type="text/x-handlebars-template">
+
         <div class="container_apartments">
             <div class="card-deck col-12">
                 <div class="card change_class premium_class">
@@ -25,7 +22,7 @@
                     </div>
 
                     <div class="card-footer span2">
-                        <a href="location.href/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
+                        <a href="apartment/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
                     </div>
                 </div>
             </div>
@@ -126,7 +123,7 @@
              };
 
             var html = template(context);
-            $("#apartments_premium").append(html);
+            $("#search_apartments_premium").append(html);
         }
 
 
