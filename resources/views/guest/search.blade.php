@@ -1,2 +1,0 @@
-ciao
-@extends('layouts.main')
