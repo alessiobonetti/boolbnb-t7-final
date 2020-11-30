@@ -118,15 +118,15 @@
 
         for(var i =0; i<ele.length; i++){
 
-            var context = {
-            "apartmentId": ele[i].id,    
-            "cover": ele[i].cover,
-            "title": ele[i].title,
-            "description":ele[i].description
-            };
+             var context = {
+             "apartmentId": ele[i].id,    
+             "cover": ele[i].cover,
+             "title": ele[i].title,
+             "description":ele[i].description
+             };
 
             var html = template(context);
-            apartments_premium.append(html);
+            $("#apartments_premium").append(html);
         }
 
 

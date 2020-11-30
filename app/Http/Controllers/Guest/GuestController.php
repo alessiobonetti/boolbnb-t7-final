@@ -59,7 +59,7 @@ class GuestController extends Controller
 
     // // Funzione di ricerca appartamenti
     public function ajaxRequest()
-    {
+    {   
         return view('guest.search');
     }
 
