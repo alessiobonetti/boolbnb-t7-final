@@ -1,12 +1,6 @@
 
 @extends('layouts.main')
 @section('content')
-    <div class="container mt-3">
-
-        <input type="text" id='form'>
-        <p id="autocomplete"></p>
-        <button id='button'>INVIA</button>
-    </div>
 
     <div id="apartments_premium">
 
