@@ -4,12 +4,21 @@
     left: 0;
     z-index: 1;
     width: 100%;
+    height: 80px;
+    
+    .navbar-collapse {
+        flex-grow: 1;
+        align-items: baseline;
 
-    .links{
-        a{
-            text-decoration: none;
-            color: rgba(0, 0, 0, 0.5);
-            padding: 0 5px;
+        h6{
+            margin: 5px;
+        }
+
+        .links{
+            a{
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.5);
+            }
         }
     }
 }
