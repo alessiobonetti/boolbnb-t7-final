@@ -4,7 +4,7 @@
     <div class="container">
         <h1>{{$apartment->title}}</h1>
         <div>
-            <img src="{{asset('storage/'.$apartment->cover)}}" alt="cover">
+            <img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover">
         </div>
         <div>
             <h5>Descrizione: <span> {{$apartment->description}}</span> </h5>

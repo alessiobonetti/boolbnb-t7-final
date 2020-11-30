@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title')
-    BoolBnB - Singolo Prodotto
+    BoolBnB - Singolo 
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
             <li><a class="btn btn-success" href="{{url('')}}" role="button">Torna alla home </a></li>
         </ul>
         <ul>
-            <li class="cover_show"><img src="{{asset('storage/'.$apartment->cover)}}" alt="cover"></li> 
+            <li class="cover_show"><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover"></li> 
         </ul>
     </div>
 </div>

@@ -31,7 +31,7 @@
             @foreach ($apartments_premium as $apartment_premium)
                 <div class="card-deck col-md-6 col-lg-4 col-12">
                     <div class="card change_class premium_class">
-                        <img class="card-img-top" src="{{$apartment_premium['cover']}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ filter_var($apartment_premium->cover, FILTER_VALIDATE_URL) ?  $apartment_premium->cover : asset('storage/' . $apartment_premium->cover) }}" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $apartment_premium['title'] }}</h5>
                         <p class="card-text">{{ $apartment_premium['description'] }}</p>
@@ -47,7 +47,7 @@
             @foreach ($apartments_free as $apartment_free)
                 <div class="card-deck col-md-6 col-lg-4 col-12">
                     <div class="card change_class">
-                        <img class="card-img-top" src="{{$apartment_free['cover']}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ filter_var($apartment_free->cover, FILTER_VALIDATE_URL) ?  $apartment_free->cover : asset('storage/' . $apartment_free->cover) }}" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $apartment_free['title'] }}</h5>
                         <p class="card-text">{{ $apartment_free['description'] }}</p>
