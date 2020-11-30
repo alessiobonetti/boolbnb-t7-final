@@ -58,8 +58,9 @@ class GuestController extends Controller
     }
 
     // // Funzione di ricerca appartamenti
-    public function search(Request $request)
+    public function ajaxRequest()
     {
+        
         //     // TODO inserire decode del file json
         //     $request->validate([
         //         'search' => 'required|min:3'
@@ -72,5 +73,12 @@ class GuestController extends Controller
         //         ->get();
 
         //     return view('admin.search', compact('posts'));
+        return view('guest.search');
+    }
+
+    public function ajaxResponse(Request $request)
+    {   $request = 5;
+        
+            return response()->json($request);
     }
 }
