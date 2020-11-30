@@ -60,25 +60,39 @@ class GuestController extends Controller
     // // Funzione di ricerca appartamenti
     public function ajaxRequest()
     {
-        
-        //     // TODO inserire decode del file json
-        //     $request->validate([
-        //         'search' => 'required|min:3'
-        //     ]);
-        //     // Get the search value from the request
-        //     $search = $request->input('search');
-
-        //     $apartments = Apartment::query()
-        //         ->where('title', 'LIKE', "%{$search}%")
-        //         ->get();
-
-        //     return view('admin.search', compact('posts'));
         return view('guest.search');
     }
 
     public function ajaxResponse(Request $request)
-    {   $request = 5;
-        
-            return response()->json($request);
+    {
+        // Ricevo la titudine e longitudine
+        $latitude = $request['query_lat'];
+        $longitude = $request['query__long'];
+        // Distanz Km TODO metterla come variabile
+        $radius = 150;
+
+        // Mega query tutta in eloquent. i risultati sono in ordine di distanza
+        // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
+        $apartments = Apartment::selectRaw("*,
+                     ( 6371 * acos( cos( radians(?) ) *
+                       cos( radians( lat ) )
+                       * cos( radians( lng ) - radians(?)
+                       ) + sin( radians(?) ) *
+                       sin( radians( lat ) ) )
+                     ) AS distance", [$latitude, $longitude, $latitude])
+            ->where('published', '=', 1)
+            ->having('distance', "<", $radius)
+            ->orderBy('distance', 'asc')
+            ->offset(0)
+            ->limit(20)
+            ->get();
+
+        return response()->json($apartments);
+
+        // Query in Mysql
+        // SELECT *, ((ACOS(SIN(46.04724300 * PI() / 180) *
+        // SIN(lat * PI() / 180) + COS(lat * PI() / 180) *
+        // COS(lat * PI() / 180) * COS((9.22013800 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)
+        // as distance FROM apartments HAVING distance <= 5 ORDER BY distance ASC
     }
 }
