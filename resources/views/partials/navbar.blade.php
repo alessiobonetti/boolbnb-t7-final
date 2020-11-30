@@ -15,14 +15,8 @@
                 {{--  searchbar --}}
                 <div class="col">
                     <form class="form-inline ">
-<<<<<<< Updated upstream
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                          aria-label="Search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-=======
                         <input id='form' class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" >
                         <a href="{{ url('search')}}"><button type="button" class="btn btn-light"><i id="search"class="fas fa-search" aria-hidden="true"></i></button></a>
->>>>>>> Stashed changes
                     </form>
                     <div class="links">
                         <a href="{{ url('search')}}"><h6 id="autocomplete"></h6></a>
