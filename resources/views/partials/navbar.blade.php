@@ -14,9 +14,8 @@
                 {{--  searchbar --}}
                 <div class="col">
                     <form class="form-inline ">
-                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                          aria-label="Search" id='form'>
-                        <i class="fas fa-search" aria-hidden="true" id='button'></i>
+                        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" >
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </form>
                 </div>
                  {{--  /searchbar --}}
