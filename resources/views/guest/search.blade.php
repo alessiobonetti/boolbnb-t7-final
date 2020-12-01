@@ -1,7 +1,7 @@
 
 @extends('layouts.main')
 @section('content')
-
+{{--
     <div id="apartments_premium">
 
     </div>
@@ -12,14 +12,14 @@
             <div class="card-deck col-12">
                 <div class="card change_class premium_class">
                     <img class="card-img-top" src="@{{cover}}">
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">@{{title}}</h5>
                         <p class="card-text">@{{description}}</p>
                     </div>
 
                     <div class="card-footer span2">
-                        <a href="location.href/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
+                        <a href="apartment/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
                     </div>
                 </div>
             </div>
@@ -106,14 +106,14 @@
     }
 
     function renderApartment(ele){
-        
+
         var source = $("#apartments_template").html();
         var template = Handlebars.compile(source);
 
         for(var i =0; i<ele.length; i++){
 
              var context = {
-             "apartmentId": ele[i].id,    
+             "apartmentId": ele[i].id,
              "cover": ele[i].cover,
              "title": ele[i].title,
              "description":ele[i].description
@@ -127,7 +127,7 @@
     }
 
 
-</script>
+</script> --}}
 
 
 @endsection

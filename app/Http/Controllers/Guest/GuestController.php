@@ -39,7 +39,6 @@ class GuestController extends Controller
             ->where('published', '=', true)
             ->get();
 
-
         $services = Service::all();
         return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
     }
@@ -59,7 +58,7 @@ class GuestController extends Controller
 
     // // Funzione di ricerca appartamenti
     public function ajaxRequest()
-    {   
+    {
         return view('guest.search');
     }
 

@@ -16,10 +16,11 @@
                 <div class="col">
                     <form class="form-inline ">
                         <input id='form' class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" >
-                        <button id="button" type="button" class="btn btn-light"><i id="search"class="fas fa-search" aria-hidden="true"></i></button>
+                        <button type="button" class="button_complete btn btn-light"><i id="search"class="fas fa-search" aria-hidden="true"></i></button>
                     </form>
                     <div>
-                        <h6 id="autocomplete"></h6>
+                        <button type="button" class="button_complete btn btn-light"> <h6 id="autocomplete"></h6></button>
+
                     </div>
                 </div>
                 {{--  /searchbar --}}
