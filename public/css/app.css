@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Oswald);@import url(https://fonts.googleapis.com/css?family=Raleway);/*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -4618,6 +4618,10 @@ readers do not read off random characters that represent icons */
   width: 100%;
 }
 
+.margin_top_20 {
+  margin-top: 20px;
+}
+
 .active-cyan input[type=text] {
   border-bottom: 1px solid #4dd0e1;
   box-shadow: 0 1px 0 0 #4dd0e1;
@@ -4625,7 +4629,13 @@ readers do not read off random characters that represent icons */
 
 .active-cyan .fa,
 .active-cyan-2 .fa {
-  color: #4dd0e1;
+  color: #6cb2eb;
+}
+
+body {
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
 }
 
 /*!
@@ -15645,18 +15655,101 @@ header .jumbotron .container .motto h2 {
   margin: auto;
 }
 
-.container_apartments .card-deck {
-  margin: 0;
+.container_apartments .title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.container_apartments .card-deck .change_class {
-  flex: 0 0 100%;
-  margin-top: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+.container_apartments .content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
 }
 
-.container_apartments .card-deck .premium_class {
-  border: 3px solid red;
+.container_apartments .content .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.container_apartments .content:hover .content-overlay {
+  opacity: 1;
+}
+
+.container_apartments .content-image {
+  width: 100%;
+}
+
+.container_apartments img {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.container_apartments .content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.container_apartments .content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.container_apartments .content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.container_apartments .content-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.container_apartments .fadeIn-bottom {
+  top: 80%;
+}
+
+.container_apartments .premium_class {
+  border: 3px solid #ffed4a;
+  border-radius: 10px;
+}
+
+.container_apartments .premium_class:hover {
+  border: 3px solid #6cb2eb;
+  border-radius: 10px;
+}
+
+.container_apartments .content_free {
+  border: 3px solid transparent;
+  transition: border 1s;
+  border-radius: 10px;
+}
+
+.container_apartments .content_free:hover {
+  border: 3px solid #6cb2eb;
+  border-radius: 10px;
 }
 
 .container .info_list {

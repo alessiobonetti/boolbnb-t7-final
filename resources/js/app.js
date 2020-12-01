@@ -4,7 +4,7 @@ require('./bootstrap');
     Jquery.$( document ).ready(function() {
     autocompleteTomTom();
     callTomTom();
-});
+    });
 
 function autocompleteTomTom(){
     $('#form').keyup(function(){
