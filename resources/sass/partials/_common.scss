@@ -8,10 +8,20 @@
     width: 100%;
   }
 
+  .margin_top_20{
+    margin-top: 20px;
+  }
+
   .active-cyan input[type=text] {
     border-bottom: 1px solid #4dd0e1;
     box-shadow: 0 1px 0 0 #4dd0e1;
   }
   .active-cyan .fa, .active-cyan-2 .fa {
-    color: #4dd0e1;
+    color: $cyan;
+  }
+
+  body {
+    background: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif
   }

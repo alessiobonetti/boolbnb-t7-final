@@ -7,27 +7,27 @@
     <div class="container_apartments container">
         <div class="row">
             @foreach ($apartments_premium as $apartment_premium)
-                <div class="card-deck col-md-6 col-lg-4 col-12">
-                    <div class="card change_class premium_class">
-                        <img class="card-img-top card-img" src="{{ filter_var($apartment_premium->cover, FILTER_VALIDATE_URL) ?  $apartment_premium->cover : asset('storage/' . $apartment_premium->cover) }}" alt="Card image cap">
-                        <div class="card-body card-img-overlay d-flex flex-column justify-content-between">
-                            <h5 class="card-title">{{ $apartment_premium['title'] }}</h5>
-                            <a href="{{ url('apartment', $apartment_premium['id']) }}"><button class="btn-block badge badge-info card-text oswald">Info</button></a>
+                <div class="card-deck margin_top_20 col-md-6 col-lg-4 col-12">
+                    <div class="content premium_class"> <a href="{{ url('apartment', $apartment_premium['id']) }}">
+                        <div class="content-overlay"></div> <img class="content-image" src="{{ filter_var($apartment_premium->cover, FILTER_VALIDATE_URL) ?  $apartment_premium->cover : asset('storage/' . $apartment_premium->cover) }}" alt="Card image cap">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">{{ $apartment_premium['title'] }}</h3>
+                            <p class="content-text"><i class="fa fas-info"></i> Clicca per maggiori informazioni</p>
                         </div>
-                    </div>
+                    </a> </div>
                 </div>
             @endforeach
         </div>
         <div class="row">
             @foreach ($apartments_free as $apartment_free)
-                <div class="card-deck col-md-6 col-lg-4 col-12">
-                    <div class="card change_class">
-                        <img class="card-img-top card-img" src="{{ filter_var($apartment_free->cover, FILTER_VALIDATE_URL) ?  $apartment_free->cover : asset('storage/' . $apartment_premium->cover) }}" alt="Card image cap">
-                        <div class="card-body card-img-overlay d-flex flex-column justify-content-between">
-                            <h5 class="card-title">{{ $apartment_free['title'] }}</h5>
-                            <a href="{{ url('apartment', $apartment_free['id']) }}"><button class="btn-block badge badge-info card-text oswald">Info</button></a>
+                <div class="card-deck margin_top_20 col-md-6 col-lg-4 col-12">
+                    <div class="content content_free"> <a href="{{ url('apartment', $apartment_free['id']) }}">
+                        <div class="content-overlay"></div> <img class="content-image" src="{{ filter_var($apartment_free->cover, FILTER_VALIDATE_URL) ?  $apartment_free->cover : asset('storage/' . $apartment_free->cover) }}" alt="Card image cap">
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title">{{ $apartment_free['title'] }}</h3>
+                            <p class="content-text"><i class="fa fas-info"></i> Clicca per maggiori informazioni</p>
                         </div>
-                    </div>
+                    </a> </div>
                 </div>
             @endforeach
         </div>

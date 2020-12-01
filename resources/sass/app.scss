@@ -9,7 +9,6 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 //Pages
 @import 'partials/_header';
@@ -17,3 +16,6 @@
 @import 'partials/_main';
 @import 'partials/_footer';
 
+//Cards Style
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url(https://fonts.googleapis.com/css?family=Raleway);
