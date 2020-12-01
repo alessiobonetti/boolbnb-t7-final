@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
@@ -51,7 +51,7 @@
                     <label for="baths">Numero Bagni:</label>
                     <input name="baths" type="number" value="{{ old('baths') ?? $apartment->baths}}" id="baths" class="form-control" placeholder="n. bagni" min="1" required>
                 </div>
-                
+
                 <div class="col-2 offset-col-4">
                     <label for="mq">Metri Quadri:</label>
                     <input name="mq" type="number" value="{{ old('mq') ?? $apartment->mq}}" id="mq" class="form-control" placeholder="mq" min="1" required>

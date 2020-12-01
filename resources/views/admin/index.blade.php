@@ -1,20 +1,42 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    {{-- Button Create --}}
-    <div>
-        <a href="{{ route('admin.apartments.create') }}"><button class="badge badge-success">Aggiungi</button></a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-1 col-md-1 mb-4">
+           <div class="card border-left-primary shadow h-100 py-2">
+               <div class="card-body">
+                   <div class="row no-gutters align-items-center">
+                       <div class="col mr-2">
+                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                               Tot annunci</div>
+                           <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">{{ count($apartments) }}</div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="col-xl-1 col-md-1 mb-4">
+           <div class="card border-left-primary shadow h-100 py-2">
+               <div class="card-body">
+                   <div class="row no-gutters align-items-center">
+                       <div class="col mr-2">
+                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                               Tot messaggi</div>
+                           <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"></div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
     </div>
-    {{-- /Button Create --}}
+
+    </div>
 
     <table class="table" >
         <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Cover</th>
                 <th scope="col">Titolo</th>
-                <th scope="col">Servizi</th>
                 <th scope="col">Stanze</th>
                 <th scope="col">Letti</th>
                 <th scope="col">Bagni</th>
@@ -31,17 +53,9 @@
             @foreach ($apartments as $apartment)
 
             <tr>
-                <td>{{$apartment->id}}</td>
-                <td><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover" class="img-thumbnail"></td>
+                {{-- <td><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover" class="img-thumbnail"></td> --}}
                 <td>{{$apartment->title}}</td>
                 {{-- // Estraggo i servizi legati all'appartamento --}}
-                <td>
-                    <ul style="list-style: none">
-                        @foreach ($apartment->services as $service)
-                            <li>{{ $service->name }}</li>
-                        @endforeach
-                    </ul>
-                </td>
                 <td>{{ $apartment->rooms }}</td>
                 <td>{{ $apartment->beds }}</td>
                 <td>{{ $apartment->baths }}</td>
@@ -71,12 +85,7 @@
             @endforeach
         </tbody>
     </table>
-    {{-- Button Create --}}
-    <div>
-        <a href="{{ route('admin.apartments.create') }}"><button class="badge badge-success">Aggiungi</button></a>
-    </div>
-    {{-- /Button Create --}}
-</div>
+
 @endsection
 
 

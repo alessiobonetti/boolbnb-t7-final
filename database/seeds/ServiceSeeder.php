@@ -13,7 +13,7 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         $services = [
-            'wifi',
+            'wifi' => '<i>',
             'auto',
             'piscina',
             'portineria',
@@ -25,6 +25,7 @@ class ServiceSeeder extends Seeder
 
             $newService = new Service;
             $newService->name = $service;
+
 
             $newService->save();
         }
