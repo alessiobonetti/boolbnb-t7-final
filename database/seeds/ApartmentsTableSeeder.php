@@ -31,7 +31,7 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->lat = $faker->latitude(45.43, 46.52);
             $newApartment->lng = $faker->longitude(9.1, 9.3);
             $newApartment->published = rand(0, 1);
-            $newApartment->cover = $faker->imageUrl(300, 400, 'city');
+            $newApartment->cover = $faker->imageUrl(640, 480, 'city');
 
             $newApartment->save();
         }

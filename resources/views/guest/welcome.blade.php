@@ -21,7 +21,7 @@
         <div class="row">
             @foreach ($apartments_free as $apartment_free)
                 <div class="card-deck margin_top_20 col-md-6 col-lg-4 col-12">
-                    <div class="content content_free"> <a href="{{ url('apartment', $apartment_free['id']) }}">
+                    <div class="content content_free mr-3 w-75"> <a href="{{ url('apartment', $apartment_free['id']) }}">
                         <div class="content-overlay"></div> <img class="content-image" src="{{ filter_var($apartment_free->cover, FILTER_VALIDATE_URL) ?  $apartment_free->cover : asset('storage/' . $apartment_free->cover) }}" alt="Card image cap">
                         <div class="content-details fadeIn-bottom">
                             <h3 class="content-title">{{ $apartment_free['title'] }}</h3>
