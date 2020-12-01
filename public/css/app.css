@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Oswald);/*!
  * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -15656,7 +15656,7 @@ header .jumbotron .container .motto h2 {
 }
 
 .container_apartments .card-deck .premium_class {
-  border: 3px solid red;
+  border: 3px solid #6cb2eb;
 }
 
 .container .info_list {
@@ -15672,6 +15672,61 @@ header .jumbotron .container .motto h2 {
 
 .container .info_list img {
   max-width: 100%;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.1em;
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  color: #38c172;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  /* fallback color */
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.card:hover .card-img,
+.card:focus .card-img {
+  transform: scale(1.02);
+  opacity: 0.5;
+}
+
+.card:hover .card-img-overlay {
+  color: #730d0d;
+}
+
+.card-img-overlay > h4,
+.card-img-overlay > a {
+  visibility: hidden;
+}
+
+.card-img-overlay:hover h4,
+.card-img-overlay:hover a {
+  visibility: visible;
+}
+
+.card:hover .card-img-overlay a {
+  font-size: 1.5em;
+  letter-spacing: 0.02em;
 }
 
 footer {
