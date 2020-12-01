@@ -59095,9 +59095,9 @@ module.exports = function(module) {
   !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\resources\\js\\app.js: Unexpected token, expected \",\" (57:25)\n\n\u001b[0m \u001b[90m 55 | \u001b[39m    $\u001b[33m.\u001b[39majax({\u001b[0m\n\u001b[0m \u001b[90m 56 | \u001b[39m        \u001b[90m// Rotta response\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 57 | \u001b[39m        \u001b[32m'url'\u001b[39m\u001b[33m:\u001b[39m \u001b[32m'{{route('\u001b[39mguest\u001b[33m.\u001b[39mresponse\u001b[32m')}}'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 58 | \u001b[39m        \u001b[32m'method'\u001b[39m\u001b[33m:\u001b[39m \u001b[32m'POST'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 59 | \u001b[39m        \u001b[32m'data'\u001b[39m\u001b[33m:\u001b[39m{\u001b[0m\n\u001b[0m \u001b[90m 60 | \u001b[39m            \u001b[90m// token\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:748:17)\n    at Parser.raiseWithData (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:741:17)\n    at Parser.raise (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:735:17)\n    at Parser.unexpected (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9097:16)\n    at Parser.expect (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9083:28)\n    at Parser.parseObjectLike (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10896:14)\n    at Parser.parseExprAtom (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10464:23)\n    at Parser.parseExprSubscripts (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10122:23)\n    at Parser.parseUpdate (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10102:21)\n    at Parser.parseMaybeUnary (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10091:17)\n    at Parser.parseExprOps (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9961:23)\n    at Parser.parseMaybeConditional (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9935:23)\n    at Parser.parseMaybeAssign (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9898:21)\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9865:39\n    at Parser.allowInAnd (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:11521:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9865:17)\n    at Parser.parseExprListItem (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:11282:18)\n    at Parser.parseCallExpressionArguments (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10323:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10231:29)\n    at Parser.parseSubscript (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10167:19)\n    at Parser.parseSubscripts (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10139:19)\n    at Parser.parseExprSubscripts (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10128:17)\n    at Parser.parseUpdate (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10102:21)\n    at Parser.parseMaybeUnary (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:10091:17)\n    at Parser.parseExprOps (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9961:23)\n    at Parser.parseMaybeConditional (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9935:23)\n    at Parser.parseMaybeAssign (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9898:21)\n    at Parser.parseExpressionBase (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9843:23)\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9837:39\n    at Parser.allowInAnd (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:11515:16)\n    at Parser.parseExpression (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:9837:17)\n    at Parser.parseStatementContent (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:11781:23)\n    at Parser.parseStatement (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:11650:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:12232:25)\n    at Parser.parseBlockBody (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:12218:10)\n    at Parser.parseBlock (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\@babel\\parser\\lib\\index.js:12202:10)");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js */ "./node_modules/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js");
 
@@ -59197,6 +59197,51 @@ __webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "
 //         $(".row_search").append(html);
 //     }
 // }
+
+/***/ }),
+
+/***/ "./resources/js/bootstrap.js":
+/*!***********************************!*\
+  !*** ./resources/js/bootstrap.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
+try {
+  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
+  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+} catch (e) {}
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+// import Echo from 'laravel-echo';
+// window.Pusher = require('pusher-js');
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: process.env.MIX_PUSHER_APP_KEY,
+//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+//     forceTLS: true
+// });
 
 /***/ }),
 

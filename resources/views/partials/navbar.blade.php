@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="main_navbar">
     <div class="container">
         <div class="row width_100">
             {{-- logo --}}
