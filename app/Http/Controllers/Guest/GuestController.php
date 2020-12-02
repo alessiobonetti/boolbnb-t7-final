@@ -27,18 +27,24 @@ class GuestController extends Controller
         // Query per avere tutti gli appartamenti con la promozione attiva
         $apartments_premium = Promotion::has('apartment')
             ->where("date_end", ">=", "$now")
-            ->get();
+            ->select('apartment_id')
+            ->get()
+            ->toArray();
+
+
         // Trovo e metto in un array gli id degli appartamenti premium
-        foreach ($apartments_premium as $apartment) {
-            $apartments_premium_id[] = $apartment->apartment->id;
-        }
+        // foreach ($apartments_premium as $apartment) {
+        //     $apartments_premium_id[] = $apartment->apartment->id;
+        // }
+
         // Trovo gli appartamenti free per differenza
-        $apartments_free = Apartment::whereNotIn("id", $apartments_premium_id)
+        $apartments_free = Apartment::whereNotIn("id", $apartments_premium)
             ->where('published', '=', true)
             ->get();
-        $apartments_premium = Apartment::whereIn("id", $apartments_premium_id)
+        $apartments_premium = Apartment::whereIn("id", $apartments_premium)
             ->where('published', '=', true)
             ->get();
+
 
         $services = Service::all();
         return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
