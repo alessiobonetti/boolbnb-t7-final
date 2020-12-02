@@ -1,7 +1,7 @@
 
 @extends('layouts.main')
 @section('content')
-{{-- qui arrivo dalla wellcome e uso blade --}}
+{{-- qui arrivo dalla welcome e uso blade --}}
 <div class="container">
     <div class="row">
         @foreach ($apartments as $apartment)

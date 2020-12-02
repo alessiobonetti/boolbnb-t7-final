@@ -15,7 +15,8 @@
                 {{--  searchbar --}}
                 <div class="col">
                     <form class="form-inline" action="{{ route('guest.response') }}" method="get">
-                        <input id='form' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" >
+                        <input id='form' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search">
+
                         <input id='lat' name="lat" value="" hidden>
                         <input id='lng' name="lng" value="" hidden>
                         <button type="button" class="button_complete btn btn-light" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
@@ -69,7 +70,7 @@
     });
 
     function autocompleteTomTom(){
-        $('#form').keyup(function(){
+        $('#form').keydown(function(){
             // salvare il dato
             var letter = $('#form').val();
             console.log(letter);
@@ -80,7 +81,7 @@
                 'success': function(data){
                         console.log(data);
                         // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
-                        $('#autocomplete').text(data.results[0].address.municipality);
+                        $('#autocomplete').text(data.results[0].address.municipality) + $('#autocomplete').text(data.results[0].address.municipality);
                 },
                 'error':function(){
                     console.log('errore!');
@@ -103,14 +104,11 @@
                         //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
                         // requestTomTom(results);
                         console.log(results);
-
                         $('#lat').val(results.lat);
                         $('#lng').val(results.lon);
                         // lat = $('#lat').val();
                         // lng = $('#lng').val();
                         console.log(lat);
-
-
                 },
                 'error':function(){
                     console.log('errore!');
