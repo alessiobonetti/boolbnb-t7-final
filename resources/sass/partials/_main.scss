@@ -161,14 +161,18 @@
         border-radius: 10px;
     }
     
-    .content_free:hover {
-        border: 3px solid $cyan;
-        border-radius: 10px;
-        opacity: 1;
-    }
 
     .random_show{
         opacity: 0.5;
+    }
+
+    .random_show:hover{
+        opacity: 1;
+        .content_free:hover {
+            border: 3px solid $cyan;
+            border-radius: 10px;
+
+        }
     }
 
     .random_show.active{

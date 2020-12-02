@@ -4,8 +4,15 @@
 @endsection
 
 @section('content')
+
+    {{-- container appartamenti --}}
     <div class="container_apartments container">
+        {{-- appartamenti premium titolo --}}
+        <div class="apartments_premium_title">
+            <h3>i nostri appartamenti premium</h3>
+        </div>
         <div class="row">
+            {{-- appartamenti premium --}}
             @foreach ($apartments_premium as $apartment_premium)
                 <div class="margin_top_20 col-md-6 col-lg-4 col-12">
                     <div class="card-deck ">
@@ -23,7 +30,9 @@
                 </div>
             @endforeach
         </div>
+
         <div class="row">
+            {{-- appartamenti free --}}
             @foreach ($apartments_free as $apartment_free)
                 <div class="margin_top_20 col-md-6 col-lg-3 col-12">
                     <div class="card-deck random_show">
