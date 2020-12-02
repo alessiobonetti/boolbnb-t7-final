@@ -17,7 +17,7 @@
                                     <h3 class="content-title">{{ $apartment_premium['title'] }}</h3>
                                     <p class="content-text"><i class="fa fas-info"></i> Clicca per maggiori informazioni</p>
                                 </div>
-                            </a> 
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                                     <h3 class="content-title">{{ $apartment_free['title'] }}</h3>
                                     <p class="content-text"><i class="fa fas-info"></i> Clicca per maggiori informazioni</p>
                                 </div>
-                            </a> 
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
+{{-- <script>
     $( document ).ready(function() {
     autocompleteTomTom();
     callTomTom();
@@ -183,7 +183,7 @@ function repeatOften() {
 repeatOften();
 
 })();
-</script>
+</script> --}}
 
 
 

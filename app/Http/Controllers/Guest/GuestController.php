@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Promotion;
 use App\Service;
-use App\Image;
 use Illuminate\Support\Carbon;
 
 class GuestController extends Controller
@@ -54,14 +53,37 @@ class GuestController extends Controller
     {
         // Gestire null e visualizzare slug
         $apartment = Apartment::find($id);
-        $images = Image::where("apartment_id", $apartment->id)->select("media")->get();
-        return view('guest.show', compact('apartment', 'images'));
+        return view('guest.show', compact('apartment'));
     }
 
     // // Funzione di ricerca appartamenti
-    public function ajaxRequest()
+    public function ajaxRequest(Request $request)
     {
-        return view('guest.search');
+
+        // Ricevo la titudine e longitudine
+        $latitude = $request->lat;
+        $longitude = $request->lng;
+        // Distanz Km TODO metterla come variabile
+        $radius = 150;
+
+        // Mega query tutta in eloquent. i risultati sono in ordine di distanza
+        // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
+        $apartments = Apartment::selectRaw("*,
+                     ( 6371 * acos( cos( radians(?) ) *
+                       cos( radians( lat ) )
+                       * cos( radians( lng ) - radians(?)
+                       ) + sin( radians(?) ) *
+                       sin( radians( lat ) ) )
+                     ) AS distance", [$latitude, $longitude, $latitude])
+            ->where('published', '=', 1)
+            ->having('distance', "<", $radius)
+            ->orderBy('distance', 'asc')
+            ->offset(0)
+            ->limit(20)
+            ->get();
+
+
+        return view('guest.search', compact('apartments'));
     }
 
     public function ajaxResponse(Request $request)

@@ -14,13 +14,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 {{--  searchbar --}}
                 <div class="col">
-                    <form class="form-inline ">
-                        <input id='form' class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" >
-                        <button type="button" class="button_complete btn btn-light"><i id="search"class="fas fa-search" aria-hidden="true"></i></button>
+                    <form class="form-inline" action="{{ route('guest.response') }}" method="get">
+                        <input id='form' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" >
+                        <input id='lat' name="lat" value="" hidden>
+                        <input id='lng' name="lng" value="" hidden>
+                        <button type="button" class="button_complete btn btn-light" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
+
+                        <div class="form-group mt-3"><button type="submit" class="btn btn-primary">Cerca</button></div>
                     </form>
                     <div>
                         <button type="button" class="button_complete btn btn-light"> <h6 id="autocomplete"></h6></button>
-
                     </div>
                 </div>
                 {{--  /searchbar --}}
@@ -54,11 +57,11 @@
                 </button>
             </div>
             {{-- hamburger --}}
-            
+
         </div>
     </div>
 
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
         $( document ).ready(function() {
         autocompleteTomTom();
@@ -88,7 +91,7 @@
     }
     // Chiamata ajax a TomTom per latitudine e longitudine dell'indirizzo ricercato
     function callTomTom(){
-        $('#button').click(function(){
+        $('#search').click(function(){
             // salvare il dato
             var title = $('#form').val();
             // effettutare chiamata ajax
@@ -98,8 +101,16 @@
                 'success': function(data){
                         var results = data.results[0].position;
                         //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-                        requestTomTom(results);
+                        // requestTomTom(results);
                         console.log(results);
+
+                        $('#lat').val(results.lat);
+                        $('#lng').val(results.lon);
+                        // lat = $('#lat').val();
+                        // lng = $('#lng').val();
+                        console.log(lat);
+
+
                 },
                 'error':function(){
                     console.log('errore!');
@@ -135,14 +146,14 @@
     }
 
     function renderApartment(ele){
-        
+
         var source = $("#apartments_template").html();
         var template = Handlebars.compile(source);
 
         for(var i =0; i<ele.length; i++){
 
              var context = {
-             "apartmentId": ele[i].id,    
+             "apartmentId": ele[i].id,
              "cover": ele[i].cover,
              "title": ele[i].title,
              "description":ele[i].description
@@ -156,5 +167,5 @@
     }
 
 
-</script> --}}
+</script>
 </nav>

@@ -1,11 +1,29 @@
 
 @extends('layouts.main')
 @section('content')
-{{--
-    <div id="apartments_premium">
+{{-- qui arrivo dalla wellcome e uso blade --}}
+<div class="container">
+    <div class="row">
+        @foreach ($apartments as $apartment)
+        <div class="card-deck col-4 mb-2">
+            <div class="card change_class premium_class">
+                <img class="card-img-top" src="{{$apartment->cover}}">
 
+                <div class="card-body">
+                    <h5 class="card-title">{{$apartment->title}}</h5>
+                    <p class="card-text">{{$apartment->description}}</p>
+                </div>
+
+                <div class="card-footer span2">
+                    <a href="apartment/{{$apartment->apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
+                </div>
+            </div>
+        </div>
+        @endforeach
     </div>
+</div>
 
+{{-- Qui sono dentro a search --}}
     {{-- handlebars template --}}
     <script id="apartments_template" type="text/x-handlebars-template">
         <div class="container_apartments">
