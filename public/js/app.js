@@ -59198,6 +59198,35 @@ __webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "
 //     }
 // }
 
+
+function initMap() {
+  var myLatlng = {
+    lat: -25.363,
+    lng: 131.044
+  };
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: myLatlng
+  }); // Create the initial InfoWindow.
+
+  var infoWindow = new google.maps.InfoWindow({
+    content: "Click the map to get Lat/Lng!",
+    position: myLatlng
+  });
+  infoWindow.open(map); // Configure the click listener.
+
+  map.addListener("click", function (mapsMouseEvent) {
+    // Close the current InfoWindow.
+    infoWindow.close(); // Create a new InfoWindow.
+
+    infoWindow = new google.maps.InfoWindow({
+      position: mapsMouseEvent.latLng
+    });
+    infoWindow.setContent(JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2));
+    infoWindow.open(map);
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
