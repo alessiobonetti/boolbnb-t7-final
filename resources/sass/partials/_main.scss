@@ -155,7 +155,7 @@
         border-radius: 10px;
     }
 
-    .content_free { 
+    .content_free {
         border: 3px solid transparent;
         transition: border 1s;
         border-radius: 10px;
@@ -186,7 +186,7 @@
 .container_apartments{
     width: 90%;
     margin:auto;
-  
+
     .card-deck{
         margin: 0;
         .change_class{
@@ -199,73 +199,6 @@
         }
     }
   }
-  
-  /* info apartement */
- /*  .container{
-    .card{
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;
-        word-wrap: break-word;
-        margin: auto;
-        border: 1px solid #F8FAFC;
-        background-color:#F8FAFC;
-        
-        .container_img_overlay{
-            margin:auto;
-            position: relative;
-  
-            .card-img{
-                flex-shrink: 0;
-                margin:auto;
-            }
-  
-            .card-img-overlay {
-                position: absolute;
-                top:85%;
-                color: $white;
-                background-color:rgba(192,192,192,0.3);}
-            }
-        
-        }
-        .container_card{
-            display:flex;
-            justify-content: space-between;
-            margin: 15px;
-        
-  
-            .container_row{
-                display:flex;
-                justify-content: space-between;
-                margin-top: 20px;
-  
-                .form-group{
-                    margin: 20px 0;
-  
-                    button{
-                        margin: 20px 0;
-                    }
-                }
-  
-        }
-    }
-  
-  } */
-  
-    /* .info_list{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        ul{
-            @include ulstyle;
-            width: 50%;
-        }
-  
-        img{
-            max-width: 100%;
-        }
-    }
-  */
 
   .container{
 
@@ -281,5 +214,12 @@
     .button_submit {
         margin-bottom: 50px;
     }
+    .maps{
+        margin: 20px 0;
+        #map {
+            height: 100%;
+          }
+    }
+    
 
 }

@@ -25,6 +25,9 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
+        "@tomtom-international/web-sdk-maps": "^5.64.0",
+        "@tomtom-international/web-sdk-plugin-zoomcontrols": "^1.0.11",
+        "@tomtom-international/web-sdk-services": "^5.64.0",
         "font-awesome": "^4.7.0",
         "handlebars": "^4.7.6",
         "startbootstrap-sb-admin-2": "^4.1.3"

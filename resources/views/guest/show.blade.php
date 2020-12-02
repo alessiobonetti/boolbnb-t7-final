@@ -56,11 +56,23 @@
       </div>
       <div class="container_maps_form">
         <div class="row container_row">
+          <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
+          <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
           <div class="maps col-md-6 col-12">
+            <div id="map" style="width: 100%; height: 100%;"></div>
+            <script>
+              var milan = [9.188540, 45.464664];
+              var map = tt.map({
+                  key: "qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm",
+                  container: "map",
+                  center: milan,
+                  zoom: 7
+              });
+          </script>
 
           </div>
           <div class="form_message col-md-6 col-12">
-            <form method="POST" action="{{ route('') }}">
+            <form method="POST" {{-- action="{{ route('') }}" --}}>
               @csrf
               @method('POST')
                 <div class="form-group">
