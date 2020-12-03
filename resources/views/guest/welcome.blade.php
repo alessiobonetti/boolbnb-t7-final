@@ -61,7 +61,25 @@
 {{-- Inserito cdn jquery - modificare librerie --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    (function showRandomApartment() {
 
+    var lights = document.getElementsByClassName("random_show");
+    var previousRandomLight = null
+
+    function repeatOften() {
+    if (previousRandomLight) previousRandomLight.classList.toggle('active')
+    var random = Math.floor(Math.random() * (lights.length - 1)) + 0;
+    var randomLight = lights[random];
+    randomLight.classList.toggle('active');
+    previousRandomLight = randomLight;
+    setTimeout(repeatOften, 1000);
+    }
+    repeatOften();
+
+    })();
+
+</script>
 
 
 

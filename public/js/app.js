@@ -59111,7 +59111,24 @@ __webpack_require__(/*! startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js *
 
 __webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-area-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js");
 
-__webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js");
+__webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"); //Show random apartment free
+
+
+(function showRandomApartment() {
+  var lights = document.getElementsByClassName("random_show");
+  var previousRandomLight = null;
+
+  function repeatOften() {
+    if (previousRandomLight) previousRandomLight.classList.toggle('active');
+    var random = Math.floor(Math.random() * (lights.length - 1)) + 0;
+    var randomLight = lights[random];
+    randomLight.classList.toggle('active');
+    previousRandomLight = randomLight;
+    setTimeout(repeatOften, 1000);
+  }
+
+  repeatOften();
+})();
 
 /***/ }),
 
@@ -59178,8 +59195,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
