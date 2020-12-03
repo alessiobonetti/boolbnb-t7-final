@@ -62,6 +62,13 @@
 .container_apartments{
     width: 90%;
     margin:auto;
+    background-color: #aaa0a0;
+    border: 1px solid black;
+    border-radius: 15px;
+    -webkit-box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.75);
+    
 
     .title {
         color: #1a1a1a;

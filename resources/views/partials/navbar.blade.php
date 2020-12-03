@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light" id="main_navbar">
+<nav class="navbar navbar-expand-md navbar-light " id="main_navbar">
     <div class="navbar_logo">
         <a href="{{url('')}}"><img src="/images/logo.png" alt="img_logo"></a>
     </div>

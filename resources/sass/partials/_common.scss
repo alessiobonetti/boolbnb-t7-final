@@ -13,15 +13,16 @@
   }
 
   .active-cyan input[type=text] {
-    border-bottom: 1px solid #4dd0e1;
-    box-shadow: 0 1px 0 0 #4dd0e1;
+    border-bottom: 1px solid $cyan;
+    box-shadow: 0 1px 0 0 $cyan;
   }
   .active-cyan .fa, .active-cyan-2 .fa {
     color: $cyan;
   }
 
   body {
-    background: #f9f9f9;
+    background: rgb(132,77,54);
+    background: radial-gradient(circle, rgba(132,77,54,1) 65%, rgba(71,72,83,1) 80%);
     font-size: 16px;
-    font-family: 'Raleway', sans-serif
+    font-family: 'Raleway', sans-serif;
   }
