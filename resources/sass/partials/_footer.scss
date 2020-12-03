@@ -1,20 +1,24 @@
 footer{
-    background-color: rgb(255, 255, 255);
-    margin-top: 20px;
-        .footer-list{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+    margin-top: 100px;
+    .container{
+        margin:auto;
+        
+        .row_footer{
             border-bottom: 1px solid $grey;
 
-            h4{
-                color: $grey;
-                padding-top: 50px;
-            }
             ul{
-                color: $grey;
                 line-height: 30px;
-                list-style: none;
+                @include ulstyle;
+
+                h4{
+                    color: $grey;
+                }
+
+                a{
+                    @include astyle;
+                    color: $grey;
+                    font-size: 16px;
+                }
             }
         }
         .copyright{
@@ -22,4 +26,5 @@ footer{
             color: $grey;
             padding: 25px 0;
         }
+    }
 }

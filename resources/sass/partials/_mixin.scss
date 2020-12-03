@@ -1,3 +1,7 @@
 @mixin ulstyle {
     list-style: none;
 }
+
+@mixin astyle {
+    text-decoration: none;
+}

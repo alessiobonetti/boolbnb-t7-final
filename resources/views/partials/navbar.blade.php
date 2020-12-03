@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light" id="main_navbar">
-    <a href="{{url('')}}" class="navbar-brand">BoolBnB</a>
+    <div class="navbar_logo">
+        <a href="{{url('')}}" class="navbar-brand"><img src="images/logo.png" alt="img_logo"></a>
+    </div>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
