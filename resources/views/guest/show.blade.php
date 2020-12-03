@@ -8,19 +8,13 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="First slide">
+          @foreach($apartment->images as  $key=> $image)
+          <div class="carousel-item {{$key == 1 ? 'active' : '' }}">
+                <img class="d-block w-100" src="{{ filter_var($image->media, FILTER_VALIDATE_URL) ?  $image->media : asset('storage/' . $image->media) }}">
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="Second slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="Third slide">
-          </div>
+          @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,21 +50,36 @@
       </div>
       <div class="container_maps_form">
         <div class="row container_row">
+          {{-- maps show htlm + js --}}
           <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
           <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
           <div class="maps col-md-6 col-12">
             <div id="map" style="width: 100%; height: 100%;"></div>
             <script>
-              var milan = [9.188540, 45.464664];
+              var localita = [{{$apartment->lng}}, {{$apartment->lat}}];
               var map = tt.map({
                   key: "qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm",
                   container: "map",
-                  center: milan,
+                  center: localita,
                   zoom: 7
               });
-          </script>
+              var marker = new tt.Marker().setLngLat(localita).addTo(map);
 
+              var popupOffsets = {
+                top: [0, 0],
+                bottom: [0, -70],
+                'bottom-right': [0, -70],
+                'bottom-left': [0, -70],
+                left: [25, -35],
+                right: [-25, -35]
+              }
+
+              var popup = new tt.Popup({offset: popupOffsets})/* .setHTML({{$apartment->lng}});
+              marker.setPopup(popup).togglePopup(); */
+
+          </script>
           </div>
+           {{-- maps show htlm + js --}}
           <div class="form_message col-md-6 col-12">
             <form method="POST" {{-- action="{{ route('') }}" --}}>
               @csrf
