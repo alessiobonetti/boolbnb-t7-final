@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-md navbar-light " id="main_navbar">
     <div class="navbar_logo">
         <a href="{{url('')}}"><img src="/images/logo.png" alt="img_logo"></a>
@@ -14,16 +15,16 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">Inbox</a>
-                    
+
                     <a href="#" class="dropdown-item">Drafts</a>
                 </div>
             </div>
         </div>
-        <form class="form-inline">
-            <div class="input-group">                    
-                <input id='form' type="text" class="form-control" placeholder="Inserisci una città" aria-label="Search">
+        <form class="form-inline" action="{{ route('guest.response') }}" method="get">
+            <div class="input-group">
+                <input id="address"  name="address" type="text" class="form-control" placeholder="Inserisci una città" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
                 <div class="input-group-append">
-                    <button type="button" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
+                    <button type="submit" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
@@ -31,19 +32,6 @@
             <!-- Authentication Links -->
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 @auth
-
-            {{-- colapse right --}}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {{--  searchbar --}}
-                <div class="col">
-                    <form class="form-inline" action="{{ route('guest.response') }}" method="get">
-                        <input id='address' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
-                        <button type="submit" class="button_complete btn btn-light" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                    </form>
-                    <div>
-                        <button type="button" class="button_complete btn btn-light"> <h6 id="autocomplete"></h6></button>
-                    </div>
-                </div>
                 {{--  /searchbar --}}
                     <a href="{{ url('/admin/apartments') }}">
                         <button type="button" class="btn btn-outline-primary">Home</button>
@@ -58,10 +46,10 @@
                     @if (Route::has('register'))
                             <a href="{{ route('register') }}">
                                 <button type="button" class="btn btn-outline-primary">Register</button>
-                            </a> 
+                            </a>
                     @endif
                 @endauth
-                
+
             </div>
 
             {{-- hamburger --}}
@@ -71,15 +59,14 @@
                 </button>
             </div>
             {{-- hamburger --}}
-            
+
         </div>
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function () {
 
-    requestAjaxWelcome();
+$(document).ready(function () {
     autocompleteTomTom();
 });
 // Autocompletamento
@@ -106,7 +93,3 @@ function autocompleteTomTom(){
 }
 
 </script>
-
-
-
-</nav>
