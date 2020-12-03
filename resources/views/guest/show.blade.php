@@ -74,8 +74,9 @@
                 right: [-25, -35]
               }
 
-              var popup = new tt.Popup({offset: popupOffsets});
-              
+              var popup = new tt.Popup({offset: popupOffsets})/* .setHTML({{$apartment->lng}});
+              marker.setPopup(popup).togglePopup(); */
+
           </script>
           </div>
            {{-- maps show htlm + js --}}
