@@ -1,6 +1,19 @@
 <header>
     @include('partials.navbar')
-    <div class="jumbotron">
+    <div id="banner"class="jumbotron">
+        <script type="text/javascript"> 
+
+            if (document.getElementById) { window.onload = swap };
+            function swap() {
+            var numimages=7;
+            rndimg = new Array("images/NewYork.jpg", "images/paris.jpg", "images/autumn.jpg", "images/cherry.jpg", "images/sea.jpg", "images/skyline.jpg", "images/spiaggia.jpg", "images/tree.jpg"); 
+            x=(Math.floor(Math.random()*numimages));
+            randomimage=(rndimg[x]);
+            document.getElementById("banner").style.backgroundImage = "url("+ randomimage +")"; 
+            }
+            
+        </script>
+        <div id="banner"></div>
         <div class="container">
             <div class="motto">
                 <div class="container_header_title">
@@ -32,4 +45,5 @@
             </div>
         </div>
     </div>
+</div>
 </header>
