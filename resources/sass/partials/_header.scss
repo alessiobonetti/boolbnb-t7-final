@@ -58,7 +58,7 @@
                         h1 {
                             margin-bottom: 50px;
                             font-family: 'Poppins';
-                            color: #fff;
+                            color: $white;
                             font-size: 52px;
                             -webkit-animation: mainFadeIn 2s forwards;
                             -o-animation: mainFadeIn 2s forwards;
@@ -114,7 +114,7 @@
                             opacity: 0;
                             font-weight: 400;
                             font-family: 'Lato';
-                            color: #ffffff;
+                            color: $white;
                             font-size: 12px;
                             text-transform: uppercase;
                             letter-spacing: 5px;
@@ -175,14 +175,14 @@
                 0% {
                     width: 0px;
                     height: 0px;
-                    background: #e9d856;
+                    background: $yellow;
                     border: 0px solid #ddd;
                     opacity: 0;
                 }
                 50% {
                     width: 10px;
                     height: 10px;
-                    background: #e9d856;
+                    background: $yellow;
                     opacity: 1;
                     bottom: 45px;
                 }
@@ -200,7 +200,7 @@
                 100% {
                     width: 7px;
                     height: 7px;
-                    background: #e9d856;
+                    background: $yellow;
                     border: 0px solid #222;
                     bottom: 13px;
                 
@@ -237,13 +237,13 @@
                     align-items: center;
                     justify-content: center;
                     font-size: 12px;
-                    color: #232323;
+                    color: $indigo;
                     font-family: 'Poppins';
                 
                     i {
                     margin-right: 25px;
                     font-size: 22px;
-                    color: #232323;
+                    color: $indigo;
                     animation: icon 2s forwards;
                     animation-delay: 3s;
                     opacity: 0;
