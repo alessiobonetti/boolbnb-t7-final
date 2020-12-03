@@ -21,25 +21,33 @@
             <div class="input-group">                    
                 <input id='form' type="text" class="form-control" placeholder="Inserisci una città" aria-label="Search">
                 <div class="input-group-append">
-                    <button type="button" class=" button_complete btn btn-secondary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
+                    <button type="button" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
         <div class="navbar-nav">
             <!-- Authentication Links -->
-            @if (Route::has('login'))
-            <div class="top-right links">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 @auth
-                    <a href="{{ url('/admin/apartments') }}">Home</a>
+
+                    <a href="{{ url('/admin/apartments') }}">
+                        <button type="button" class="btn btn-outline-primary">Home</button>
+                    </a>
+
                 @else
-                    <a href="{{ route('login') }}">Login</a>
+
+                    <a href="{{ route('login') }}">
+                        <button type="button" class="btn btn-outline-success">Login</button>
+                    </a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">
+                                <button type="button" class="btn btn-outline-primary">Register</button>
+                            </a> 
                     @endif
                 @endauth
+                
             </div>
-        @endif
         </div>
     </div>
 </nav>
