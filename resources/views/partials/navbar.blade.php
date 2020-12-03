@@ -10,15 +10,6 @@
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
             <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
-            <a href="#" class="nav-item nav-link">Profile</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Inbox</a>
-
-                    <a href="#" class="dropdown-item">Drafts</a>
-                </div>
-            </div>
         </div>
         <form class="form-inline" action="{{ route('guest.response') }}" method="get">
             <div class="input-group">
@@ -32,7 +23,7 @@
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 @auth            
                     <a href="{{ url('/admin/apartments') }}">
-                        <button type="button" class="btn btn-outline-primary">Home</button>
+                        <button type="button" class="btn btn-outline-primary">Dashboard</button>
                     </a>
                 @else
                     <a href="{{ route('login') }}">
@@ -47,15 +38,6 @@
                 @endauth
 
             </div>
-
-            {{-- hamburger --}}
-            <div class="col-auto col-xs-4 d-flex flex-row-reverse">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            {{-- hamburger --}}
-            
         </div>
     </div>
 </nav>

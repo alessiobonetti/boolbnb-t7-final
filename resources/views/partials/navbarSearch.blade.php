@@ -1,59 +1,43 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="main_navbar">
-    <div class="container">
-        <div class="row width_100">
-            {{-- logo --}}
-            <div class="col col-xs-8">
-                <div class="navbar-nav mr-auto links">
-                    <a href="{{url('')}}"><h1>BoolBnB</h1> </a>
+<nav class="navbar navbar-expand-md navbar-light " id="main_navbar">
+    <div class="navbar_logo">
+        <a href="{{url('')}}"><img src="/images/logo.png" alt="img_logo"></a>
+    </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
+        </div>
+        <form class="form-inline" method="get">
+            <div class="input-group">
+                <input id='address' name="address" class="form-control" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
+                <div class="input-group-append">
+                    <button type="button" class="button_complete btn btn-primary" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
-             {{-- /logo --}}
+            </form>
+        <div class="navbar-nav">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                @auth            
+                    <a href="{{ url('/admin/apartments') }}">
+                        <button type="button" class="btn btn-outline-primary">Dashboard</button>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}">
+                        <button type="button" class="btn btn-outline-success">Login</button>
+                    </a>
 
-            {{-- colapse right --}}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {{--  searchbar --}}
-                <div class="col">
-                    <form class="form-inline" method="get">
-                        <input id='address' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
-                        <button type="button" class="button_complete btn btn-light" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                    </form>
-                    <div>
-                        <button type="button" class="button_complete btn btn-light"> <h6 id="autocomplete"></h6></button>
-                    </div>
-                </div>
-                {{--  /searchbar --}}
+                    @if (Route::has('register'))
+                            <a href="{{ route('register') }}">
+                                <button type="button" class="btn btn-outline-primary">Register</button>
+                            </a>
+                    @endif
+                @endauth
 
-                {{--  Authentication --}}
-                <div class="col col-lg-3 d-flex flex-row-reverse">
-                    <div class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @if (Route::has('login'))
-                            <div class="top-right links">
-                                @auth
-                                    <a href="{{ url('/admin/apartments') }}">Home</a>
-                                @else
-                                    <a href="{{ route('login') }}">Login</a>
-
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}">Register</a>
-                                    @endif
-                                @endauth
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                {{--  /Authentication --}}
             </div>
-
-            {{-- hamburger --}}
-            <div class="col-auto col-xs-4 d-flex flex-row-reverse">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            {{-- hamburger --}}
-
         </div>
     </div>
 </nav>
