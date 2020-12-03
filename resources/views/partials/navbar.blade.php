@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-md navbar-light " id="main_navbar">
     <div class="navbar_logo">
         <a href="{{url('')}}"><img src="/images/logo.png" alt="img_logo"></a>
@@ -14,7 +15,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
                 <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">Inbox</a>
-                    
+
                     <a href="#" class="dropdown-item">Drafts</a>
                 </div>
             </div>
@@ -41,11 +42,19 @@
                     @if (Route::has('register'))
                             <a href="{{ route('register') }}">
                                 <button type="button" class="btn btn-outline-primary">Register</button>
-                            </a> 
+                            </a>
                     @endif
                 @endauth
-                
+
             </div>
+
+            {{-- hamburger --}}
+            <div class="col-auto col-xs-4 d-flex flex-row-reverse">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            {{-- hamburger --}}
             
         </div>
     </div>
@@ -54,9 +63,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function () {
 
-    requestAjaxWelcome();
+$(document).ready(function () {
     autocompleteTomTom();
 });
 // Autocompletamento
@@ -86,3 +94,4 @@ function autocompleteTomTom(){
 
 
 
+</nav>
