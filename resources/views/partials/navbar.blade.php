@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="main_navbar">
     <div class="container">
@@ -6,6 +7,24 @@
             <div class="col col-xs-8">
                 <div class="navbar-nav mr-auto links">
                     <a href="{{url('')}}"><h1>BoolBnB</h1> </a>
+=======
+<nav class="navbar navbar-expand-md navbar-light bg-light" id="main_navbar">
+    <a href="{{url('')}}" class="navbar-brand"><img src="images/logo.png" alt="img_logo"></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
+            <a href="#" class="nav-item nav-link">Profile</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Inbox</a>
+                    
+                    <a href="#" class="dropdown-item">Drafts</a>
+>>>>>>> Stashed changes
                 </div>
             </div>
              {{-- /logo --}}

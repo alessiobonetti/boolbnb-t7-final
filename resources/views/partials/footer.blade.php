@@ -1,45 +1,37 @@
 <footer>
     <div class="container">
-        <div class="footer-list">
-            <ul>
-                <li><h4>INFORMAZIONI</h4></li>
-                <li>Newsroom</li>
-                <li>Airbnb Plus</li>
-                <li>Airbnb Luxe</li>
-                <li>HotelTonight</li>
-                <li>Airbnb for Work</li>
-                <li>Olimpiadi</li>
-                <li>Opportunità di lavoro</li>
+        <div class="row row_footer">
+            <ul class="col-lg-3 col-md-6 col-xs-12">
+                <li><a href="#"><h4>INFORMAZIONI</h4></a></li>
+                <li><a href="#">Newsroom</a> </li>
+                <li><a href="#">BullBnB Premium</a></li>
+                <li><a href="#">BullBnB Free</a></li>
             </ul>
-            <ul>
-                <li><h4>COMMUNITY</h4></li>
-                <li>Diversità e appartenenza</li>
-                <li>Accessibilità</li>
-                <li>Airbnb Associates</li>
-                <li>Alloggi per l'emergenza</li>
-                <li>Invita degli amici</li>
+            <ul class="col-lg-3 col-md-6 col-xs-12">
+                <li><a href="#"><h4>COMMUNITY</h4></a></li>
+                <li><a href="#">Chi siamo</h4></li>
+                <li><a href="#">Accessibilità</h4></li>
+                <li><a href="#">BullBnB Associates</h4></li>
+                <li><a href="#">Invita degli amici</h4></li>
             </ul>
-            <ul>
-                <li><h4>OSPITA</h4></li>
-                <li>Diventa un host</li>
-                <li>Offri un'Esperienza online</li>
-                <li>Offri un'Esperienza</li>
-                <li>Ospitare responsabilmente</li>
-                <li>Open Homes</li>
-                <li>Centro Risorse</li>
-                <li>Community Center</li>
+            <ul class="col-lg-3 col-md-6 col-xs-12">
+                <li><a href="#"><h4>OSPITA</h4></a></li>
+                <li><a href="#">Diventa un host</a></li>
+                <li><a href="#">Offri un'Esperienza online</a></li>
+                <li><a href="#">Offri un'Esperienza</a></li>
+                <li><a href="#">Open Homes</a></li>
             </ul>
-            <ul>
-                <li><h4>ASSISTENZA</h4></li>
-                <li>La nostra risposta all'emergenza COVID-19</li>
-                <li>Centro Assistenza</li>
-                <li>Opzioni di cancellazione</li>
-                <li>Servizio di supporto al vicinato</li>
-                <li>Affidabilità e sicurezza</li>
+            <ul class="col-lg-3 col-md-6 col-xs-12">
+                <li><a href="#"><h4>ASSISTENZA</h4></a></li>
+                <li><a href="#">Centro Assistenza</a></li>
+                <li><a href="#">Opzioni di cancellazione</a></li>
+                <li><a href="#">Affidabilità e sicurezza</a></li>
             </ul>
         </div>
-        <div class="copyright">
-            Create by Team@7
+            <div class="copyright">
+                Create by Team@7
+            </div>
         </div>
+        
     </div>
 </footer>
