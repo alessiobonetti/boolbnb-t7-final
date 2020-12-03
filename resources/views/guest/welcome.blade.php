@@ -10,7 +10,7 @@
     <div class="container_apartments container">
         {{-- appartamenti premium titolo --}}
         <div class="apartments_premium_title">
-            <h3>i nostri appartamenti premium</h3>
+            <h3>I nostri appartamenti PREMIUM</h3>
         </div>
         <div class="row">
             {{-- appartamenti premium --}}
