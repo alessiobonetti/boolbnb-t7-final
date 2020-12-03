@@ -59111,92 +59111,7 @@ __webpack_require__(/*! startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js *
 
 __webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-area-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js");
 
-__webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"); //     Jquery.$( document ).ready(function() {
-//     autocompleteTomTom();
-//     callTomTom();
-// });
-// function autocompleteTomTom(){
-//     $('#form').keyup(function(){
-//         // salvare il dato
-//         var letter = $('#form').val();
-//         console.log(letter);
-//         $.ajax({
-//             // E' possibile aggiungere degli argomenti opzionali alla chiamata ->vedi guida api TomTom fuzzy search
-//             'url': 'https://api.tomtom.com/search/2/search/'+ letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT',
-//             'method': 'GET',
-//             'success': function(data){
-//                     console.log(data);
-//                     // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
-//                     $('#autocomplete').text(data.results[0].address.municipality);
-//             },
-//             'error':function(){
-//                 console.log('errore!');
-//                 }
-//         });
-//     })
-// }
-// // Chiamata ajax a TomTom per latitudine e longitudine dell'indirizzo ricercato
-// function callTomTom(){
-//     $('.button_complete').click(function(){
-//         // salvare il dato
-//         var title = $('#form').val();
-//         // effettutare chiamata ajax
-//         $.ajax({
-//             'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-//             'method': 'GET',
-//             'success': function(data){
-//                     var results = data.results[0].position;
-//                     //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-//                     requestTomTom(results);
-//                     console.log(results);
-//             },
-//             'error':function(){
-//                 console.log('errore!');
-//                 }
-//         });
-//     })
-// }
-// // Elaborazione della query a Backend su richiesta della chiamata ajax
-// function requestTomTom(query){
-//     console.log(query);
-//     $.ajax({
-//         // Rotta response
-//         'url': '{{route('guest.response')}}',
-//         'method': 'POST',
-//         'data':{
-//             // token
-//             '_token': '{{ csrf_token() }}',
-//             // le coordinate da mandare al back-end
-//             'query_lat': query.lat,
-//             'query__long': query.lon,
-//         },
-//         'success': function(data){
-//             // data contiene la ns risposta. gli appartamenti!
-//                 console.log(data);
-//                 renderApartment(data)
-//             },
-//             'error':function(){
-//                 console.log('errore!');
-//                 }
-//     });
-// }
-// /* logica Handlebars */
-// function renderApartment(ele){
-//     $('.container_apartments').html("");
-//     $('.row_search').html("");
-//     var source = $("#apartments_template").html();
-//     var template = Handlebars.compile(source);
-//     for(var i = 0; i < ele.length; i++){
-//             var context = {
-//             "apartmentId": ele[i].id,
-//             "cover": ele[i].cover,
-//             "title": ele[i].title,
-//             "description":ele[i].description
-//             };
-//         var html = template(context);
-//         $(".row_search").append(html);
-//     }
-// }
+__webpack_require__(/*! startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js */ "./node_modules/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js");
 
 /***/ }),
 
@@ -59252,7 +59167,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n316 │ >>>>>>> welcomerandomshow\r\n    │                          ^\n    ╵\n  resources\\sass\\partials\\_main.scss 316:26  @import\n  C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\resources\\sass\\app.scss 16:9                                 root stylesheet\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:90547:16)\n    at _render_closure1.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:79617:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:27035:18)\n    at _FutureListener.handleError$1 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25563:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25860:49)\n    at Object._Future__propagateToListeners (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4539:77)\n    at _Future._completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25693:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25036:12)\n    at Object._asyncRethrow (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4288:17)\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:13174:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4313:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25057:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25049:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:27035:18)\n    at _FutureListener.handleError$1 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25563:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25860:49)\n    at Object._Future__propagateToListeners (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4539:77)\n    at _Future._completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25693:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25036:12)\n    at Object._asyncRethrow (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4288:17)\n    at C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:17915:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4313:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25057:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25049:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:27035:18)\n    at _FutureListener.handleError$1 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25563:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25860:49)\n    at Object._Future__propagateToListeners (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4539:77)\n    at _Future._completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25693:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:25036:12)\n    at Object._asyncRethrow (C:\\Users\\alesi\\Desktop\\Boolean\\Esercizi\\boolbnb-t7-final\\node_modules\\sass\\sass.dart.js:4288:17)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -59263,8 +59178,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

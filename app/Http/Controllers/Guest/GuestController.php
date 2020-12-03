@@ -59,31 +59,13 @@ class GuestController extends Controller
     // // Funzione di ricerca appartamenti
     public function ajaxRequest(Request $request)
     {
+        if (!empty($request->address)) {
+            $search = $request->address;
+        } else {
+            $search = '';
+        }
 
-        // Ricevo la titudine e longitudine
-        $latitude = $request->lat;
-        $longitude = $request->lng;
-        // Distanz Km TODO metterla come variabile
-        $radius = 150;
-
-        // Mega query tutta in eloquent. i risultati sono in ordine di distanza
-        // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
-        $apartments = Apartment::selectRaw("*,
-                     ( 6371 * acos( cos( radians(?) ) *
-                       cos( radians( lat ) )
-                       * cos( radians( lng ) - radians(?)
-                       ) + sin( radians(?) ) *
-                       sin( radians( lat ) ) )
-                     ) AS distance", [$latitude, $longitude, $latitude])
-            ->where('published', '=', 1)
-            ->having('distance', "<", $radius)
-            ->orderBy('distance', 'asc')
-            ->offset(0)
-            ->limit(20)
-            ->get();
-
-
-        return view('guest.search', compact('apartments'));
+        return view('guest.search', compact('search'));
     }
 
     public function ajaxResponse(Request $request)

@@ -1,3 +1,4 @@
+@include('partials.header')
 @extends('layouts.main')
 @section('title')
     BoolBnB - Sito Ufficile
