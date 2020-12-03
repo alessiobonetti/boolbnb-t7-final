@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Promotion;
 use App\Service;
-use App\Image;
 use Illuminate\Support\Carbon;
 
 class GuestController extends Controller
@@ -60,14 +59,19 @@ class GuestController extends Controller
     {
         // Gestire null e visualizzare slug
         $apartment = Apartment::find($id);
-        $images = Image::where("apartment_id", $apartment->id)->select("media")->get();
-        return view('guest.show', compact('apartment', 'images'));
+        return view('guest.show', compact('apartment'));
     }
 
     // // Funzione di ricerca appartamenti
-    public function ajaxRequest()
+    public function ajaxRequest(Request $request)
     {
-        return view('guest.search');
+        if (!empty($request->address)) {
+            $search = $request->address;
+        } else {
+            $search = '';
+        }
+
+        return view('guest.search', compact('search'));
     }
 
     public function ajaxResponse(Request $request)
