@@ -19,38 +19,21 @@
                 </div>
             </div>
         </div>
-        <form class="form-inline">
-            <div class="input-group">                    
-                <input id='form' type="text" class="form-control" placeholder="Inserisci una città" aria-label="Search">
+        <form class="form-inline" action="{{ route('guest.response') }}" method="get">
+            <div class="input-group">
+                <input id="address"  name="address" type="text" class="form-control" placeholder="Inserisci una città" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
                 <div class="input-group-append">
-                    <button type="button" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
+                    <button type="submit" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
         </form>
         <div class="navbar-nav">
-            <!-- Authentication Links -->
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                @auth
-
-            {{-- colapse right --}}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {{--  searchbar --}}
-                <div class="col">
-                    <form class="form-inline" action="{{ route('guest.response') }}" method="get">
-                        <input id='address' name="address" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
-                        <button type="submit" class="button_complete btn btn-light" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                    </form>
-                    <div>
-                        <button type="button" class="button_complete btn btn-light"> <h6 id="autocomplete"></h6></button>
-                    </div>
-                </div>
-                {{--  /searchbar --}}
+                @auth            
                     <a href="{{ url('/admin/apartments') }}">
                         <button type="button" class="btn btn-outline-primary">Home</button>
                     </a>
-
                 @else
-
                     <a href="{{ route('login') }}">
                         <button type="button" class="btn btn-outline-success">Login</button>
                     </a>
@@ -63,17 +46,11 @@
                 @endauth
                 
             </div>
-
-            {{-- hamburger --}}
-            <div class="col-auto col-xs-4 d-flex flex-row-reverse">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            {{-- hamburger --}}
             
         </div>
     </div>
+</nav>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -109,4 +86,3 @@ function autocompleteTomTom(){
 
 
 
-</nav>
