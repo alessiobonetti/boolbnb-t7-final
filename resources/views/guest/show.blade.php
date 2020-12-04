@@ -1,7 +1,11 @@
-@include('partials.header')
 @extends('layouts.main')
+
 @section('title')
-    BoolBnB - Singolo
+    BoolBnB - Sito Ufficile
+@endsection
+
+@section('header')
+    @include('partials.header')
 @endsection
 
 @section('content')

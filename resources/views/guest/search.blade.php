@@ -1,5 +1,12 @@
-@include('partials.headerSearch')
 @extends('layouts.main')
+
+@section('title')
+    BoolBnB - Sito Ufficile
+@endsection
+
+@section('header')
+    @include('partials.headerSearch')
+@endsection
 @section('content')
 
     <div id="apartments_premium" class="container">
@@ -27,12 +34,4 @@
         </div>
     </div>
 </script>
-
-
-{{-- Inserito cdn jquery - modificare librerie --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-
 @endsection

@@ -1,5 +1,5 @@
 
-
+window.$ = require('jquery');
 window._ = require('lodash');
 
 /**
@@ -41,3 +41,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+    // sb-admin
+    // require('startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js');
+    // require('startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js');
+    // require('startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing.min.js');
+    // require('startbootstrap-sb-admin-2/js/sb-admin-2.min.js');
+    // require('startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js');
+    // require('startbootstrap-sb-admin-2/js/demo/chart-area-demo.js');
+    // require('startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js');

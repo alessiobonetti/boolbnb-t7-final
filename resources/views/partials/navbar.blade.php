@@ -18,10 +18,10 @@
                     <button type="submit" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
-        </form>
+                    </form>
         <div class="navbar-nav">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                @auth            
+                @auth
                     <a href="{{ url('/admin/apartments') }}">
                         <button type="button" class="btn btn-outline-primary">Dashboard</button>
                     </a>
@@ -42,8 +42,8 @@
     </div>
 </nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
 
 $(document).ready(function () {
