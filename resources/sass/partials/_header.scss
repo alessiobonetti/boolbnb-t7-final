@@ -2,7 +2,7 @@
 .jumbotron{
     position: relative;
     /* background-image: url('https://a0.muscache.com/im/pictures/8203f5ab-f1a9-4574-b97c-b7ad693d83fb.jpg?im_q=highq&im_w=720'); */
-    background-image: url('/images/jprova.webp');
+    background-image: url();
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,6 @@
     .container{
 
         .motto{
-            background-color: rgba(170, 160, 160, 0.2);
             position: absolute;
             transform: translate(-50%, -50%);
             top:50%;
@@ -22,7 +21,6 @@
             .container_header_title {
                 width: 100%;
                 height: 100%;
-                background: transparent;
                 padding: 10px;
                 display: flex;
                 justify-content: center;
@@ -65,6 +63,7 @@
                             display: flex;
                             align-items: baseline;
                             position: relative;
+                            font-weight: bold;
                 
                             span {
                                 width:0px;
@@ -72,7 +71,6 @@
                                 -webkit-border-radius: 50%;
                                 -moz-border-radius: 50%;
                                 border-radius: 50%;
-                        
                                 background: $cyan;
                                 -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
                                 animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
@@ -82,7 +80,7 @@
                                 position: absolute;
                                 bottom: 13px;
                                 right: -12px;
-                    
+
                             }
                         }
                     }
@@ -97,8 +95,8 @@
                 
                         .block {
                             width: 0%;
-                            height: inherit;
-                            background: $green;
+                            height: 50px;
+                            background: $cyan;
                             position: absolute;
                             animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
                             animation-delay: 2s;
@@ -109,21 +107,19 @@
                             animation: secFadeIn 2s forwards;
                             animation-delay: 3.2s;
                             opacity: 0;
-                            font-weight: 400;
+                            font-weight: bolder;
                             font-family: 'Lato';
                             color: $white;
-                            font-size: 12px;
+                            font-size: 15px;
                             text-transform: uppercase;
-                            letter-spacing: 5px;
+                            letter-spacing: 1px;
+                            margin-top: 10px;
                         }
                     }
                 }
             }
                 
-                
-                
-                
-                
+
             @keyframes mainBlock {
                 0% {
                     width: 0%;
@@ -213,13 +209,11 @@
                 }
             }
                 
-                
-                
-                
+
             .header_title_footer {
                 width: 250px;
                 height: 50px;
-                background: $cyan;
+                background:#001C29;
                 position: absolute;
                 right: 0;
                 bottom: -80px;
@@ -234,13 +228,13 @@
                     align-items: center;
                     justify-content: center;
                     font-size: 12px;
-                    color: $indigo;
+                    color: #3E90E3;
                     font-family: 'Poppins';
                 
                     i {
                     margin-right: 25px;
                     font-size: 22px;
-                    color: $indigo;
+                    color: #3E90E3;
                     animation: icon 2s forwards;
                     animation-delay: 3s;
                     opacity: 0;
@@ -276,5 +270,5 @@
             }
         }
     }
-}   
+}
 

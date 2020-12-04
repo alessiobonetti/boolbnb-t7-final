@@ -6,7 +6,7 @@
             if (document.getElementById) { window.onload = swap };
             function swap() {
             var numimages=7;
-            rndimg = new Array("images/NewYork.jpg", "images/paris.jpg", "images/autumn.jpg", "images/cherry.jpg", "images/sea.jpg", "images/skyline.jpg", "images/spiaggia.jpg", "images/tree.jpg"); 
+            rndimg = new Array("/images/newyork.jpeg", "/images/paris.jpg", "/images/natura.jpg", "/images/brooklyn.jpg", "/images/cherry.jpg", "/images/sea.jpg", "/images/beach.jpg", "/images/spiaggia.jpg", "/images/m.jpg");
             x=(Math.floor(Math.random()*numimages));
             randomimage=(rndimg[x]);
             document.getElementById("banner").style.backgroundImage = "url("+ randomimage +")"; 
@@ -26,7 +26,7 @@
                 
                         <div class="role">
                             <div class="block"></div>
-                            <p class="header_title_p">Cerca l'appartamento giusto per te</p>
+                            <p class="header_title_p">L'Appartamento per Te</p>
                         </div>
                 
                     </div>

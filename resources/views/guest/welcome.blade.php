@@ -14,7 +14,7 @@
     <div class="container_apartments container">
         {{-- appartamenti premium titolo --}}
         <div class="apartments_premium_title">
-            <h3>I nostri appartamenti PREMIUM</h3>
+            <h3>Gli Appartamenti PREMIUM</h3>
         </div>
         <div class="row">
             {{-- appartamenti premium --}}
@@ -36,6 +36,9 @@
             @endforeach
         </div>
 
+        <div class="apartments_premium_title">
+            <h3>Gli Appartamenti </h3>
+        </div>
         <div class="row">
             {{-- appartamenti free --}}
             @foreach ($apartments_free as $apartment_free)
