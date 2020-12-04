@@ -1,29 +1,36 @@
 @include('partials.headerSearch')
 @extends('layouts.main')
 @section('content')
+    <div class="search_filters">
 
+    </div>
+{{-- struttura boolstrap visualizzazione appartamenti --}}
+    
     <div id="apartments_premium" class="container">
     </div>
+
+    
 
 
 
 {{-- Qui sono dentro a search --}}
     {{-- handlebars template --}}
 <script id="apartments_template" type="text/x-handlebars-template">
-    <div class="container_apartments mb-3">
-        <div class="card-deck col">
-            <div class="card change_class premium_class">
-                <img class="card-img-top" src="@{{cover}}">
-
-                <div class="card-body">
-                    <h5 class="card-title">@{{title}}</h5>
-                    <p class="card-text">@{{description}}</p>
-                </div>
-
-                <div class="card-footer span2">
-                    <a href="apartment/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
-                </div>
+    <div class="container search_container">
+        <div class="row">
+            <div class="col-xs-8">
+                <img class="img-fluid" src="@{{cover}}">
             </div>
+            <div class="col-xs-4">
+                <h5 class="card-title">@{{title}}</h5>
+                <p class="card-text">@{{description}}</p>
+                <div class="w-100"></div>
+                <a href="apartment/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
+            </div>
+
+
+
+            
         </div>
     </div>
 </script>
