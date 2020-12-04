@@ -23,9 +23,9 @@
             </div>
             <div class="col-xs-4">
                 <h5 class="card-title">@{{title}}</h5>
-                <p class="card-text">@{{description}}</p>
-                <div class="w-100"></div>
-                <a href="apartment/@{{apartmentId}}"><button class="btn-block badge badge-info">Info</button></a>
+                <p class="card-text text">@{{description}}</p>
+                <div class="w-100 divider"></div>
+                <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
             </div>
 
 
