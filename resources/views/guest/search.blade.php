@@ -1,4 +1,4 @@
-@include('partials.headerSearch')
+@include('partials.header')
 @extends('layouts.main')
 @section('content')
 

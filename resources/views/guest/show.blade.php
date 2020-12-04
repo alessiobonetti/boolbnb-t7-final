@@ -6,6 +6,7 @@
 
 @section('content')
 <div class="container">
+  <h2 class="card-title">{{$apartment->title}}</h2>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -26,12 +27,12 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <h2 class="card-title">{{$apartment->title}}</h2>
 
       <div class="container_card">
         <div class="row">
             <div class="card_descrition col-md-6 col-12">
-                <p>Descrizione: <span> {{$apartment->description}}</span></p>
+               <h3>Descrizione:</h3>
+               <p><span>{{$apartment->description}}</span></p>
             </div>
             <div class="card_services col-md-6 col-12">
                 <p>Servizi:

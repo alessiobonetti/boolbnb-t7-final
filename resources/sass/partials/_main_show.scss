@@ -3,6 +3,12 @@
     h2{
         text-align: center;
         margin: 20px 0;
+        font-weight: bolder;
+        color: $logoColor;
+    }
+
+    .container_card{
+        margin-top: 40px; 
     }
 
     .form-group{
