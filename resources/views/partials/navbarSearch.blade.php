@@ -21,7 +21,7 @@
             </form>
         <div class="navbar-nav">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                @auth            
+                @auth
                     <a href="{{ url('/admin/apartments') }}">
                         <button type="button" class="btn btn-outline-primary">Dashboard</button>
                     </a>
@@ -41,13 +41,14 @@
         </div>
     </div>
 </nav>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <script>
 $(document).ready(function () {
 
-    requestAjaxSearch();
+
     autocompleteTomTom();
     //    salvare il dato
     var title = $('#address').val();
@@ -89,26 +90,7 @@ function autocompleteTomTom(){
 
     })
 }
-// // chiamata ajax per compilazione dalla welcome
-// function requestAjaxWelcome() {
-//     var title = $('#address').val();
-//     console.log(title);
-//     // effettutare chiamata ajax
-//     $.ajax({
-//         'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-//         'method': 'GET',
-//         'success': function(data){
-//                 var results = data.results[0].position;
-//                 //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-//                 requestTomTom(results);
-//         },
-//         'error':function(){
-//             console.log('errore!');
-//             }
-//     });
-// }
-// chiamata ajax per compilazione dalla search
- function requestAjaxSearch(){
+function requestAjaxSearch(){
         $('#search').click(function(){
 
             // salvare il dato
@@ -173,5 +155,4 @@ function renderApartment(ele){
 
 
 }
-
 </script>
