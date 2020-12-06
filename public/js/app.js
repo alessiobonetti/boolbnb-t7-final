@@ -37408,7 +37408,8 @@ function requestTomTom(query) {
     'data': {
       // le coordinate da mandare al back-end
       'query_lat': query.lat,
-      'query__long': query.lon
+      'query__long': query.lon,
+      'mq': $('#mq').val()
     },
     'success': function success(data) {
       // data contiene la ns risposta. gli appartamenti!
