@@ -37278,6 +37278,30 @@ __webpack_require__(/*! ./asset/search.js */ "./resources/js/asset/search.js");
 
 __webpack_require__(/*! ./asset/random_show.js */ "./resources/js/asset/random_show.js");
 
+__webpack_require__(/*! ./asset/carousel_jumbotron */ "./resources/js/asset/carousel_jumbotron.js");
+
+/***/ }),
+
+/***/ "./resources/js/asset/carousel_jumbotron.js":
+/*!**************************************************!*\
+  !*** ./resources/js/asset/carousel_jumbotron.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  swap();
+});
+
+function swap() {
+  var numimages = 7;
+  rndimg = new Array("/images/newyork.jpeg", "/images/paris.jpg", "/images/natura.jpg", "/images/brooklyn.jpg", "/images/cherry.jpg", "/images/sea.jpg", "/images/beach.jpg", "/images/spiaggia.jpg", "/images/m.jpg");
+  x = Math.floor(Math.random() * numimages);
+  randomimage = rndimg[x];
+  document.getElementById("banner").style.backgroundImage = "url(" + randomimage + ")";
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
 /***/ }),
 
 /***/ "./resources/js/asset/random_show.js":
@@ -37320,24 +37344,9 @@ function showRandomApartment() {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  autocompleteTomTom();
+  ajaxCall();
   requestAjaxSearch();
-  autocompleteTomTom(); //    salvare il dato
-
-  var title = $('#address').val();
-  console.log(title); //effettutare chiamata ajax
-
-  $.ajax({
-    'url': 'https://api.tomtom.com/search/2/geocode/' + title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-    'method': 'GET',
-    'success': function success(data) {
-      var results = data.results[0].position; //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-
-      requestTomTom(results); //console.log(results);
-    },
-    'error': function error() {
-      console.log('errore!');
-    }
-  });
 }); // Autocompletamento
 
 function autocompleteTomTom() {
@@ -37359,31 +37368,35 @@ function autocompleteTomTom() {
       }
     });
   });
-}
+} // Chimata ajax con i dati del form
+
+
+function ajaxCall() {
+  //    salvare il dato
+  var title = $('#address').val();
+  $.ajax({
+    'url': 'https://api.tomtom.com/search/2/geocode/' + title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
+    'method': 'GET',
+    'success': function success(data) {
+      var results = data.results[0].position; //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
+
+      requestTomTom(results); //console.log(results);
+    },
+    'error': function error() {
+      console.log('errore!');
+    }
+  });
+} // Chimata ajax in search
+
 
 function requestAjaxSearch() {
   $('#search').click(function () {
-    // salvare il dato
-    var title = $('#address').val(); // effettutare chiamata ajax
-
-    $.ajax({
-      'url': 'https://api.tomtom.com/search/2/geocode/' + title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-      'method': 'GET',
-      'success': function success(data) {
-        var results = data.results[0].position; //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-
-        requestTomTom(results);
-      },
-      'error': function error() {
-        console.log('errore!');
-      }
-    });
+    ajaxCall();
   });
 } // Elaborazione della query a Backend su richiesta della chiamata ajax
 
 
 function requestTomTom(query) {
-  // headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
   $.ajax({
     // Rotta response
     'url': 'http://localhost:8000/search',
