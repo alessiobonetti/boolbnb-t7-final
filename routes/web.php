@@ -22,7 +22,7 @@ Route::name('guest.')
     ->group(function () {
         Route::get('', 'GuestController@index')->name('index');
         Route::get('apartment/{id}', 'GuestController@show')->name('show');
-        Route::post('apartment/{apartment}mex', 'GuestController@writeMex')->name('writeMex');
+        Route::post('apartment/{apartment}', 'GuestController@writeMex')->name('writeMex');
         Route::get('search', 'GuestController@ajaxRequest')->name('request');
         Route::post('search', 'GuestController@ajaxResponse')->name('response');
     });
@@ -35,5 +35,5 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
         Route::resource('apartments', 'HomeController');
-        Route::get('apartments/message', 'MessageController@index');
+        Route::get('message', 'MessageController@index')->name('messages');
     });

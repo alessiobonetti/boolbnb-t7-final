@@ -22,8 +22,6 @@ class GuestController extends Controller
     public function index()
     {
         //arry Id premium
-        $apartments_premium_id = [];
-
         $now = Carbon::now();
         // Query per avere tutti gli appartamenti con la promozione attiva
         $apartments_premium = Promotion::has('apartment')
