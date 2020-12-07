@@ -7,10 +7,31 @@
         color: $logoColor;
     }
 
+    .w-100 {
+        width: 50% !important;
+        margin: auto;
+        border-radius: 1%;
+    }
+    .carousel-control-prev {
+        left: 10%;
+    }
+
+    .carousel-control-next {
+        right: 10%;
+    }
+
     .container_card{
         margin-top: 40px; 
     }
 
+    h3, h4{
+        color: $logoColor;
+    }
+    
+    p{
+       color: #02525A;
+    }
+    
     .form-group{
         margin: 20px 0;
     }

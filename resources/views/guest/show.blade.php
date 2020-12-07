@@ -96,14 +96,26 @@
                 @method('POST')
                     <div class="form-group">
                         <h4>Scrivi al proprietario per maggiori informazioni</h4>
-                        <label for="email">Email address</label>
+                        <label for="email">Scrivi il tuo indirizzo Email </label>
                         <input name="email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="body">Example textarea</label>
-                        <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="text">Scrivi il tuo messaggio</label>
+                        <textarea name='body' type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="Il tuo messaggio" rows="3"></textarea>
                         </div>
                     <button type="submit" class="button_submit btn btn-primary">Submit</button>
+
+                    {{-- Errors --}}
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                {{-- /Errors --}}
                 </form>
             </div>
         </div>

@@ -1,12 +1,12 @@
 
-@extends('layouts.main')
 
 @section('title')
     BoolBnB - Sito Ufficile
 @endsection
 
 @section('header')
-    @include('partials.headerSearch')
+@include('partials.headerSearch')
+@extends('layouts.main')
 @endsection
 @section('content')
     <div class="search_filters">
