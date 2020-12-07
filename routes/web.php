@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChartController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,4 +37,5 @@ Route::prefix('admin')
     ->group(function () {
         Route::resource('apartments', 'HomeController');
         Route::get('message', 'MessageController@index')->name('messages');
+        Route::get('chart', 'ChartController@index')->name('chart');
     });

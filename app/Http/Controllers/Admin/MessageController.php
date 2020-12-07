@@ -15,6 +15,7 @@ class MessageController extends Controller
         $id = Auth::id();
         $apartments = Apartment::has('messages')
             ->where('user_id', $id)
+            ->orderBy('created_at', 'asc')
             ->get()
             ->toArray();
         $messages = Message::whereIn('apartment_id', [$apartments])->get();
