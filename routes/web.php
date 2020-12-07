@@ -38,4 +38,5 @@ Route::prefix('admin')
         Route::resource('apartments', 'HomeController');
         Route::get('message', 'MessageController@index')->name('messages');
         Route::get('chart', 'ChartController@index')->name('chart');
+        Route::post('carousel/{apartment}', 'CarouselController@store')->name('carousel');
     });
