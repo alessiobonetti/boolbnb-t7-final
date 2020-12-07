@@ -1,0 +1,39 @@
+@import 'partials/_navbar';
+
+.advanced_search {
+    margin-left: 15px ;
+    .services_list {
+        padding: 0 15px;
+        
+    }
+}
+
+.range-wrap {
+    position: relative;
+    margin: 0 auto 3rem;
+  }
+  .range {
+    width: 100%;
+  }
+  .bubble {
+    background: $blue;
+    color: white;
+    padding: 4px 12px;
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translate(-50% , 60%);
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: $blue;
+    top: -1px;
+    left: 50%;
+  }
+  
+  body {
+    margin: 2rem;
+  }

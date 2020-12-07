@@ -16,7 +16,7 @@ function autocompleteTomTom(){
             'url': 'https://api.tomtom.com/search/2/search/'+ letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT',
             'method': 'GET',
             'success': function(data){
-                    console.log(data);
+                    
                     // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
                     $('#autocomplete').text(data.results[0].address.municipality);
             },
