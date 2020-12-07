@@ -9,6 +9,10 @@
 @endsection
 
 @section('content')
+ {{-- Visualizza un allert dopo la spedizione del messaggio con successo  --}}
+@if(session('message'))
+    <p>{{session('message')}}</p>
+@endif
 <div class="container">
   <h2 class="card-title">{{$apartment->title}}</h2>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -87,25 +91,23 @@
           </div>
            {{-- maps show htlm + js --}}
           <div class="form_message col-md-6 col-12">
-            <form method="POST" {{-- action="{{ route('') }}" --}}>
-              @csrf
-              @method('POST')
-                <div class="form-group">
-                    <h4>Scrivi al proprietario per maggiori informazioni</h4>
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                <button type="submit" class="button_submit btn btn-primary">Submit</button>
-              </form>
-          </div>
+                <form method="POST" action="{{ route('guest.writeMex', $apartment) }}">
+                @csrf
+                @method('POST')
+                    <div class="form-group">
+                        <h4>Scrivi al proprietario per maggiori informazioni</h4>
+                        <label for="email">Email address</label>
+                        <input name="email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Example textarea</label>
+                        <textarea name="body" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    <button type="submit" class="button_submit btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
-        <a href="{{url('')}}"><button type="button" class="btn btn-outline-primary">Torna alla Home</button></a>
-      </div>
-
     </div>
+    <a href="{{url('')}}"><button type="button" class="btn btn-outline-primary">Torna alla Home</button></a>
+</div>
 @endsection

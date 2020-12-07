@@ -6,14 +6,18 @@
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
             <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
         </div>
+        {{-- Form del search --}}
         <form class="form-inline" method="get">
             <div class="input-group">
-                <input id='address' name="address" class="form-control" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}">
+                <input id='address' name="address" class="form-control" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}" required>
+                {{-- opzioni --}}
+                <input type="number" id="mq">
+
+
                 <div class="input-group-append">
                     <button type="button" class="button_complete btn btn-primary" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
                 </div>

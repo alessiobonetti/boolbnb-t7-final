@@ -6,9 +6,11 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\Message;
 use App\Promotion;
 use App\Service;
 use Illuminate\Support\Carbon;
+
 
 class GuestController extends Controller
 {
@@ -20,8 +22,6 @@ class GuestController extends Controller
     public function index()
     {
         //arry Id premium
-        $apartments_premium_id = [];
-
         $now = Carbon::now();
         // Query per avere tutti gli appartamenti con la promozione attiva
         $apartments_premium = Promotion::has('apartment')
@@ -65,17 +65,19 @@ class GuestController extends Controller
     // // Funzione di ricerca appartamenti
     public function ajaxRequest(Request $request)
     {
+        $services = Service::all();
         if (!empty($request->address)) {
             $search = $request->address;
         } else {
             $search = '';
         }
 
-        return view('guest.search', compact('search'));
+        return view('guest.search', compact('search', 'services'));
     }
 
     public function ajaxResponse(Request $request)
     {
+
         // Ricevo la titudine e longitudine
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
@@ -105,5 +107,25 @@ class GuestController extends Controller
         // SIN(lat * PI() / 180) + COS(lat * PI() / 180) *
         // COS(lat * PI() / 180) * COS((9.22013800 - lng) * PI() / 180)) * 180 / PI()) * 60 * 1.1515)
         // as distance FROM apartments HAVING distance <= 5 ORDER BY distance ASC
+    }
+
+    // $apartment contiene l'ID dell'appartamento
+    public function writeMex(Request $request, $apartment)
+    {
+
+        $data = $request->all();
+
+        $request->validate([
+            'email' => 'required|email',
+            'body' => 'required|string'
+        ]);
+
+        $newMex = new Message;
+        $newMex->apartment_id = $apartment;
+        $newMex->body = $data['body'];
+        $newMex->email = $data['email'];
+
+        $newMex->save();
+        return redirect()->route('guest.show', [$apartment])->with('message', 'Success');
     }
 }

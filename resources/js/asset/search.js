@@ -1,24 +1,9 @@
 $(document).ready(function () {
 
-    requestAjaxSearch();
     autocompleteTomTom();
-    //    salvare il dato
-    var title = $('#address').val();
-    console.log(title);
-    //effettutare chiamata ajax
-    $.ajax({
-        'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-        'method': 'GET',
-        'success': function(data){
-                var results = data.results[0].position;
-                //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-                requestTomTom(results);
-                //console.log(results);
-        },
-        'error':function(){
-            console.log('errore!');
-            }
-    });
+    ajaxCall();
+    requestAjaxSearch();
+
 });
 // Autocompletamento
 function autocompleteTomTom(){
@@ -42,32 +27,33 @@ function autocompleteTomTom(){
 
     })
 }
+// Chimata ajax con i dati del form
+function ajaxCall() {
+    //    salvare il dato
+    var title = $('#address').val();
+    $.ajax({
+            'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
+            'method': 'GET',
+            'success': function(data){
+                    var results = data.results[0].position;
+                    //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
+                    requestTomTom(results);
+                    //console.log(results);
+            },
+            'error':function(){
+                console.log('errore!');
+                }
+        });
+}
+// Chimata ajax in search
 function requestAjaxSearch(){
-        $('#search').click(function(){
-
-            // salvare il dato
-            var title = $('#address').val();
-            // effettutare chiamata ajax
-            $.ajax({
-                'url': 'https://api.tomtom.com/search/2/geocode/'+ title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
-                'method': 'GET',
-                'success': function(data){
-                        var results = data.results[0].position;
-                        //uso la funzione requestTomTom per incrociare lat e lng richiesta dall'utente con gli appartamenti presenti a DB
-                        requestTomTom(results);
-                },
-                'error':function(){
-                    console.log('errore!');
-                    }
-            });
+    $('#search').click(function () {
+        ajaxCall()
 
         })
     }
 // Elaborazione della query a Backend su richiesta della chiamata ajax
 function requestTomTom(query) {
-
-           // headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
-
     $.ajax({
         // Rotta response
         'url': 'http://localhost:8000/search',
@@ -78,6 +64,7 @@ function requestTomTom(query) {
             // le coordinate da mandare al back-end
             'query_lat': query.lat,
             'query__long': query.lon,
+            'mq': $('#mq').val(),
         },
         'success': function(data){
             // data contiene la ns risposta. gli appartamenti!
@@ -107,6 +94,4 @@ function renderApartment(ele){
         var html = template(context);
         $("#apartments_premium").append(html);
     }
-
-
 }
