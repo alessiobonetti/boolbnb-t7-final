@@ -38,3 +38,4 @@ function checkboxCheck (id) {
     var checked = $('check_wifi').prop('checked');
     console.log(checked);
 }
+
