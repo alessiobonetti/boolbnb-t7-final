@@ -37278,7 +37278,57 @@ __webpack_require__(/*! ./asset/search.js */ "./resources/js/asset/search.js");
 
 __webpack_require__(/*! ./asset/random_show.js */ "./resources/js/asset/random_show.js");
 
-__webpack_require__(/*! ./asset/carousel_jumbotron */ "./resources/js/asset/carousel_jumbotron.js");
+__webpack_require__(/*! ./asset/advanced_search.js */ "./resources/js/asset/advanced_search.js");
+
+__webpack_require__(/*! ./asset/carousel_jumbotron.js */ "./resources/js/asset/carousel_jumbotron.js");
+
+/***/ }),
+
+/***/ "./resources/js/asset/advanced_search.js":
+/*!***********************************************!*\
+  !*** ./resources/js/asset/advanced_search.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  // Ricerca Avanzata valore Raggio di ricerca
+  $("#search_radius").mouseup(function () {
+    var radiusVal = $("#search_radius").val();
+    console.log(radiusVal);
+    return radiusVal;
+  });
+  checkboxCheck(check_wifi);
+}); // Logica label per raggio di ricerca
+
+var allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(function (wrap) {
+  var range = wrap.querySelector(".range");
+  var bubble = wrap.querySelector(".bubble");
+  range.addEventListener("input", function () {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  var val = range.value;
+  var min = range.min ? range.min : 0;
+  var max = range.max ? range.max : 100;
+  var newVal = Number((val - min) * 100 / (max - min));
+  bubble.innerHTML = val; // Sorta magic numbers based on size of the native UI thumb
+
+  bubble.style.left = "calc(".concat(newVal, "% + (").concat(8 - newVal * 0.15, "px))");
+} // Valore dei checked
+
+
+function checkboxCheck(id) {
+  var checked = $('check_wifi').prop('checked');
+  console.log(checked);
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+__webpack_require__(/*! ./asset/multi_upload */ "./resources/js/asset/multi_upload.js");
 
 __webpack_require__(/*! ./asset/chart.js */ "./resources/js/asset/chart.js");
 
@@ -37306,6 +37356,7 @@ function swap() {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./resources/js/asset/chart.js":
 /*!*************************************!*\
   !*** ./resources/js/asset/chart.js ***!
@@ -37399,6 +37450,25 @@ var massPopChartView = new Chart(myChartView, {
     }
   }
 });
+=======
+/***/ "./resources/js/asset/multi_upload.js":
+/*!********************************************!*\
+  !*** ./resources/js/asset/multi_upload.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $(".btn-success").click(function () {
+    var lsthmtl = $(".clone").html();
+    $(".increment").after(lsthmtl);
+  });
+  $("body").on("click", ".btn_delete", function () {
+    $(this).parents(".hdtuto").remove(); //$(this).parents(".hdtuto control-group lst").remove();
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+>>>>>>> main
 
 /***/ }),
 
@@ -37457,8 +37527,7 @@ function autocompleteTomTom() {
       'url': 'https://api.tomtom.com/search/2/search/' + letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT',
       'method': 'GET',
       'success': function success(data) {
-        console.log(data); // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
-
+        // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
         $('#autocomplete').text(data.results[0].address.municipality);
       },
       'error': function error() {
@@ -37614,8 +37683,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Luca\Desktop\Classe17\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Luca\Desktop\Classe17\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> main
 
 
 /***/ })
