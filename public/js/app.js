@@ -37328,6 +37328,8 @@ function checkboxCheck(id) {
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
+__webpack_require__(/*! ./asset/multi_upload */ "./resources/js/asset/multi_upload.js");
+
 /***/ }),
 
 /***/ "./resources/js/asset/carousel_jumbotron.js":
@@ -37348,6 +37350,26 @@ function swap() {
   randomimage = rndimg[x];
   document.getElementById("banner").style.backgroundImage = "url(" + randomimage + ")";
 }
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./resources/js/asset/multi_upload.js":
+/*!********************************************!*\
+  !*** ./resources/js/asset/multi_upload.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+  $(".btn-success").click(function () {
+    var lsthmtl = $(".clone").html();
+    $(".increment").after(lsthmtl);
+  });
+  $("body").on("click", ".btn_delete", function () {
+    $(this).parents(".hdtuto").remove(); //$(this).parents(".hdtuto control-group lst").remove();
+  });
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

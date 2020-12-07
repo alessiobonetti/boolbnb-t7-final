@@ -125,13 +125,14 @@ class HomeController extends Controller
             'mq' => 'required|min:1',
             'address' => 'required|max:60',
             'published' => 'boolean',
-            'cover' => 'image|required',
+            'cover' => 'nullable|image',
         ]);
 
-        $path = Storage::disk('public')->put('images', $data['cover']);
-
         $apartment = Apartment::findOrFail($id);
-        $apartment->cover = $path;
+        if (!empty($request->cover)) {
+            $path = Storage::disk('public')->put('images', $data['cover']);
+            $apartment->cover = $path;
+        }
         $apartment->fill($data)->update();
 
         if (!empty($data['services'])) {
