@@ -13,11 +13,9 @@
 
     </div>
 {{-- struttura boolstrap visualizzazione appartamenti --}}
-    
+
     <div id="apartments_premium" class="container">
     </div>
-
-    
 
 
 
@@ -27,15 +25,21 @@
     <div class="container search_container">
         <div class="row">
             <div class="col-xs-8">
-                <img class="img-fluid" src="@{{cover}}">
+
+                    <img class="img-fluid" src="@{{cover}}">
+
+
+
             </div>
             <div class="col-xs-4">
                 <h5 class="card-title">@{{title}}</h5>
                 <p class="card-text text">@{{description}}</p>
                 <div class="w-100 divider"></div>
                 <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
-            </div>  
+            </div>
         </div>
     </div>
 </script>
 @endsection
+
+ {{-- <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}"> --}}
