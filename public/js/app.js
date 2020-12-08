@@ -37327,7 +37327,7 @@ function setBubble(range, bubble) {
 
 
 function checkboxCheck() {
-  var $checkbox = $('input[name="<i>"]');
+  var $checkbox = $('.checkbox_service[name="<i>"]');
   $checkbox.change(function () {
     var checked = $(this).prop('checked');
     console.log(checked);
