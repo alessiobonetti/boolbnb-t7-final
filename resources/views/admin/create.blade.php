@@ -27,7 +27,10 @@
             {{-- Address --}}
             <div class="form-group">
                 <label for="address">Indirizzo</label>
-                <input  name="address" value="{{ old('address') }}" type="text" class="form-control" id="address"  placeholder="Indirizzo (Via, N.Civico, Città, Cap, Nazione)" required>
+                <input  name="address" value="{{ old('address') }}" type="text" class="form-control" id="address_admin"  placeholder="Indirizzo (Via, N.Civico, Città, Cap, Nazione)" required>
+                <input name="lng" id="lng_admin" value="" hidden>
+                <input name="lat" id="lat_admin" value="" hidden>
+
             </div>
             {{-- /Address --}}
 
@@ -96,3 +99,28 @@
     </main>
 </div>
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+
+
+        $('#address_admin').keyup(function () {
+
+            //    salvare il dato
+            var title = $('#address_admin').val();
+            $.ajax({
+                'url': 'https://api.tomtom.com/search/2/geocode/' + title + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm',
+                'method': 'GET',
+                'success': function (data) {
+                    var results = data.results[0].position;
+                    $('#lat_admin').val(results.lat);
+                    $('#lng_admin').val(results.lon);
+                },
+                'error': function () {
+                    console.log('errore!');
+                }
+            });
+
+        })
+});
+</script>
