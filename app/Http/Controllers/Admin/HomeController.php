@@ -115,6 +115,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $data = $request->all();
         $request->validate([
             'title' => 'required|max:50',
@@ -125,7 +126,6 @@ class HomeController extends Controller
             'mq' => 'required|min:1',
             'address' => 'required|max:60',
             'published' => 'boolean',
-            'cover' => 'nullable|image',
         ]);
 
         $apartment = Apartment::findOrFail($id);

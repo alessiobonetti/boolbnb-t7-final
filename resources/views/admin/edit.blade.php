@@ -31,7 +31,7 @@
             {{-- Cover --}}
             <div class="form-group">
                     <label for="cover">Cover</label>
-                    <input  type="file" value="{{old("'storage/'.$apartment->cover") ?? asset('storage/'.$apartment->cover)}}" name="cover[]" class="form-control" id="cover" accept="image/*">
+                    <input  type="file" value="{{old("'storage/'.$apartment->cover") ?? $apartment->cover}}" name="cover" class="form-control" id="cover" accept="image/*">
             </div>
             {{-- /Cover --}}
 
