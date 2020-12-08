@@ -5,7 +5,9 @@ $(document).ready(function () {
         console.log(radiusVal);
         return radiusVal;
     });
-    checkboxCheck (check_wifi);
+
+    checkboxCheck ();
+    
 });
 
 // Logica label per raggio di ricerca
@@ -22,8 +24,8 @@ allRanges.forEach(wrap => {
 
 function setBubble(range, bubble) {
   const val = range.value;
-  const min = range.min ? range.min : 0;
-  const max = range.max ? range.max : 100;
+  const min = range.min ? range.min : 10;
+  const max = range.max ? range.max : 150;
   const newVal = Number(((val - min) * 100) / (max - min));
   bubble.innerHTML = val;
 
@@ -34,8 +36,11 @@ function setBubble(range, bubble) {
 
 // Valore dei checked
 
-function checkboxCheck (id) {
-    var checked = $('check_wifi').prop('checked');
+function checkboxCheck () {
+  var $checkbox = $('input[name="<i>"]');
+    $checkbox.change(function(){
+    var checked = $(this).prop('checked');
     console.log(checked);
+  });
 }
 
