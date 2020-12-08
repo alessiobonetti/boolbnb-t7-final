@@ -126,6 +126,6 @@ class GuestController extends Controller
         $newMex->email = $data['email'];
 
         $newMex->save();
-        return redirect()->route('guest.show', [$apartment])->with('message', 'Success');
+        return redirect()->route('guest.show', [$apartment])->with('success_message', 'Messaggio inviato correttamente');
     }
 }

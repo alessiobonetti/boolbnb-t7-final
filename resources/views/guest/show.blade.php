@@ -86,10 +86,11 @@
 
               var popup = new tt.Popup({offset: popupOffsets})/* .setHTML({{$apartment->lng}});
               marker.setPopup(popup).togglePopup(); */
-
           </script>
           </div>
-           {{-- maps show htlm + js --}}
+           {{-- /maps show htlm + js --}}
+
+           {{-- form message --}}
           <div class="form_message col-md-6 col-12">
                 <form method="POST" action="{{ route('guest.writeMex', $apartment) }}">
                 @csrf
@@ -104,19 +105,19 @@
                         <textarea name='body' type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="Il tuo messaggio" rows="3"></textarea>
                         </div>
                     <button type="submit" class="button_submit btn btn-primary">Submit</button>
-
                     {{-- Errors --}}
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                {{-- /Errors --}}
+                    @if (session('success_message'))
+                      <div class="container">
+                          <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <p>{{{ session('success_message') }}}</p>
+                          </div>
+                      </div>
+                      @endif
+                      {{-- /Errors --}}
                 </form>
+                {{-- /form message --}}
+
             </div>
         </div>
     </div>

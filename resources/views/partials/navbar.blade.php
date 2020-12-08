@@ -27,7 +27,7 @@
                     </a>
                 @else
                     <a href="{{ route('login') }}">
-                        <button type="button" class="btn btn-outline-success">Login</button>
+                        <button type="button" class="btn btn-outline-primary">Login</button>
                     </a>
 
                     @if (Route::has('register'))

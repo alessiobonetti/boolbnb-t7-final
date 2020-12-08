@@ -42,7 +42,7 @@
         <div class="row">
             {{-- appartamenti free --}}
             @foreach ($apartments_free as $apartment_free)
-                <div class="margin_top_20 col-md-6 col-lg-3 col-12">
+                <div class="margin_top_20 col-xs-12 col-sm-6 col-md-4">
                     <div class="card-deck random_show">
                         <div class="content content_free mr-3 w-75">
                             <a href="{{ url('apartment', $apartment_free['id']) }}">

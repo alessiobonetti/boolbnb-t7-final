@@ -23,7 +23,7 @@ class ImageSeeder extends Seeder
 
                 $newImage = new Image;
                 $newImage->apartment_id = $apartment->id;
-                $newImage->media = $faker->imageUrl(300, 400, 'cats');
+                $newImage->media = $faker->imageUrl(300, 400, 'city');
 
                 $newImage->save();
             }
