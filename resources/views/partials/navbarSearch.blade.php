@@ -32,7 +32,7 @@
                         <h6 class="dropdown-header">Servizi</h6>
                         @foreach($services as $service)
                             <li>
-                                <input class="checkbox_service" type="checkbox" name="{{$service->name}}">{{$service->name}}
+                                <input class="checkbox_service" type="checkbox" name="{{$service->name}}">  {{$service->name}}
                             </li>
                         @endforeach
                        

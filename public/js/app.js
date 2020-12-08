@@ -37276,6 +37276,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./asset/advanced_search.js */ "./resources/js/asset/advanced_search.js");
 
+__webpack_require__(/*! ./asset/multi_upload.js */ "./resources/js/asset/multi_upload.js");
+
 __webpack_require__(/*! ./asset/search.js */ "./resources/js/asset/search.js");
 
 __webpack_require__(/*! ./asset/random_show.js */ "./resources/js/asset/random_show.js");
@@ -37283,8 +37285,6 @@ __webpack_require__(/*! ./asset/random_show.js */ "./resources/js/asset/random_s
 __webpack_require__(/*! ./asset/carousel_jumbotron.js */ "./resources/js/asset/carousel_jumbotron.js");
 
 __webpack_require__(/*! ./asset/chart.js */ "./resources/js/asset/chart.js");
-
-__webpack_require__(/*! ./asset/multi_upload.js */ "./resources/js/asset/multi_upload.js");
 
 /***/ }),
 
@@ -37327,7 +37327,7 @@ function setBubble(range, bubble) {
 
 
 function checkboxCheck() {
-  var $checkbox = $('.checkbox_service[name="<i>"]');
+  var $checkbox = $('.checkbox_service[name="auto"]');
   $checkbox.change(function () {
     var checked = $(this).prop('checked');
     console.log(checked);
