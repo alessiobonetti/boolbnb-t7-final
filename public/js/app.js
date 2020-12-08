@@ -37274,17 +37274,17 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./asset/advanced_search.js */ "./resources/js/asset/advanced_search.js");
+
+__webpack_require__(/*! ./asset/multi_upload.js */ "./resources/js/asset/multi_upload.js");
+
 __webpack_require__(/*! ./asset/search.js */ "./resources/js/asset/search.js");
 
 __webpack_require__(/*! ./asset/random_show.js */ "./resources/js/asset/random_show.js");
 
-__webpack_require__(/*! ./asset/carousel_jumbotron */ "./resources/js/asset/carousel_jumbotron.js");
-
-__webpack_require__(/*! ./asset/multi_upload */ "./resources/js/asset/multi_upload.js");
+__webpack_require__(/*! ./asset/carousel_jumbotron.js */ "./resources/js/asset/carousel_jumbotron.js");
 
 __webpack_require__(/*! ./asset/chart.js */ "./resources/js/asset/chart.js");
-
-__webpack_require__(/*! ./asset/advanced_search.js */ "./resources/js/asset/advanced_search.js");
 
 /***/ }),
 
@@ -37302,7 +37302,7 @@ __webpack_require__(/*! ./asset/advanced_search.js */ "./resources/js/asset/adva
     console.log(radiusVal);
     return radiusVal;
   });
-  checkboxCheck(check_wifi);
+  checkboxCheck();
 }); // Logica label per raggio di ricerca
 
 var allRanges = document.querySelectorAll(".range-wrap");
@@ -37317,8 +37317,8 @@ allRanges.forEach(function (wrap) {
 
 function setBubble(range, bubble) {
   var val = range.value;
-  var min = range.min ? range.min : 0;
-  var max = range.max ? range.max : 100;
+  var min = range.min ? range.min : 10;
+  var max = range.max ? range.max : 150;
   var newVal = Number((val - min) * 100 / (max - min));
   bubble.innerHTML = val; // Sorta magic numbers based on size of the native UI thumb
 
@@ -37326,9 +37326,12 @@ function setBubble(range, bubble) {
 } // Valore dei checked
 
 
-function checkboxCheck(id) {
-  var checked = $('check_wifi').prop('checked');
-  console.log(checked);
+function checkboxCheck() {
+  var $checkbox = $('.checkbox_service[name="auto"]');
+  $checkbox.change(function () {
+    var checked = $(this).prop('checked');
+    console.log(checked);
+  });
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

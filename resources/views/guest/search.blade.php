@@ -34,11 +34,7 @@
                 <p class="card-text text">@{{description}}</p>
                 <div class="w-100 divider"></div>
                 <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
-            </div>
-
-
-
-            
+            </div>  
         </div>
     </div>
 </script>

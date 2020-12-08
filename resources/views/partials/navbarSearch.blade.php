@@ -14,71 +14,51 @@
         <form class="form-inline" method="get">
             <div class="input-group">
                 <input id='address' name="address" class="form-control" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}" required>
-                {{-- opzioni --}}
                 
-
-
+                {{-- bottone ricerca --}}
                 <div class="input-group-append">
                     <button type="button" class="button_complete btn btn-primary" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
                 </div>
 
                 {{-- Ricerca Avanzata --}}
-        <div class="dropdown advanced_search">
-            <button class="btn btn-primary dropdown-toggle" type="button" 
-                    id="dropdownMenu1" data-toggle="dropdown" 
-                    aria-haspopup="true" aria-expanded="true">
-                <i class="fab fa-elementor"></i>
-                <span class="caret">Ricerca Avanzata</span>
-            </button>
-            <ul class="dropdown-menu checkbox-menu allow-focus services_list" aria-labelledby="dropdownMenu1">
-                <h6 class="dropdown-header">Servizi</h6>
-                <li >
-                    <label>
-                    <input id="check_wifi" type="checkbox"> Wi-FI
-                    </label>
-                </li>
-                
-                <li >
-                    <label>
-                    <input id="check_auto" type="checkbox"> Parcheggio auto
-                    </label>
-                </li>
-                
-                <li >
-                    <label>
-                    <input id="check_pool" type="checkbox"> Piscina
-                    </label>
-                </li>
+                <div class="dropdown advanced_search">
+                    <button class="btn btn-primary dropdown-toggle" type="button" 
+                            id="dropdownMenu1" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="true">
+                        <i class="fab fa-elementor"></i>
+                        <span class="caret">Ricerca Avanzata</span>
+                    </button>
+                    <ul id="checkbox_list" class="dropdown-menu checkbox-menu allow-focus services_list" aria-labelledby="dropdownMenu1">
+                        <h6 class="dropdown-header">Servizi</h6>
+                        @foreach($services as $service)
+                            <li>
+                                <input class="checkbox_service" type="checkbox" name="{{$service->name}}">  {{$service->name}}
+                            </li>
+                        @endforeach
+                       
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
 
-                <li >
-                    <label>
-                    <input id="check_view" type="checkbox"> Vista
-                    </label>
-                </li>
+                        <h6 class="dropdown-header">MQ Appartamento</h6>
+                        <li>
+                            <input type="number" id="mq">
+                        </li>
 
-                <li>
-                    <div class="dropdown-divider"></div>
-                </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
 
-                <h6 class="dropdown-header">MQ Appartamento</h6>
-                <li>
-                    <input type="number" id="mq">
-                </li>
-
-                <li>
-                    <div class="dropdown-divider"></div>
-                </li>
-
-                <h6 class="dropdown-header">Raggio Ricerca in Km</h6>
-                <li>
-                    <div class="range-wrap" style="width: 80%;">
-                        <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="10">
-                        <output class="bubble"></output>
-                      </div>
-                </li>
-              
-            </ul>
-          </div>
+                        <h6 class="dropdown-header">Raggio Ricerca in Km</h6>
+                        <li>
+                            <div class="range-wrap" style="width: 80%;">
+                                <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="10">
+                                <output class="bubble"></output>
+                            </div>
+                        </li>
+                    
+                    </ul>
+                </div>
             </div>
         </form>
 
