@@ -77,13 +77,12 @@ class GuestController extends Controller
 
     public function ajaxResponse(Request $request)
     {
-
         // Ricevo la titudine e longitudine
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
         // Distanz Km TODO metterla come variabile
-        $radius = 150;
-
+        $radius = $request['radius'];
+        dd($radius);
         // Mega query tutta in eloquent. i risultati sono in ordine di distanza
         // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
         $apartments = Apartment::selectRaw("*,

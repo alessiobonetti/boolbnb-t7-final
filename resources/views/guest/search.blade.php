@@ -19,17 +19,15 @@
 
 
 
+
+
 {{-- Qui sono dentro a search --}}
     {{-- handlebars template --}}
 <script id="apartments_template" type="text/x-handlebars-template">
     <div class="container search_container">
         <div class="row">
             <div class="col-xs-8">
-
-                    <img class="img-fluid" src="@{{cover}}">
-
-
-
+                <img class="img-fluid" src="@{{cover}}">
             </div>
             <div class="col-xs-4">
                 <h5 class="card-title">@{{title}}</h5>
@@ -42,4 +40,8 @@
 </script>
 @endsection
 
- {{-- <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}"> --}}
+{{-- img fake --}}
+{{-- <img class="img-fluid" src="@{{cover}}"> --}}
+
+{{-- img path --}}
+{{-- <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}"> --}}

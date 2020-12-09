@@ -7,18 +7,19 @@ $(document).ready(function () {
 });
 // Autocompletamento
 function autocompleteTomTom(){
-    $('#address').keyup(function(){
+    $('#address').keyup(function () {
         // salvare il dato
         var letter = $('#address').val();
-        //console.log(letter);
         $.ajax({
             // E' possibile aggiungere degli argomenti opzionali alla chiamata ->vedi guida api TomTom fuzzy search
-            'url': 'https://api.tomtom.com/search/2/search/'+ letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT',
+            'url': 'https://api.tomtom.com/search/2/search/'+ letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT&limit=5',
             'method': 'GET',
-            'success': function(data){
-                    
+            'success': function (data) {
+                console.log(length(data.results));
                     // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
                     $('#autocomplete').text(data.results[0].address.municipality);
+
+
             },
             'error':function(){
                 console.log('errore!');
@@ -64,6 +65,8 @@ function requestTomTom(query) {
             // le coordinate da mandare al back-end
             'query_lat': query.lat,
             'query__long': query.lon,
+            'radius': search_radius(),
+            'services': checkboxCheck(),
             'mq': $('#mq').val(),
         },
         'success': function(data){
@@ -95,3 +98,49 @@ function renderApartment(ele){
         $("#apartments_premium").append(html);
     }
 }
+
+function search_radius() {
+    // Ricerca Avanzata valore Raggio di ricerca
+    $("#search_radius").mouseup(function() {
+        var radiusVal = $("#search_radius").val();
+        return radiusVal;
+    });
+
+
+}
+
+// Logica label per raggio di ricerca
+const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".bubble");
+
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 10;
+  const max = range.max ? range.max : 150;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+
+
+// Valore dei checked in un array
+
+function checkboxCheck() {
+    var service_array = [];
+    var checkbox_service = $('input[type=checkbox]').each(function () {
+        var status = (this.checked ? service_array.push($(this).val()) : "");
+    });
+    return service_array;
+    //console.log(service_array);
+}
+

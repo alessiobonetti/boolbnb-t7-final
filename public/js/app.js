@@ -37523,14 +37523,14 @@ function showRandomApartment() {
 function autocompleteTomTom() {
   $('#address').keyup(function () {
     // salvare il dato
-    var letter = $('#address').val(); //console.log(letter);
-
+    var letter = $('#address').val();
     $.ajax({
       // E' possibile aggiungere degli argomenti opzionali alla chiamata ->vedi guida api TomTom fuzzy search
-      'url': 'https://api.tomtom.com/search/2/search/' + letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT',
+      'url': 'https://api.tomtom.com/search/2/search/' + letter + '.json?key=qSDJhLAxaQVApzhQYzYHIRVtb03Dnkqm&language=it-IT&limit=5',
       'method': 'GET',
       'success': function success(data) {
-        // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
+        console.log(length(data.results)); // Esempio di autocompilazione con il municipio -> vedi guida api TomTom fuzzy search
+
         $('#autocomplete').text(data.results[0].address.municipality);
       },
       'error': function error() {
@@ -37579,6 +37579,8 @@ function requestTomTom(query) {
       // le coordinate da mandare al back-end
       'query_lat': query.lat,
       'query__long': query.lon,
+      'radius': search_radius(),
+      'services': checkboxCheck(),
       'mq': $('#mq').val()
     },
     'success': function success(data) {
@@ -37608,6 +37610,44 @@ function renderApartment(ele) {
     var html = template(context);
     $("#apartments_premium").append(html);
   }
+}
+
+function search_radius() {
+  // Ricerca Avanzata valore Raggio di ricerca
+  $("#search_radius").mouseup(function () {
+    var radiusVal = $("#search_radius").val();
+    return radiusVal;
+  });
+} // Logica label per raggio di ricerca
+
+
+var allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(function (wrap) {
+  var range = wrap.querySelector(".range");
+  var bubble = wrap.querySelector(".bubble");
+  range.addEventListener("input", function () {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  var val = range.value;
+  var min = range.min ? range.min : 10;
+  var max = range.max ? range.max : 150;
+  var newVal = Number((val - min) * 100 / (max - min));
+  bubble.innerHTML = val; // Sorta magic numbers based on size of the native UI thumb
+
+  bubble.style.left = "calc(".concat(newVal, "% + (").concat(8 - newVal * 0.15, "px))");
+} // Valore dei checked in un array
+
+
+function checkboxCheck() {
+  var service_array = [];
+  var checkbox_service = $('input[type=checkbox]').each(function () {
+    var status = this.checked ? service_array.push($(this).val()) : "";
+  });
+  return service_array; //console.log(service_array);
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

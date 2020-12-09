@@ -14,7 +14,7 @@
         <form class="form-inline" method="get">
             <div class="input-group">
                 <input id='address' name="address" class="form-control" type="text" placeholder="Search Apartements" aria-label="Search" value="{{ isset($search) ? $search : '' }}" required>
-                
+
                 {{-- bottone ricerca --}}
                 <div class="input-group-append">
                     <button type="button" class="button_complete btn btn-primary" id="search"><i class="fas fa-search" aria-hidden="true"></i></button>
@@ -22,8 +22,8 @@
 
                 {{-- Ricerca Avanzata --}}
                 <div class="dropdown advanced_search">
-                    <button class="btn btn-primary dropdown-toggle" type="button" 
-                            id="dropdownMenu1" data-toggle="dropdown" 
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            id="dropdownMenu1" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="true">
                         <i class="fab fa-elementor"></i>
                         <span class="caret">Ricerca Avanzata</span>
@@ -32,10 +32,10 @@
                         <h6 class="dropdown-header">Servizi</h6>
                         @foreach($services as $service)
                             <li>
-                                <input class="checkbox_service" type="checkbox" name="{{$service->name}}">  {{$service->name}}
+                                <input class="checkbox_service" type="checkbox" value="{{$service->id}}">  {{$service->name}}
                             </li>
                         @endforeach
-                       
+
                         <li>
                             <div class="dropdown-divider"></div>
                         </li>
@@ -56,13 +56,13 @@
                                 <output class="bubble"></output>
                             </div>
                         </li>
-                    
+
                     </ul>
                 </div>
             </div>
         </form>
 
-        
+
 
         <div class="navbar-nav">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
