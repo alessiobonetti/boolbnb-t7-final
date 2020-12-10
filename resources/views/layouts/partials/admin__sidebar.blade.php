@@ -47,7 +47,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="#"
+        <a class="nav-link " href="{{ route('admin.chart') }}"
             aria-expanded="true">
             <i class="fas fa-chart-area"></i>
             <span>Statistiche</span>

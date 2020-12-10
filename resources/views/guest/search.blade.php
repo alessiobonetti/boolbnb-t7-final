@@ -1,5 +1,3 @@
-
-
 @section('title')
     BoolBnB - Sito Ufficile
 @endsection
@@ -36,4 +34,3 @@
 </script>
 @endsection
 
- {{-- <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}"> --}}

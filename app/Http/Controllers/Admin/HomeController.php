@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Service;
 use App\User;
 use App\View;
+use App\Mail\SendNewMail;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -69,10 +71,13 @@ class HomeController extends Controller
         $newApartment->user_id = Auth::id();
         $newApartment->save();
 
+        ;
+
         if (!empty($data['services'])) {
             $newApartment->services()->sync($data['services']);
         }
 
+        Mail::to($newApartment->user->email)->send(new SendNewMail($newApartment));
         return redirect('admin/apartments')->with('success_message', 'Appartemento creato correttamente');
     }
 
