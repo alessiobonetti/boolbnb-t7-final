@@ -13,32 +13,26 @@
 
     </div>
 {{-- struttura boolstrap visualizzazione appartamenti --}}
-
-    <div id="apartments_premium" class="container">
+<div class="container">
+    <div class="row row_search">
+        <div class="col-sm-12 col-md-6" >
+            <div id="apartments_premium"></div>
+        </div>
     </div>
-
+</div>
 
 
 {{-- Qui sono dentro a search --}}
     {{-- handlebars template --}}
 <script id="apartments_template" type="text/x-handlebars-template">
-    <div class="container search_container">
-        <div class="row">
-            <div class="col-xs-8">
-
-                    <img class="img-fluid" src="@{{cover}}">
-
-
-
-            </div>
-            <div class="col-xs-4">
-                <h5 class="card-title">@{{title}}</h5>
-                <p class="card-text text">@{{description}}</p>
-                <div class="w-100 divider"></div>
-                <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
-            </div>
+    <div class="content_search">
+        <img src="@{{cover}}" class="img-fluid" alt="Responsive image">
+        <div class="content_down_img">
+            <h5 >@{{title}}</h5>
+            <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
         </div>
     </div>
+   
 </script>
 @endsection
 

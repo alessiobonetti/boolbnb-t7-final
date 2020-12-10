@@ -36,3 +36,30 @@
         }
     }
 }
+
+.row_search{
+    justify-content: center;
+    #apartments_premium{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .content_search{
+            background-color: $white;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            .img-fluid {
+                max-width: 98%;
+                margin-left: 5px;
+                margin-top: 5px;
+                height: auto;
+            }
+
+            .content_down_img{
+                margin:20px 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+

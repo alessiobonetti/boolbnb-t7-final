@@ -3,10 +3,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route("guest.index") }}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            {{-- logo --}}
-        </div>
-        <div class="sidebar-brand-text mx-3">Torna al sito</div>
+        Torna Al sito
     </a>
 
     <!-- Divider -->

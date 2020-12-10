@@ -1,0 +1,40 @@
+.container{
+
+    h3{
+        text-align: center;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin:auto;
+        word-wrap: break-word;
+        background-color: #f8f9fa;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+    }
+
+    .container_show{
+        width: 80%;
+        margin:auto;
+
+         h4, .multi_up_title{
+            text-align: center;
+            color: $logoColor;
+        }
+    
+        h5, p{
+            color: $logoColor;
+        }
+    
+        .bottone{
+            margin-left: 8px;
+            margin-top: 10px;
+        }
+    }
+    
+    
+}

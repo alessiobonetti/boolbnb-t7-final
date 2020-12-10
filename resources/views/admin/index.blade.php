@@ -1,91 +1,86 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid">
+{{-- success message --}}
+@if (session('success_message'))
+<div class="container_message">
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h6>{{{ session('success_message') }}}</h6>
+    </div>
+</div>
+@endif
+{{-- /success message --}}
+<div class="container" style="margin-left: 5px">
     <div class="row">
-        <div class="col-xl-1 col-md-1 mb-4">
-           <div class="card border-left-primary shadow h-100 py-2">
-               <div class="card-body">
-                   <div class="row no-gutters align-items-center">
-                       <div class="col mr-2">
-                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                               Tot annunci</div>
-                           <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">{{ count($apartments) }}</div>
-                       </div>
-                   </div>
-               </div>
-           </div>
+        <div class="card border-primary mb-3" style="max-width: 10rem; margin-right: 10px">
+            <div class="card-body border-left-primary shadow h-100 py-2">
+              <h5 class="card-title">Totale Annunci</h5>
+              <p class="card-text">{{ count($apartments) }}</p>
+            </div>
+          </div>
+        <div class="card border-primary mb-3" style="max-width: 10rem;">
+        <div class="card-body border-left-primary shadow h-100 py-2">
+            <h5 class="card-title">Totale Messaggi</h5>
+            <p class="card-text">{{-- {{ count($messages) }} --}}</p>
         </div>
-        <div class="col-xl-1 col-md-1 mb-4">
-           <div class="card border-left-primary shadow h-100 py-2">
-               <div class="card-body">
-                   <div class="row no-gutters align-items-center">
-                       <div class="col mr-2">
-                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                               Tot messaggi</div>
-                           <div class="h5 mb-0 font-weight-bold text-gray-800 text-center"></div>
-                       </div>
-                   </div>
-               </div>
-           </div>
         </div>
     </div>
 
     </div>
 
-    <table class="table" >
-        <thead>
-            <tr>
-                <th scope="col">Titolo</th>
-                <th scope="col">Stanze</th>
-                <th scope="col">Letti</th>
-                <th scope="col">Bagni</th>
-                <th scope="col">Mq</th>
-                <th scope="col">Indirizzo</th>
-                <th scope="col">Pubblicato</th>
-                <th scope="col">Views</th>
-                <th scope="col">Message</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            {{-- // Ciclo gli appartamenti --}}
-            @foreach ($apartments as $apartment)
-
-            <tr>
-                {{-- <td><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover" class="img-thumbnail"></td> --}}
-                <td>{{$apartment->title}}</td>
-                {{-- // Estraggo i servizi legati all'appartamento --}}
-                <td>{{ $apartment->rooms }}</td>
-                <td>{{ $apartment->beds }}</td>
-                <td>{{ $apartment->baths }}</td>
-                <td>{{ $apartment->mq }}</td>
-                <td>{{ $apartment->address }}</td>
-                <td>{{ $apartment->published }}</td>
-                <td>
-                    @if ($apartment->views->count())
-                        {{ $apartment->views->count() }}
-                    @else
-                        0
-                    @endif
-                </td>
-                <td>
-                    {{ $apartment->messages->count() }}
-                </td>
-                <td>
-                    <a href="{{ route('admin.apartments.show', $apartment->id) }}"><button class="badge badge-info">Info</button></a>
-                    <a href="{{ route('admin.apartments.edit', $apartment->id) }}"><button class="badge badge-secondary">Edita</button></a>
-                    <form action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="badge badge-warning" class="btn btn-warning" type="submit">Elimina</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-
+    <div class="table">
+        <table class="table">
+            <thead class="thead">
+                <tr>
+                    <th scope="col">Titolo</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Stanze</th>
+                    <th scope="col" class="d-none d-lg-table-cell" >Letti</th>
+                    <th scope="col" class="d-none d-lg-table-cell" >Bagni</th>
+                    <th scope="col" class="d-none d-lg-table-cell">MQ</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Indirizzo</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Pubblicato</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Visualizzazioni</th>
+                    <th scope="col" class="d-none d-lg-table-cell">Messaggi</th>
+                    <th scope="col">Modifiche</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($apartments as $apartment)
+                    <tr>
+                        {{-- <td><img src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="cover" class="img-thumbnail"></td> --}}
+                        <td>{{$apartment->title}}</td>
+                        {{-- // Estraggo i servizi legati all'appartamento --}}
+                        <td class="d-none d-lg-table-cell">{{ $apartment->rooms }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->beds }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->baths }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->mq }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->address }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->published }}</td>
+                        <td class="d-none d-lg-table-cell">
+                            @if ($apartment->views->count())
+                                {{ $apartment->views->count() }}
+                            @else
+                                0
+                            @endif
+                        </td>
+                        <td class="d-none d-lg-table-cell">
+                            {{ $apartment->messages->count() }}
+                        </td>
+                        <td>
+                            <a href="{{ route('admin.apartments.show', $apartment->id) }}"><button class="badge badge-primary">Info</button></a>
+                            <a href="{{ route('admin.apartments.edit', $apartment->id) }}"><button class="badge badge-success">Edita</button></a>
+                            <form action="{{ route('admin.apartments.destroy', $apartment->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="badge badge-danger" class="btn badge-danger" type="submit">Elimina</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+      </div>
 @endsection
 
 
