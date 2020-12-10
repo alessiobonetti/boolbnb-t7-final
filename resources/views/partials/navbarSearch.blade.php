@@ -41,8 +41,10 @@
                         </li>
 
                         <h6 class="dropdown-header">MQ Appartamento</h6>
+                        <label for=""><em class="text-info">almeno...</em></label>
+
                         <li>
-                            <input type="number" id="mq" value="10">
+                            <input type="number" id="mq" value="10" min=10>
                         </li>
 
                         <li>
@@ -50,17 +52,21 @@
                         </li>
 
                         <h6 class="dropdown-header">N Stanze</h6>
+                        <label for=""><em class="text-info">numero minimo</em></label>
+                        <label for=""><em class="text-info"></em></label>
+
                         <li>
-                            <input type="number" id="rooms" value="10">
+                            <input type="number" id="rooms" value="1" min="1" placeholder="numero minimo">
                         </li>
 
                         <li>
-                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider" placeholder="numero minimo"></div>
                         </li>
 
-                        <h6 class="dropdown-header">N Camere</h6>
+                        <h6 class="dropdown-header">N Letti</h6>
+                        <label for=""><em class="text-info">numero minimo</em></label>
                         <li>
-                            <input type="number" id="beds" value="10">
+                            <input type="number" id="beds" value="1" min=1>
                         </li>
 
                         <li>
@@ -68,8 +74,9 @@
                         </li>
 
                         <h6 class="dropdown-header">N Bagni</h6>
+                        <label for=""><em class="text-info">numero minimo</em></label>
                         <li>
-                            <input type="number" id="baths" value="10">
+                            <input type="number" id="baths" value="1" min=1>
                         </li>
 
                         <li>

@@ -66,7 +66,11 @@ function requestTomTom(query) {
             'query_lat': query.lat,
             'query__long': query.lon,
             'radius': $('#search_radius').val(),
+
             'services': checkboxCheck(),
+            'rooms': $('#rooms').val(),
+            'beds': $('#beds').val(),
+            'baths': $('#baths').val(),
             'mq': $('#mq').val(),
         },
         'success': function (data) {

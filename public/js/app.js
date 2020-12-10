@@ -37295,7 +37295,8 @@ __webpack_require__(/*! ./asset/chart.js */ "./resources/js/asset/chart.js");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+/* WEBPACK VAR INJECTION */(function($) {//Gestione effetto per la radius e il get dei servizi
+$(document).ready(function () {
   // Ricerca Avanzata valore Raggio di ricerca
   $("#search_radius").mouseup(function () {
     var radiusVal = $("#search_radius").val();
@@ -37581,6 +37582,9 @@ function requestTomTom(query) {
       'query__long': query.lon,
       'radius': $('#search_radius').val(),
       'services': checkboxCheck(),
+      'rooms': $('#rooms').val(),
+      'beds': $('#beds').val(),
+      'baths': $('#baths').val(),
       'mq': $('#mq').val()
     },
     'success': function success(data) {
@@ -37726,8 +37730,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/carloboolean/Desktop/boolean/test/boolbnb/boolbnb-t7-final/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

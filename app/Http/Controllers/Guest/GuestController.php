@@ -79,11 +79,25 @@ class GuestController extends Controller
 
     public function ajaxResponse(Request $request)
     {   // Validazione
+        $request->validate([
+            'query_lat' => 'required|numeric',
+            'query__long' => 'required|numeric',
+            'mq' => 'min:2|numeric',
+            'rooms' => 'min:1|numeric',
+            'beds' => 'min:1|numeric',
+            'baths' => 'min:1|numeric',
+        ]);
+
+        // Carbon
+        $now = Carbon::now();
 
         // Ricevo I dati dalla search avanzata
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
         $mq = $request['mq'];
+        $rooms = $request['rooms'];
+        $beds = $request['beds'];
+        $baths = $request['baths'];
         $services =  $request['services'];
 
         // Conto quanti sono i servizi ricevuti
@@ -97,23 +111,25 @@ class GuestController extends Controller
                 ->toArray();
             // Numero di servizi per ogni appartamento
             $apartments_n_services = array_count_values($apartments_id_services);
-            // Eseguo un array in cui inserisco le chiavi che hanno tutti i servizi richiesti
+            // Eseguo un array in cui inserisco le chiavi che hanno tutti i servizi richiesti,
             // i valori del nuovo array sono i miei appartamenti
             $apartments_id = array_keys($apartments_n_services, $service_length);
         } else {
             $apartments_id = Apartment::get('id');
         }
-
+        //  Id degli appartamenti con promozione attiva (non scaduta)
+        $apartments_premium_id = Promotion::has('apartment')
+            ->where("date_end", ">=", "$now")
+            ->select('apartment_id')
+            ->get()
+            ->toArray();
 
 
         // Distanz Km TODO metterla come variabile
         $radius = $request['radius'];
-
-
-
         // Mega query tutta in eloquent. i risultati sono in ordine di distanza
         // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
-        $apartments = Apartment::selectRaw("*,
+        $apartments_premium = Apartment::selectRaw("*,
                      ( 6371 * acos( cos( radians(?) ) *
                        cos( radians( lat ) )
                        * cos( radians( lng ) - radians(?)
@@ -121,16 +137,43 @@ class GuestController extends Controller
                        sin( radians( lat ) ) )
                      ) AS distance", [$latitude, $longitude, $latitude])
             ->whereIn('id', $apartments_id)
+            ->whereIn('id', $apartments_premium_id)
             ->where('published', '=', 1)
             ->where('mq', '>=', $mq)
+            ->where('rooms', '>=', $rooms)
+            ->where('beds', '>=', $beds)
+            ->where('baths', '>=', $baths)
             ->having('distance', "<", $radius)
             ->orderBy('distance', 'asc')
             ->offset(0)
             ->limit(20)
             ->get();
 
+        $apartments_free = Apartment::selectRaw("*,
+                     ( 6371 * acos( cos( radians(?) ) *
+                       cos( radians( lat ) )
+                       * cos( radians( lng ) - radians(?)
+                       ) + sin( radians(?) ) *
+                       sin( radians( lat ) ) )
+                     ) AS distance", [$latitude, $longitude, $latitude])
+            ->whereIn('id', $apartments_id)
+            ->whereNotIn('id', $apartments_premium_id)
+            ->where('published', '=', 1)
+            ->where('mq', '>=', $mq)
+            ->where('rooms', '>=', $rooms)
+            ->where('beds', '>=', $beds)
+            ->where('baths', '>=', $baths)
+            ->having('distance', "<", $radius)
+            ->orderBy('distance', 'asc')
+            ->offset(0)
+            ->limit(20)
+            ->get();
+        $apartments['premium'] = $apartments_premium;
+        $apartments['free'] = $apartments_free;
 
-        //return view('guest.search');
+        //array_push($apartments, $apartments_free, $apartments_premium);
+
+        dd($apartments["premium"][0]->title);
         return response()->json($apartments);
 
         // Query in Mysql
