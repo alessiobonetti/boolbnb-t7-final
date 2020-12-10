@@ -9,10 +9,18 @@
 @endsection
 
 @section('content')
- {{-- Visualizza un allert dopo la spedizione del messaggio con successo  --}}
-@if(session('message'))
-    <p>{{session('message')}}</p>
+
+{{-- success message --}}
+@if (session('success_message'))
+<div class="container_message">
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h6>{{{ session('success_message') }}}</h6>
+    </div>
+</div>
 @endif
+{{-- /success message --}}
+
 <div class="container">
   <h2 class="card-title">{{$apartment->title}}</h2>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -105,16 +113,6 @@
                         <textarea name='body' type="text" class="form-control" id="exampleFormControlTextarea1" placeholder="Il tuo messaggio" rows="3"></textarea>
                         </div>
                     <button type="submit" class="button_submit btn btn-primary">Submit</button>
-                    {{-- Errors --}}
-                    @if (session('success_message'))
-                      <div class="container">
-                          <div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <p>{{{ session('success_message') }}}</p>
-                          </div>
-                      </div>
-                      @endif
-                      {{-- /Errors --}}
                 </form>
                 {{-- /form message --}}
 

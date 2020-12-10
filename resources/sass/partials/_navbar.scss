@@ -9,7 +9,7 @@
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
     background: rgb(1,34,37);
-background: linear-gradient(7deg, rgba(1,34,37,1) 51%, rgba(2,102,112,1) 100%);
+    background: linear-gradient(7deg, rgba(1,34,37,1) 51%, rgba(2,102,112,1) 100%);
 
     .nav-link{
         color: $blue;
@@ -21,11 +21,11 @@ background: linear-gradient(7deg, rgba(1,34,37,1) 51%, rgba(2,102,112,1) 100%);
     }
 
     .navbar-collapse {
-        
         flex-grow: 1;
         align-items: baseline;
         padding: 15px;
         background: rgb(1,34,37);
+        background: linear-gradient(7deg, rgba(1,34,37,1) 51%, rgba(2,102,112,1) 100%);
 
         h6{
             margin: 5px;
@@ -45,5 +45,17 @@ background: linear-gradient(7deg, rgba(1,34,37,1) 51%, rgba(2,102,112,1) 100%);
             width: 100%;
         }
     }
+
+
+        .navbar-toggler {
+            color:$logoColor;
+            border-color:$logoColor;
+
+            span.navbar-toggler-icon{
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='lightblue' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+        }
+
+   
 
 }

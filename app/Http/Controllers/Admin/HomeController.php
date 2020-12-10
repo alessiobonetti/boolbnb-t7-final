@@ -73,7 +73,7 @@ class HomeController extends Controller
             $newApartment->services()->sync($data['services']);
         }
 
-        return redirect('admin/apartments');
+        return redirect('admin/apartments')->with('success_message', 'Appartemento creato correttamente');
     }
 
     /**
@@ -141,7 +141,7 @@ class HomeController extends Controller
             $apartment->services()->detach();
         }
 
-        return redirect('admin/apartments');
+        return redirect('admin/apartments')->with('success_message', 'Appartemento modificato correttamente');
     }
 
     /**
