@@ -13,6 +13,7 @@ class MessageController extends Controller
     public function index()
     {
         $id = Auth::id();
+        $user = User::where('id' , $id)->get();
         $apartments = Apartment::has('messages')
             ->where('user_id', $id)
             ->orderBy('created_at', 'asc')
