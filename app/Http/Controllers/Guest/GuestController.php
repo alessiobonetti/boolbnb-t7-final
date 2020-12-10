@@ -173,7 +173,7 @@ class GuestController extends Controller
 
         //array_push($apartments, $apartments_free, $apartments_premium);
 
-        dd($apartments["premium"][0]->title);
+
         return response()->json($apartments);
 
         // Query in Mysql
