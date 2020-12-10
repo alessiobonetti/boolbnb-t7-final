@@ -10,7 +10,7 @@ use App\Message;
 use App\Promotion;
 use App\Service;
 use Illuminate\Support\Carbon;
-
+use Illuminate\Support\Facades\DB;
 
 class GuestController extends Controller
 {
@@ -76,13 +76,39 @@ class GuestController extends Controller
     }
 
     public function ajaxResponse(Request $request)
-    {
-        // Ricevo la titudine e longitudine
+    {   // Validazione
+        // Ricevo I dati dalla search avanzata
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
+        $mq = $request['mq'];
+        $services = $request['services'];
+        // Richiamo tutti gli appartamenti con almeno un servizio
+        // $apartments_all =
+        //     Apartment::whereHas('services')
+        //     ->get()
+        //     ->toArray();
+
+        // $apartments_all =
+        //     Apartment::whereHas('services')
+        //     ->get()
+        //     ->toArray();
+        // $apartments_services = $apartments_all->services()
+        //     ->wherePivot('service_id', $services)
+        //     ->get(); // execute the query
+
+        $apartments_id_services = DB::table('apartment_service')
+            ->whereIn("service_id", $services)
+
+            ->select('apartment_id')
+            ->groupBy('apartment_id')
+
+            ->get();
+        dd($apartments_id_services);
         // Distanz Km TODO metterla come variabile
         $radius = $request['radius'];
-        dd($radius);
+
+
+
         // Mega query tutta in eloquent. i risultati sono in ordine di distanza
         // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
         $apartments = Apartment::selectRaw("*,
@@ -93,13 +119,16 @@ class GuestController extends Controller
                        sin( radians( lat ) ) )
                      ) AS distance", [$latitude, $longitude, $latitude])
             ->where('published', '=', 1)
+            ->where('mq', '>=', $mq)
             ->having('distance', "<", $radius)
             ->orderBy('distance', 'asc')
             ->offset(0)
             ->limit(20)
             ->get();
 
-        return response()->json($apartments);
+
+        return view('guest.search');
+        //return response()->json($apartments);
 
         // Query in Mysql
         // SELECT *, ((ACOS(SIN(46.04724300 * PI() / 180) *

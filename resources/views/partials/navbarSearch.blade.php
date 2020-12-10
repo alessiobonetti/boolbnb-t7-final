@@ -42,7 +42,7 @@
 
                         <h6 class="dropdown-header">MQ Appartamento</h6>
                         <li>
-                            <input type="number" id="mq">
+                            <input type="number" id="mq" value="fa-rotate-2700">
                         </li>
 
                         <li>

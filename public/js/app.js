@@ -37579,7 +37579,7 @@ function requestTomTom(query) {
       // le coordinate da mandare al back-end
       'query_lat': query.lat,
       'query__long': query.lon,
-      'radius': search_radius(),
+      'radius': $('#search_radius').val(),
       'services': checkboxCheck(),
       'mq': $('#mq').val()
     },
