@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h3 class="mb-4">Riepilogo del Tuo Appartamento</h3>
-        <div class="card mb-3">
+        <div class="card mb-3 img_show_admin">
             <img class="card-img-top" src="{{ filter_var($apartment->cover, FILTER_VALIDATE_URL) ?  $apartment->cover : asset('storage/' . $apartment->cover) }}" alt="Card image cap">
         </div>
         <div class="container_show">
@@ -40,7 +40,7 @@
         <form method="post"  enctype="multipart/form-data" id="multi_upload" action="{{ route('admin.carousel', $apartment) }}">
             @csrf
             @method('POST')
-            
+            {{-- Multi Upload --}}
             <div class="input hdtuto control-group lst increment" >
                 <input type="file" name="filenames[]" class="form-control-sm">
                 <div class="input-btn bottone">
@@ -57,15 +57,10 @@
             </div>
             <button type="submit" class="btn btn-info bottone" style="margin-top:40px">Submit</button>
         </form>
+        {{-- /Multi Upload --}}
         <a class="btn btn-success bottone" style="margin-top:20px" href="{{route('admin.apartments.index')}}" role="button">Torna ai tuoi appartamenti </a>
 
         </div>
-        
-          
 
-        {{-- Multi Upload --}}
-       
-        
-        {{-- /Multi Upload --}}
     </div>
 @endsection
