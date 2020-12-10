@@ -17,10 +17,12 @@ class MessageController extends Controller
         $user = User::where('id' , $id)->select('email')->get();
         $apartments = Apartment::has('messages')
             ->where('user_id', $id)
-            ->orderBy('created_at', 'asc')
-            ->get()
+            ->pluck('id')
             ->toArray();
-        $messages = Message::whereIn('apartment_id', [$apartments])->get();
+
+        $messages = Message::has('apartment')
+            ->wherein('apartment_id', $apartments)
+            ->get();
         return view('admin.message', compact('messages','user'));
     }
 }
