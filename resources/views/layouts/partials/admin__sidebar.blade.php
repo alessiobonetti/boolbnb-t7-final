@@ -40,7 +40,7 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link " href="{{ url('admin/message') }}" target="_self"
+        <a class="nav-link " href="{{ route('admin.messages') }}" target="_self"
             aria-expanded="true">
             <i class="fas fa-envelope"></i>
             <span>Messaggi</span>
