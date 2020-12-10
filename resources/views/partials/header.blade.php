@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <a href="/search" target="_blank">
+                <a href="{{ url('admin/apartments') }}" target="_self">
                     <div class="header_title_footer">
                         <div class="texto">
                             <span>
