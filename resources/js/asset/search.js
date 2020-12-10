@@ -69,7 +69,8 @@ function requestTomTom(query) {
             'services': checkboxCheck(),
             'mq': $('#mq').val(),
         },
-        'success': function(data){
+        'success': function (data) {
+
             // data contiene la ns risposta. gli appartamenti!
                 //console.log(data);
                 renderApartment(data)

@@ -81,27 +81,20 @@ class GuestController extends Controller
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
         $mq = $request['mq'];
-        $services = empty($request['services']) ? [1, 2, 3, 4, 5, 6] : $request['services'];
-        //Richiamo tutti gli appartamenti con almeno un servizio
-        $apartments_all =
-            Apartment::whereHas('services')
-            ->get()
-            ->toArray();
+        // Array servizi
+        $services =  $request['services'];
 
-        // $apartments_all =
-        //     Apartment::whereHas('services')
-        //     ->get()
-        //     ->toArray();
-        // $apartments_services = $apartments_all->services()
-        //     ->wherePivot('service_id', $services)
-        //     ->get(); // execute the query
-
+        // Conto qunati sono
+        $service_length = count($services);
         $apartments_id_services = DB::table('apartment_service')
+            // Estrapolo appartamenti con almeno uno di questi servizi
             ->whereIn("service_id", $services)
-            ->groupBy('apartment_id')
             ->pluck('apartment_id')
             ->toArray();
-        dd($apartments_id_services);
+        // Numero di servizi per ogni appartamento
+        $apartments_n_services = array_count_values($apartments_id_services);
+        // Se un appartamento ha tutti i servizi che cerco: BINGO!
+        $apartments_id = array_keys($apartments_n_services, $service_length);
 
         // Distanz Km TODO metterla come variabile
         $radius = $request['radius'];
@@ -120,14 +113,16 @@ class GuestController extends Controller
             ->where('published', '=', 1)
             ->where('mq', '>=', $mq)
             ->having('distance', "<", $radius)
+            ->whereIn('id', $apartments_id)
+
             ->orderBy('distance', 'asc')
             ->offset(0)
             ->limit(20)
             ->get();
 
 
-        return view('guest.search');
-        //return response()->json($apartments);
+        //return view('guest.search');
+        return response()->json($apartments);
 
         // Query in Mysql
         // SELECT *, ((ACOS(SIN(46.04724300 * PI() / 180) *
