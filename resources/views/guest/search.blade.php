@@ -34,3 +34,6 @@
 </script>
 @endsection
 
+
+{{-- img path --}}
+{{-- <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}"> --}}

@@ -10,7 +10,7 @@ use App\Message;
 use App\Promotion;
 use App\Service;
 use Illuminate\Support\Carbon;
-
+use Illuminate\Support\Facades\DB;
 
 class GuestController extends Controller
 {
@@ -21,6 +21,8 @@ class GuestController extends Controller
      */
     public function index()
     {
+        $services = Service::all();
+
         //arry Id premium
         $now = Carbon::now();
         // Query per avere tutti gli appartamenti con la promozione attiva
@@ -46,7 +48,7 @@ class GuestController extends Controller
 
 
         $services = Service::all();
-        return view('guest.welcome', compact('apartments_premium', 'apartments_free'));
+        return view('guest.welcome', compact('apartments_premium', 'apartments_free', 'services'));
     }
 
     /**
@@ -76,13 +78,38 @@ class GuestController extends Controller
     }
 
     public function ajaxResponse(Request $request)
-    {
+    {   // Validazione
 
-        // Ricevo la titudine e longitudine
+        // Ricevo I dati dalla search avanzata
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
+        $mq = $request['mq'];
+        $services =  $request['services'];
+
+        // Conto quanti sono i servizi ricevuti
+        if (!empty($services)) {
+            $service_length = count($services);
+            // Estrapolo appartamenti con almeno uno di questi servizi
+            // trasformo tutto in un array
+            $apartments_id_services = DB::table('apartment_service')
+                ->whereIn("service_id", $services)
+                ->pluck('apartment_id')
+                ->toArray();
+            // Numero di servizi per ogni appartamento
+            $apartments_n_services = array_count_values($apartments_id_services);
+            // Eseguo un array in cui inserisco le chiavi che hanno tutti i servizi richiesti
+            // i valori del nuovo array sono i miei appartamenti
+            $apartments_id = array_keys($apartments_n_services, $service_length);
+        } else {
+            $apartments_id = Apartment::get('id');
+        }
+
+
+
         // Distanz Km TODO metterla come variabile
-        $radius = 150;
+        $radius = $request['radius'];
+
+
 
         // Mega query tutta in eloquent. i risultati sono in ordine di distanza
         // https://en.wikipedia.org/wiki/Haversine_formula <- questa formula
@@ -93,13 +120,17 @@ class GuestController extends Controller
                        ) + sin( radians(?) ) *
                        sin( radians( lat ) ) )
                      ) AS distance", [$latitude, $longitude, $latitude])
+            ->whereIn('id', $apartments_id)
             ->where('published', '=', 1)
+            ->where('mq', '>=', $mq)
             ->having('distance', "<", $radius)
             ->orderBy('distance', 'asc')
             ->offset(0)
             ->limit(20)
             ->get();
 
+
+        //return view('guest.search');
         return response()->json($apartments);
 
         // Query in Mysql
