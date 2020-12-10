@@ -49,6 +49,33 @@
                             <div class="dropdown-divider"></div>
                         </li>
 
+                        <h6 class="dropdown-header">N Stanze</h6>
+                        <li>
+                            <input type="number" id="rooms" value="10">
+                        </li>
+
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+
+                        <h6 class="dropdown-header">N Camere</h6>
+                        <li>
+                            <input type="number" id="beds" value="10">
+                        </li>
+
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+
+                        <h6 class="dropdown-header">N Bagni</h6>
+                        <li>
+                            <input type="number" id="baths" value="10">
+                        </li>
+
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+
                         <h6 class="dropdown-header">Raggio Ricerca in Km</h6>
                         <li>
                             <div class="range-wrap" style="width: 80%;">
