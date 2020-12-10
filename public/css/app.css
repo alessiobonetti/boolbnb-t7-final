@@ -16325,7 +16325,7 @@ a.text-dark:focus {
 }
 
 .container_message {
-  width: 15%;
+  max-width: 15%;
   margin: 0 50px;
 }
 
@@ -16380,9 +16380,13 @@ a.text-dark:focus {
   margin: 20px 0;
 }
 
-.container #map {
+.container .maps #map {
   height: 100%;
   width: 100%;
+}
+
+.container .maps #map .mapboxgl-ctrl {
+  position: absolute;
 }
 
 .search_container {
