@@ -81,12 +81,12 @@ class GuestController extends Controller
         $latitude = $request['query_lat'];
         $longitude = $request['query__long'];
         $mq = $request['mq'];
-        $services = $request['services'];
-        // Richiamo tutti gli appartamenti con almeno un servizio
-        // $apartments_all =
-        //     Apartment::whereHas('services')
-        //     ->get()
-        //     ->toArray();
+        $services = empty($request['services']) ? [1, 2, 3, 4, 5, 6] : $request['services'];
+        //Richiamo tutti gli appartamenti con almeno un servizio
+        $apartments_all =
+            Apartment::whereHas('services')
+            ->get()
+            ->toArray();
 
         // $apartments_all =
         //     Apartment::whereHas('services')
@@ -98,12 +98,11 @@ class GuestController extends Controller
 
         $apartments_id_services = DB::table('apartment_service')
             ->whereIn("service_id", $services)
-
-            ->select('apartment_id')
             ->groupBy('apartment_id')
-
-            ->get();
+            ->pluck('apartment_id')
+            ->toArray();
         dd($apartments_id_services);
+
         // Distanz Km TODO metterla come variabile
         $radius = $request['radius'];
 
