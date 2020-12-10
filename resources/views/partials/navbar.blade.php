@@ -17,6 +17,7 @@
                 <div class="input-group-append">
                     <button type="submit" class=" button_complete btn btn-primary"><i id="search" class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
+
             </div>
                     </form>
         <div class="navbar-nav">

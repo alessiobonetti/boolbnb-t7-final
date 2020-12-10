@@ -42,7 +42,7 @@
 
                         <h6 class="dropdown-header">MQ Appartamento</h6>
                         <li>
-                            <input type="number" id="mq" value="fa-rotate-2700">
+                            <input type="number" id="mq" value="10">
                         </li>
 
                         <li>
@@ -52,7 +52,7 @@
                         <h6 class="dropdown-header">Raggio Ricerca in Km</h6>
                         <li>
                             <div class="range-wrap" style="width: 80%;">
-                                <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="10">
+                                <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="150">
                                 <output class="bubble"></output>
                             </div>
                         </li>
