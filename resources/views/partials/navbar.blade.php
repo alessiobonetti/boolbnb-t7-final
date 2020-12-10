@@ -25,6 +25,15 @@
                     <a href="{{ url('/admin/apartments') }}">
                         <button type="button" class="btn btn-outline-primary">Dashboard</button>
                     </a>
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        <button type="button" class="btn btn-outline-primary">Logout</button>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 @else
                     <a href="{{ route('login') }}">
                         <button type="button" class="btn btn-outline-primary">Login</button>
