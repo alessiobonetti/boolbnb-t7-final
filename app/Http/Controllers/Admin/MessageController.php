@@ -14,7 +14,7 @@ class MessageController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $user = User::where('id' , $id)->select('email')->get();
+        $user = User::where('id' , $id)->get();
         $apartments = Apartment::has('messages')
             ->where('user_id', $id)
             ->pluck('id')
