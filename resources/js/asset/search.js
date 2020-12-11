@@ -66,14 +66,18 @@ function requestTomTom(query) {
             'query_lat': query.lat,
             'query__long': query.lon,
             'radius': $('#search_radius').val(),
+
             'services': checkboxCheck(),
+            'rooms': $('#rooms').val(),
+            'beds': $('#beds').val(),
+            'baths': $('#baths').val(),
             'mq': $('#mq').val(),
         },
         'success': function (data) {
 
             // data contiene la ns risposta. gli appartamenti!
-                //console.log(data);
-                renderApartment(data)
+            renderApartment_premium(data['premium']);
+            renderApartment_free(data['free']);
             },
             'error':function(){
                 console.log('errore!');
@@ -81,9 +85,33 @@ function requestTomTom(query) {
     });
 }
 // Renderizzazione richieste ajax
-function renderApartment(ele){
+function renderApartment_premium(ele) {
     $('#apartments_premium').html('');
-    var source = $("#apartments_template").html();
+
+    var source = $("#apartments_template_premium").html();
+    var template = Handlebars.compile(source);
+
+
+    for (var i = 0; i < ele.length; i++) {
+
+        var context = {
+            "apartmentId": ele[i].id,
+            "cover": ele[i].cover,
+            "title": ele[i].title,
+            "description": ele[i].description
+        };
+
+        var html = template(context);
+        $("#apartments_premium").append(html);
+    }
+}
+
+function renderApartment_free(ele) {
+
+ $('#apartments_free').html('');
+
+
+    var source = $("#apartments_template_free").html();
     var template = Handlebars.compile(source);
 
     for(var i =0; i<ele.length; i++){
@@ -96,7 +124,7 @@ function renderApartment(ele){
             };
 
         var html = template(context);
-        $("#apartments_premium").append(html);
+        $("#apartments_free").append(html);
     }
 }
 

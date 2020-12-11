@@ -1,3 +1,5 @@
+//Gestione effetto per la radius e il get dei servizi
+
 $(document).ready(function () {
     // Ricerca Avanzata valore Raggio di ricerca
     $("#search_radius").mouseup(function() {
@@ -7,7 +9,7 @@ $(document).ready(function () {
     });
 
     checkboxCheck ();
-    
+
 });
 
 // Logica label per raggio di ricerca

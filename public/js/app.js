@@ -37295,7 +37295,8 @@ __webpack_require__(/*! ./asset/chart.js */ "./resources/js/asset/chart.js");
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {$(document).ready(function () {
+/* WEBPACK VAR INJECTION */(function($) {//Gestione effetto per la radius e il get dei servizi
+$(document).ready(function () {
   // Ricerca Avanzata valore Raggio di ricerca
   $("#search_radius").mouseup(function () {
     var radiusVal = $("#search_radius").val();
@@ -37581,12 +37582,15 @@ function requestTomTom(query) {
       'query__long': query.lon,
       'radius': $('#search_radius').val(),
       'services': checkboxCheck(),
+      'rooms': $('#rooms').val(),
+      'beds': $('#beds').val(),
+      'baths': $('#baths').val(),
       'mq': $('#mq').val()
     },
     'success': function success(data) {
       // data contiene la ns risposta. gli appartamenti!
-      //console.log(data);
-      renderApartment(data);
+      renderApartment_premium(data['premium']);
+      renderApartment_free(data['free']);
     },
     'error': function error() {
       console.log('errore!');
@@ -37595,9 +37599,9 @@ function requestTomTom(query) {
 } // Renderizzazione richieste ajax
 
 
-function renderApartment(ele) {
+function renderApartment_premium(ele) {
   $('#apartments_premium').html('');
-  var source = $("#apartments_template").html();
+  var source = $("#apartments_template_premium").html();
   var template = Handlebars.compile(source);
 
   for (var i = 0; i < ele.length; i++) {
@@ -37609,6 +37613,23 @@ function renderApartment(ele) {
     };
     var html = template(context);
     $("#apartments_premium").append(html);
+  }
+}
+
+function renderApartment_free(ele) {
+  $('#apartments_free').html('');
+  var source = $("#apartments_template_free").html();
+  var template = Handlebars.compile(source);
+
+  for (var i = 0; i < ele.length; i++) {
+    var context = {
+      "apartmentId": ele[i].id,
+      "cover": ele[i].cover,
+      "title": ele[i].title,
+      "description": ele[i].description
+    };
+    var html = template(context);
+    $("#apartments_free").append(html);
   }
 }
 
@@ -37726,8 +37747,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Luca\Desktop\Classe17\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Luca\Desktop\Classe17\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\alesi\Desktop\Boolean\Esercizi\boolbnb-t7-final\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
