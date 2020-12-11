@@ -22,7 +22,7 @@
         <div class="card border-primary mb-3" style="max-width: 10rem;">
         <div class="card-body border-left-primary shadow h-100 py-2">
             <h5 class="card-title">Totale Messaggi</h5>
-            <p class="card-text">{{-- {{ count($messages) }} --}}</p>
+            <p class="card-text"> {{ count($messages) }} </p>
         </div>
         </div>
     </div>

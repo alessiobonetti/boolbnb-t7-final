@@ -53,5 +53,12 @@
             <span>Statistiche</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link " href="{{ route('admin.payment.make') }}"
+            aria-expanded="true">
+            <i class="fas fa-star"></i>
+            <span>Premium</span>
+        </a>
+    </li>
 </ul>
 <!-- End of Sidebar -->

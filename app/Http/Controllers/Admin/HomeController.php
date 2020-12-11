@@ -12,6 +12,7 @@ use App\Service;
 use App\User;
 use App\View;
 use App\Mail\SendNewMail;
+use App\Message;
 use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
@@ -24,8 +25,13 @@ class HomeController extends Controller
     public function index()
     {
         $id = Auth::id();
+        $apartments_id = Apartment::has('messages')->where('user_id', $id)->get('id')->pluck('id')->toArray();
+        $messages = Message::whereIn('apartment_id', $apartments_id)->get();
+
+
+
         $apartments = Apartment::all()->where('user_id', $id);
-        return view('admin.index', compact('apartments',));
+        return view('admin.index', compact('apartments', 'messages'));
     }
 
 
@@ -69,9 +75,7 @@ class HomeController extends Controller
         $newApartment->fill($data);
         $newApartment->cover = $path;
         $newApartment->user_id = Auth::id();
-        $newApartment->save();
-
-        ;
+        $newApartment->save();;
 
         if (!empty($data['services'])) {
             $newApartment->services()->sync($data['services']);

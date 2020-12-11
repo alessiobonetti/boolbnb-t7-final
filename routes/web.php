@@ -39,4 +39,5 @@ Route::prefix('admin')
         Route::get('message', 'MessageController@index')->name('messages');
         Route::get('chart', 'ChartController@index')->name('chart');
         Route::post('carousel/{apartment}', 'CarouselController@store')->name('carousel');
+        Route::get('payment', 'PaymentsController@make')->name('payment.make');
     });
