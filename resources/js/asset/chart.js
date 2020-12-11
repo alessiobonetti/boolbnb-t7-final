@@ -3,10 +3,10 @@ let myChartMex = document.getElementById('myChartMex').getContext('2d');
 let massPopChart = new Chart(myChartMex, {
   type:'bar',
   data:{
-    labels:['Appartemento  1', 'Appartemento  2', 'Appartemento  3', 'Appartemento  4', 'Appartemento  5', 'Appartemento  6', 'Appartemento  7', 'Appartemento  8', 'Appartemento  9', 'Appartemento 10', 'Appartemento 11', 'Appartemento 12'],
+    labels:['Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data'],
     datasets:[{
       label:'Messaggi',
-      data:[8, 46, 55, 43, 51, 71, 87, 103, 97, 73, 42, 59],
+      data:[17, 23, 31, 51, 35, 45, 67, 42, 78],
       backgroundColor:'#E40066',
       borderWidth:1,
       borderColor:'#777',
@@ -48,10 +48,10 @@ let myChartView = document.getElementById('myChartView').getContext('2d');
 let massPopChartView = new Chart(myChartView, {
   type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
   data:{
-    labels:['data', 'data', 'data', 'data'],
+    labels:['Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data', 'Data'],
     datasets:[{
       label:'Visualizzazioni',
-        data:[22, 41, 5, 59, 81, 78, 97, 153],
+        data:[59, 78, 87, 102, 89, 54, 92, 61, 108],
         backgroundColor: '#03CEA4',
         borderWidth:1,
         borderColor:'#777',

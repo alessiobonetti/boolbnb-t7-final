@@ -16113,77 +16113,9 @@ a.text-dark:focus {
   left: 50%;
 }
 
-/* .container_apartments{
-    width: 90%;
-    margin:auto;
-
-    .apartments_premium {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        .apartment_premium_box{
-            width: 500px;
-            height: 515px;
-            border: 3px solid red;
-            margin: 20px;
-            padding: 10px;
-
-            h3{
-                text-align: center;
-            }
-
-            img{
-                max-width: 50%;
-                max-height: 50%;
-            }
-
-            p{
-                overflow-y: auto;
-                height: 150px;
-                margin-top: 20px;
-            }
-        }
-    }
-
-    .apartments_free{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        .apartment_free_box{
-            width: 500px;
-            height: 515px;
-            border: 1px solid black;
-            margin: 20px;
-            padding: 10px;
-
-            img{
-                max-width: 50%;
-                max-height: 50%;
-            }
-            h3{
-                text-align: center;
-            }
-            p{
-                overflow-y: auto;
-                height: 150px;
-                margin-top: 20px;
-            }
-        }
-    }
-} */
-
 .container_apartments {
   width: 90%;
   margin: auto;
-  /* background-image: linear-gradient(175deg, #a1edff 0, #3cb5f2 50%, #0080ca 100%); */
-  /*  border: 1px solid #0080ca;
-   border-radius: 10px; */
-  /*  -webkit-box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.3);
-     -moz-box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.3);
-     box-shadow: 4px 4px 44px 10px rgba(0,0,0,0.3);
-  */
 }
 
 .container_apartments .apartments_premium_title h3 {
@@ -16269,7 +16201,7 @@ a.text-dark:focus {
 }
 
 .container_apartments .premium_class {
-  border: 3px solid #fef9c7;
+  border: 3px solid #E8BD21;
   border-radius: 10px;
 }
 
@@ -16389,43 +16321,6 @@ a.text-dark:focus {
   position: absolute;
 }
 
-.search_container {
-  margin: 50px 0;
-}
-
-.search_container .row {
-  border: 1px solid #86b3d1;
-}
-
-.search_container .col-xs-8 {
-  height: 350px;
-  width: 60%;
-}
-
-.search_container .col-xs-8 img {
-  height: 100%;
-}
-
-.search_container .col-xs-4 {
-  width: 40%;
-  padding: 10px;
-  text-align: center;
-}
-
-.search_container .col-xs-4 h5 {
-  box-shadow: 0px 6px 4px 2px rgba(0, 0, 0, 0.75);
-  background-color: #f8f9fa;
-}
-
-.search_container .col-xs-4 .text {
-  height: 245px;
-  overflow-y: auto;
-}
-
-.search_container .col-xs-4 .divider {
-  margin-top: 5%;
-}
-
 .row_search {
   justify-content: center;
 }
@@ -16450,6 +16345,34 @@ a.text-dark:focus {
 }
 
 .row_search #apartments_premium .content_search .content_down_img {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.row_search {
+  justify-content: center;
+}
+
+.row_search #apartments_free {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.row_search #apartments_free .content_search {
+  background-color: #f8f9fa;
+  margin-bottom: 50px;
+  border-radius: 8px;
+}
+
+.row_search #apartments_free .content_search .img-fluid {
+  max-width: 98%;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: auto;
+}
+
+.row_search #apartments_free .content_search .content_down_img {
   margin: 20px 0;
   text-align: center;
 }
@@ -29082,6 +29005,7 @@ form.user .btn-user {
 
 @-webkit-keyframes noise-anim {
   0% {
+<<<<<<< HEAD
     clip: rect(38px, 9999px, 97px, 0);
   }
 
@@ -29135,13 +29059,69 @@ form.user .btn-user {
 
   65% {
     clip: rect(72px, 9999px, 48px, 0);
+=======
+    clip: rect(73px, 9999px, 97px, 0);
+  }
+
+  5% {
+    clip: rect(97px, 9999px, 16px, 0);
+  }
+
+  10% {
+    clip: rect(21px, 9999px, 74px, 0);
+  }
+
+  15% {
+    clip: rect(96px, 9999px, 42px, 0);
+  }
+
+  20% {
+    clip: rect(12px, 9999px, 67px, 0);
+  }
+
+  25% {
+    clip: rect(65px, 9999px, 65px, 0);
+  }
+
+  30% {
+    clip: rect(50px, 9999px, 75px, 0);
+  }
+
+  35% {
+    clip: rect(70px, 9999px, 97px, 0);
+  }
+
+  40% {
+    clip: rect(70px, 9999px, 71px, 0);
+  }
+
+  45% {
+    clip: rect(21px, 9999px, 67px, 0);
+  }
+
+  50% {
+    clip: rect(21px, 9999px, 42px, 0);
+  }
+
+  55% {
+    clip: rect(94px, 9999px, 43px, 0);
+  }
+
+  60% {
+    clip: rect(90px, 9999px, 12px, 0);
+  }
+
+  65% {
+    clip: rect(76px, 9999px, 80px, 0);
+>>>>>>> main
   }
 
   70% {
-    clip: rect(26px, 9999px, 83px, 0);
+    clip: rect(88px, 9999px, 67px, 0);
   }
 
   75% {
+<<<<<<< HEAD
     clip: rect(68px, 9999px, 89px, 0);
   }
 
@@ -29163,11 +29143,35 @@ form.user .btn-user {
 
   100% {
     clip: rect(34px, 9999px, 61px, 0);
+=======
+    clip: rect(23px, 9999px, 98px, 0);
+  }
+
+  80% {
+    clip: rect(29px, 9999px, 93px, 0);
+  }
+
+  85% {
+    clip: rect(50px, 9999px, 48px, 0);
+  }
+
+  90% {
+    clip: rect(11px, 9999px, 54px, 0);
+  }
+
+  95% {
+    clip: rect(83px, 9999px, 36px, 0);
+  }
+
+  100% {
+    clip: rect(4px, 9999px, 66px, 0);
+>>>>>>> main
   }
 }
 
 @keyframes noise-anim {
   0% {
+<<<<<<< HEAD
     clip: rect(38px, 9999px, 97px, 0);
   }
 
@@ -29221,13 +29225,69 @@ form.user .btn-user {
 
   65% {
     clip: rect(72px, 9999px, 48px, 0);
+=======
+    clip: rect(73px, 9999px, 97px, 0);
+  }
+
+  5% {
+    clip: rect(97px, 9999px, 16px, 0);
+  }
+
+  10% {
+    clip: rect(21px, 9999px, 74px, 0);
+  }
+
+  15% {
+    clip: rect(96px, 9999px, 42px, 0);
+  }
+
+  20% {
+    clip: rect(12px, 9999px, 67px, 0);
+  }
+
+  25% {
+    clip: rect(65px, 9999px, 65px, 0);
+  }
+
+  30% {
+    clip: rect(50px, 9999px, 75px, 0);
+  }
+
+  35% {
+    clip: rect(70px, 9999px, 97px, 0);
+  }
+
+  40% {
+    clip: rect(70px, 9999px, 71px, 0);
+  }
+
+  45% {
+    clip: rect(21px, 9999px, 67px, 0);
+  }
+
+  50% {
+    clip: rect(21px, 9999px, 42px, 0);
+  }
+
+  55% {
+    clip: rect(94px, 9999px, 43px, 0);
+  }
+
+  60% {
+    clip: rect(90px, 9999px, 12px, 0);
+  }
+
+  65% {
+    clip: rect(76px, 9999px, 80px, 0);
+>>>>>>> main
   }
 
   70% {
-    clip: rect(26px, 9999px, 83px, 0);
+    clip: rect(88px, 9999px, 67px, 0);
   }
 
   75% {
+<<<<<<< HEAD
     clip: rect(68px, 9999px, 89px, 0);
   }
 
@@ -29249,6 +29309,29 @@ form.user .btn-user {
 
   100% {
     clip: rect(34px, 9999px, 61px, 0);
+=======
+    clip: rect(23px, 9999px, 98px, 0);
+  }
+
+  80% {
+    clip: rect(29px, 9999px, 93px, 0);
+  }
+
+  85% {
+    clip: rect(50px, 9999px, 48px, 0);
+  }
+
+  90% {
+    clip: rect(11px, 9999px, 54px, 0);
+  }
+
+  95% {
+    clip: rect(83px, 9999px, 36px, 0);
+  }
+
+  100% {
+    clip: rect(4px, 9999px, 66px, 0);
+>>>>>>> main
   }
 }
 
@@ -29267,6 +29350,7 @@ form.user .btn-user {
 
 @-webkit-keyframes noise-anim-2 {
   0% {
+<<<<<<< HEAD
     clip: rect(82px, 9999px, 34px, 0);
   }
 
@@ -29348,11 +29432,95 @@ form.user .btn-user {
 
   100% {
     clip: rect(59px, 9999px, 52px, 0);
+=======
+    clip: rect(27px, 9999px, 81px, 0);
+  }
+
+  5% {
+    clip: rect(97px, 9999px, 74px, 0);
+  }
+
+  10% {
+    clip: rect(49px, 9999px, 39px, 0);
+  }
+
+  15% {
+    clip: rect(22px, 9999px, 91px, 0);
+  }
+
+  20% {
+    clip: rect(86px, 9999px, 46px, 0);
+  }
+
+  25% {
+    clip: rect(67px, 9999px, 22px, 0);
+  }
+
+  30% {
+    clip: rect(4px, 9999px, 4px, 0);
+  }
+
+  35% {
+    clip: rect(22px, 9999px, 20px, 0);
+  }
+
+  40% {
+    clip: rect(16px, 9999px, 62px, 0);
+  }
+
+  45% {
+    clip: rect(1px, 9999px, 13px, 0);
+  }
+
+  50% {
+    clip: rect(62px, 9999px, 80px, 0);
+  }
+
+  55% {
+    clip: rect(37px, 9999px, 30px, 0);
+  }
+
+  60% {
+    clip: rect(11px, 9999px, 97px, 0);
+  }
+
+  65% {
+    clip: rect(81px, 9999px, 27px, 0);
+  }
+
+  70% {
+    clip: rect(48px, 9999px, 50px, 0);
+  }
+
+  75% {
+    clip: rect(81px, 9999px, 20px, 0);
+  }
+
+  80% {
+    clip: rect(29px, 9999px, 46px, 0);
+  }
+
+  85% {
+    clip: rect(7px, 9999px, 10px, 0);
+  }
+
+  90% {
+    clip: rect(32px, 9999px, 5px, 0);
+  }
+
+  95% {
+    clip: rect(85px, 9999px, 98px, 0);
+  }
+
+  100% {
+    clip: rect(100px, 9999px, 99px, 0);
+>>>>>>> main
   }
 }
 
 @keyframes noise-anim-2 {
   0% {
+<<<<<<< HEAD
     clip: rect(82px, 9999px, 34px, 0);
   }
 
@@ -29434,6 +29602,89 @@ form.user .btn-user {
 
   100% {
     clip: rect(59px, 9999px, 52px, 0);
+=======
+    clip: rect(27px, 9999px, 81px, 0);
+  }
+
+  5% {
+    clip: rect(97px, 9999px, 74px, 0);
+  }
+
+  10% {
+    clip: rect(49px, 9999px, 39px, 0);
+  }
+
+  15% {
+    clip: rect(22px, 9999px, 91px, 0);
+  }
+
+  20% {
+    clip: rect(86px, 9999px, 46px, 0);
+  }
+
+  25% {
+    clip: rect(67px, 9999px, 22px, 0);
+  }
+
+  30% {
+    clip: rect(4px, 9999px, 4px, 0);
+  }
+
+  35% {
+    clip: rect(22px, 9999px, 20px, 0);
+  }
+
+  40% {
+    clip: rect(16px, 9999px, 62px, 0);
+  }
+
+  45% {
+    clip: rect(1px, 9999px, 13px, 0);
+  }
+
+  50% {
+    clip: rect(62px, 9999px, 80px, 0);
+  }
+
+  55% {
+    clip: rect(37px, 9999px, 30px, 0);
+  }
+
+  60% {
+    clip: rect(11px, 9999px, 97px, 0);
+  }
+
+  65% {
+    clip: rect(81px, 9999px, 27px, 0);
+  }
+
+  70% {
+    clip: rect(48px, 9999px, 50px, 0);
+  }
+
+  75% {
+    clip: rect(81px, 9999px, 20px, 0);
+  }
+
+  80% {
+    clip: rect(29px, 9999px, 46px, 0);
+  }
+
+  85% {
+    clip: rect(7px, 9999px, 10px, 0);
+  }
+
+  90% {
+    clip: rect(32px, 9999px, 5px, 0);
+  }
+
+  95% {
+    clip: rect(85px, 9999px, 98px, 0);
+  }
+
+  100% {
+    clip: rect(100px, 9999px, 99px, 0);
+>>>>>>> main
   }
 }
 

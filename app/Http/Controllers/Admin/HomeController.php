@@ -170,6 +170,6 @@ class HomeController extends Controller
         $apartment->delete();
 
 
-        return redirect('admin/apartments');
+        return redirect('admin/apartments')->with('success_message', 'Appartemento eliminato correttamente');
     }
 }
