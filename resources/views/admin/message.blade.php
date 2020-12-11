@@ -1,3 +1,6 @@
+@php
+    $messagesCount = count($messages)
+@endphp
 
 @extends('layouts.admin')
 
@@ -20,7 +23,7 @@
 
                 <ul class="inbox-nav inbox-divider">
                     <li class="active">
-                        <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
+                    <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right"><?=$messagesCount?></span></a>
 
                     </li>
 
