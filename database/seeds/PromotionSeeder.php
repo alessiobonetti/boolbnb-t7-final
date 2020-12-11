@@ -19,7 +19,7 @@ class PromotionSeeder extends Seeder
         // Array per controllare se l'appartamento ha già una promozione
         $apartment_check = [];
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 4; $i++) {
             // Seleziono un apartment random
             $apartment = Apartment::inRandomOrder()->first();
             // Verifico che non abbia promotion

@@ -56,7 +56,7 @@
                         <td class="d-none d-lg-table-cell">{{ $apartment->baths }}</td>
                         <td class="d-none d-lg-table-cell">{{ $apartment->mq }}</td>
                         <td class="d-none d-lg-table-cell">{{ $apartment->address }}</td>
-                        <td class="d-none d-lg-table-cell">{{ $apartment->published }}</td>
+                        <td class="d-none d-lg-table-cell">{{ $apartment->published ? 'SI' : 'NO'}}</td>
                         <td class="d-none d-lg-table-cell">
                             @if ($apartment->views->count())
                                 {{ $apartment->views->count() }}

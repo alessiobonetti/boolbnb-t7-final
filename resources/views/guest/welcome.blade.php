@@ -14,7 +14,7 @@
     <div class="container_apartments container">
         {{-- appartamenti premium titolo --}}
         <div class="apartments_premium_title">
-            <h3>Gli Appartamenti PREMIUM</h3>
+            <h3>Appartamenti PREMIUM</h3>
         </div>
         <div class="row">
             {{-- appartamenti premium --}}
@@ -37,7 +37,7 @@
         </div>
 
         <div class="apartments_premium_title">
-            <h3>Gli Appartamenti </h3>
+            <h3>Appartamenti </h3>
         </div>
         <div class="row">
             {{-- appartamenti free --}}

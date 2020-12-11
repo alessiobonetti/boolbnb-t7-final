@@ -12,12 +12,17 @@
     </div>
 {{-- struttura boolstrap visualizzazione appartamenti --}}
 <div class="container">
+    <h3><strong>Appartamenti PREMIUM</strong></h3>
     <div class="row row_search">
+
         <div class="col-sm-12 col-md-6" >
             <div id="apartments_premium"></div>
         </div>
     </div>
+        <h3><strong>Appartamenti</strong></h3>
+
         <div class="row row_search">
+
         <div class="col-sm-12 col-md-6" >
             <div id="apartments_free"></div>
         </div>
@@ -29,7 +34,7 @@
     {{-- handlebars template --}}
 <script id="apartments_template_premium" type="text/x-handlebars-template">
     <div class="content_search" style="border:  5px solid #E8BD21">
-        <img src="@{{cover}}" class="img-fluid" alt="Responsive image">
+        <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}">
         <div class="content_down_img">
             <h5 >@{{title}}</h5>
             <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
@@ -40,7 +45,7 @@
 
 <script id="apartments_template_free" type="text/x-handlebars-template">
     <div class="content_search" style="border:  5px solid #0454A8">
-        <img src="@{{cover}}" class="img-fluid" alt="Responsive image">
+        <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}">
         <div class="content_down_img">
             <h5 >@{{title}}</h5>
             <a href="apartment/@{{apartmentId}}"><button type="button" class="btn btn-outline-primary">Informazioni</button></a>
