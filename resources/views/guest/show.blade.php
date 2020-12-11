@@ -71,8 +71,8 @@
           {{-- maps show htlm + js --}}
           <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
           <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
-          <div class="maps col-6 ">
-            <div id="map" style="width: 100%; height: 100%;"></div>
+          <div class="maps col-12 ">
+            <div id="map" style="width: 100%; height: 300px;"></div>
             <script>
               var localita = [{{$apartment->lng}}, {{$apartment->lat}}];
               var map = tt.map({
@@ -96,10 +96,12 @@
               marker.setPopup(popup).togglePopup(); */
           </script>
           </div>
+        </div>
+      </div>
            {{-- /maps show htlm + js --}}
 
            {{-- form message --}}
-          <div class="form_message col-6 ">
+          <div class="form_message col-12 ">
                 <form method="POST" action="{{ route('guest.writeMex', $apartment) }}">
                 @csrf
                 @method('POST')
@@ -117,8 +119,7 @@
                 {{-- /form message --}}
 
             </div>
+           <a href="{{url('')}}"><button type="button" class="btn btn-outline-primary">Torna alla Home</button></a>
+
         </div>
-    </div>
-    <a href="{{url('')}}"><button type="button" class="btn btn-outline-primary">Torna alla Home</button></a>
-</div>
 @endsection
