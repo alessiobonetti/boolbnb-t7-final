@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Apartment;
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Facades\Auth;
->>>>>>> main
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ChartController extends Controller
 {
@@ -17,11 +14,6 @@ class ChartController extends Controller
         $id = Auth::id();
         $apartments = Apartment::all()->where('user_id', $id);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
         return view('admin.chart', compact('apartments'));
     }
 }
