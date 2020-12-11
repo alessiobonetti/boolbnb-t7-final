@@ -28,7 +28,7 @@
 {{-- Qui sono dentro a search --}}
     {{-- handlebars template --}}
 <script id="apartments_template_premium" type="text/x-handlebars-template">
-    <div class="content_search">
+    <div class="content_search" style="border:  5px solid #fef9c7">
         <img src="@{{cover}}" class="img-fluid" alt="Responsive image">
         <div class="content_down_img">
             <h5 >@{{title}}</h5>
@@ -39,7 +39,7 @@
 </script>
 
 <script id="apartments_template_free" type="text/x-handlebars-template">
-    <div class="content_search" style="border:  5px solid #fef9c7">
+    <div class="content_search">
         <img src="@{{cover}}" class="img-fluid" alt="Responsive image">
         <div class="content_down_img">
             <h5 >@{{title}}</h5>
