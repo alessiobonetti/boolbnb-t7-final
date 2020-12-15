@@ -11,7 +11,7 @@
 
     </div>
 {{-- struttura boolstrap visualizzazione appartamenti --}}
-<div class="container">
+<div class="container content">
     <h3><strong>Appartamenti PREMIUM</strong></h3>
     <div class="row row_search">
 
@@ -34,6 +34,7 @@
     {{-- handlebars template --}}
 <script id="apartments_template_premium" type="text/x-handlebars-template">
     <div class="content_search" style="border:  5px solid #E8BD21">
+        <div class="content-verlay"></div>
         <img class="img-fluid" src="{{ asset('storage/') }}/@{{cover}}">
         <div class="content_down_img">
             <h5 >@{{title}}</h5>

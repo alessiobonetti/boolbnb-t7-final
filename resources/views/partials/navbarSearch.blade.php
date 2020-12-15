@@ -86,7 +86,7 @@
                         <h6 class="dropdown-header">Raggio Ricerca in Km</h6>
                         <li>
                             <div class="range-wrap" style="width: 80%;">
-                                <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="150">
+                                <input id="search_radius" name="radius" type="range" class="range" min="10" max="150" step="10" value="20">
                                 <output class="bubble"></output>
                             </div>
                         </li>
